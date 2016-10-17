@@ -3174,3 +3174,38 @@ CANVAS PAGE STYLE
 }
 @media (max-width: 767px) {
 }
+
+#header999 {
+    width: 50%;
+    background-color: #e6e6e6;
+    height: 250px;
+    margin-top: 20px;
+}
+
+#header998 {
+    width: 50%;
+    background-color: #e6e6e6;
+    height: 250px;
+    margin-top: 20px;
+}
+
+
+#first {
+    width: 200px;
+    float: left;
+    height: 250px;
+        background-color: #e6e6e6;
+}
+#second {
+    width: 370px;
+    float: right;
+    height: 250px;
+    background-color: #e6e6e6;
+}
+
+#add {
+    width: %100px;
+    float: bottom;
+    height: 30px;
+    background-color: grey;
+}
