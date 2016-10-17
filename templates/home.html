@@ -1,19 +1,64 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Home</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-  </head>
-  <body>
-  	<h1>Hello from itucsdb1627</h1>
-    <h1>Hello from zihni</h1>
-	<h1>Hello from burak</h1>
-	<h1>Hello from hilal</h1>
-	<h1>Hello from Erdem</h1>
-	<h1>Hello from zeynep</h1>
-    <footer>
-      <div id="datetime">{{ current_time }}</div>
-    </footer>
-  </body>
-</html>
+  {% extends "layout.html" %}
+  {% block content %}
+
+    
+   
+        
+          
+         <!-- CONTENT -->
+          <div class="col-sm-7">
+            <div class="text-area">
+              <div class="position-center-center col-md-10">
+                <h1> Beklediğiniz Sosyal İletişim Platformuna Hoşgeldiniz</h1>
+                <h6>400 milyon+ üye | Profesyonel kimliğinizi yönetin. Profesyonel ağınızı kurun ve ağınızla bağlantıya geçin. Bilgi birikimlerine, içgörülere ve fırsatlara erişin</h6>
+              </div>
+            </div>
+          </div>
+          
+          <!-- FORM SECTION -->
+          <div class="col-sm-5">
+            <div class="login-sec"> 
+              
+              <!-- TABS -->
+              <div class="uou-tabs">
+                <ul class="tabs">
+                  <li><a href="#register">Kayıt Ol</a></li>
+                  <li class="active"><a href="#log-in">Üye Girişi</a></li>
+                </ul>
+                
+                <!-- REGISTER -->
+                <div class="content">
+                  <div id="register">
+                    <form>
+                      <input type="text" placeholder="isminiz">
+                      <input type="email" placeholder="Email Addresiniz">
+                      <input type="text" placeholder="Telefonunuz">
+                      <input type="password" placeholder="sifreniz">
+                      <button type="submit">Kayıt Ol</button>                      
+                    </form>
+                  </div>
+                  
+                  <!-- LOGIN -->
+                  <div id="log-in" class="active">
+                    <form>
+                      <input type="email" placeholder="Email Adresiniz">
+                      <input type="password" placeholder="sifreniz">
+                      <button type="submit">Onay</button>                      
+                      <div class="forget">Şifrenizi mi unuttunuz <a href="#.">Buraya Tıklayın</a></div>
+                    </form>
+                  </div>
+                  <div id="forget">
+                    <form>
+                      <input type="email" placeholder="Email Address">
+                      <button type="submit">Giriş</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      
+
+
+{% endblock %}
