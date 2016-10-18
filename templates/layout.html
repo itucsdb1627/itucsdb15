@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,41 +10,39 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800,300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" href="static/main-style.css">
-<link rel="stylesheet" href="static/style.css">
+<link rel="stylesheet" href="{{ url_for('static',filename='main-style.css') }}">
+<link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+
+</head>
 
 <body>
-<div id= "main-wrapper"> 
-  
-    
+<div id= "main-wrapper">
+
     <div class="uou-block-1a blog">
       <div class="container">
-        <div class="search"> 
+        <div class="search">
           <form action="#">
             <input type="text" class="search-input" placeholder="Search ...">
             <input type="submit" value="">
           </form>
         </div>
-                
+
         <ul class="authentication">
           <li><a href="#">Giriş</a></li>
           <li><a href="#">Kayıt Ol</a></li>
         </ul>
-        
+
       </div>
     </div>
-  
-  
-  
-  
+
   <div class="box-shadow-for-ui">
     <div class="uou-block-2b">
-      <div class="container"><img src="https://cdn1.iconfinder.com/data/icons/business-and-finance-20/200/vector_65_02-64.png" ></a> <a href="#" class="mobile-sidebar-button mobile-sidebar-toggle"><span></span></a>
-        <nav class="nav">        
-          <ul class="sf-menu">            
+      <div class="container"><img src="https://cdn1.iconfinder.com/data/icons/business-and-finance-20/200/vector_65_02-64.png" > <a href="#" class="mobile-sidebar-button mobile-sidebar-toggle"><span></span></a>
+        <nav class="nav">
+          <ul class="sf-menu">
             <li> <a href="{{ url_for('isfirsatlari_page') }}">İş Fırsatları</a> </li>
-            <li> <a href="{{ url_for('ilgialanlari_page') }}">İlgi Alanları</a> </li>        
-            
+            <li> <a href="{{ url_for('ilgialanlari_page') }}">İlgi Alanları</a> </li>
+
             <li> <a href="{{ url_for('baglantilar_page') }}">Bağlantılar</a></li>
             <li><a href="{{ url_for('kisiler_page') }}">Tanıyor Olabileceğiniz Kişiler</a></li>
             <li><a href="{{ url_for('hakkimizda_page') }}">Hakkımızda</a></li>
@@ -51,20 +50,20 @@
         </nav>
       </div>
     </div>
-    <!-- end .uou-block-2b --> 
-  
+    <!-- end .uou-block-2b -->
+
     </div>
      <div class="home-pro">
       <!-- PRO BANNER HEAD -->
     <div class="banr-head">
       <div class="container">
-      
+
   {% block content %}{% endblock %}
- 
+
 </div>
         </div>
   </div>
-  
+
 
 
 <footer>
@@ -80,5 +79,6 @@
 
     </footer>
 
+</div>
 </body>
 </html>
