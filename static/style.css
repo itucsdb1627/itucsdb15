@@ -1,28 +1,4 @@
-/*------------------------------------------------------------------
-    Main Style Stylesheet
-    Project:        TIGER HTML5 Template
-    Version:        1.0
-    Author:         UOUAPPS
-    Last change:    06/10/2016
-    Primary use:    Creative, Coporate, Business,
--------------------------------------------------------------------*/
-/*------------------------------------------------------------------
-body
- + WRAP
- + HEADER
- + NAVIGATION
- + BANNER
- + SERVICES
- + OUR FEATURED FOUNDERS
- + BLOG UPDATES
- + APPOINMENT
- + NEWS FROM BLOG
- + PARTNERS / CLIENTS
- + FOOTER
- + SOCIAL ICONS
- + MEGA MENU
- + 3 MENU LEVEL
--------------------------------------------------------------------*/
+
 #profile-template-5 .profile-sidebar {
 	float: left;
 	width: 100%;
@@ -3227,4 +3203,10 @@ CANVAS PAGE STYLE
     height: 400px;
     margin-left: auto;
     margin-right: auto;
+}
+#header1001 {
+    width: 50%;
+    background-color: #e6e6e6;
+    height: 250px;
+    margin-top: 20px;
 }
