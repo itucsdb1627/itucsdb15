@@ -1,4 +1,7 @@
 applications:
+- services:
+   -ElephantSQL-ue
+   
 - disk_quota: 1024M
   host: itucsdb1627
   name: itucsdb1627
