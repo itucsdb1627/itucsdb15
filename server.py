@@ -29,7 +29,7 @@ def get_elephantsql_dsn(vcap_services):
 def home_page():
     now = datetime.datetime.now()
     return render_template('home.html', current_time=now.ctime())
-
+@app.route('/initdb')
 def initialize_database():
     with dbapi2.connect(app.config['dsn']) as connection:
         cursor = connection.cursor()
@@ -45,7 +45,7 @@ def initialize_database():
 
         connection.commit()
     return redirect(url_for('home_page'))
-
+@app.route('/count')
 def counter_page():
     with dbapi2.connect(app.config['dsn']) as connection:
         cursor = connection.cursor()
