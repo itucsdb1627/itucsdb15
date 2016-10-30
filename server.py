@@ -95,6 +95,20 @@ def initialize_database_eklenmemis_kisiler():
     return redirect(url_for('kisiler_page'))
 
 
+@app.route('/baglantilar/initdb')
+def initialize_database_baglantilar():
+    connection=dbapi2.connect(app.config['dsn'])
+    cursor=connection.cursor()
+
+    query=""" DROP TABLE IF EXISTS BAGLANTILAR CASCADE"""
+    cursor.execute(query)
+    query="""CREATE TABLE BAGLANTILAR(ID SERIAL PRIMARY KEY, FIRSTNAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50) NOT NULL,COMPANYNAME VARCHAR(50),MUTUALCONNECTIONNUMBER INTEGER,TOTALCONNECTIONNUMBER INTEGER)"""
+    cursor.execute(query)
+    query="""INSERT INTO BAGLANTILAR(FIRSTNAME,SURNAME,COMPANYNAME,MUTUALCONNECTIONNUMBER,TOTALCONNECTIONNUMBER) VALUES('BURAK','SIMSEK','ITU','10','40')"""
+    cursor.execute(query)
+    connection.commit()
+    return redirect(url_for('baglantilar_page'))
+
 
 
 if __name__ == '__main__':
