@@ -4,10 +4,12 @@ import os
 import psycopg2 as dbapi2
 import re
 
+
 from flask import Flask
 from flask import redirect
 from flask import render_template
 from flask.helpers import url_for
+
 
 
 app = Flask(__name__)
@@ -75,6 +77,26 @@ def hakkimizda_page():
 def isfirsatlari_page():
     return render_template('isfirsatlari.html')
 
+
+@app.route('/kisiler/db')
+def initialize_database_eklenmemis_kisiler():
+    connection = dbapi2.connect(app.config['dsn'])
+    cursor = connection.cursor()
+
+    query = """DROP TABLE IF EXISTS EKLENMEMISKISILER CASCADE"""
+    cursor.execute(query)
+    query = """CREATE TABLE EKLENMEMISKISILER (ID SERIAL PRIMARY KEY, PersonName VARCHAR NOT NULL , PersonSurname VARCHAR NOT NULL , Company VARCHAR NOT NULL)"""
+    cursor.execute(query)
+    query = """INSERT INTO EKLENMEMISKISILER (PersonName, PersonSurname, Company) VALUES ('ANIL','AGCA', 'IBM')"""
+    cursor.execute(query)
+    query = """INSERT INTO EKLENMEMISKISILER (PersonName, PersonSurname, Company) VALUES ('YUSUF','AKSOY', 'ORACLE')"""
+    cursor.execute(query)
+    connection.commit()
+    return redirect(url_for('kisiler_page'))
+
+
+
+
 if __name__ == '__main__':
     VCAP_APP_PORT = os.getenv('VCAP_APP_PORT')
     if VCAP_APP_PORT is not None:
@@ -87,6 +109,6 @@ if __name__ == '__main__':
         app.config['dsn'] = get_elephantsql_dsn(VCAP_SERVICES)
     else:
         app.config['dsn'] = """user='vagrant' password='vagrant'
-                               host='localhost' port=5432 dbname='itucsdb'"""
+                               host='localhost' port=1234 dbname='itucsdb'"""
 
     app.run(host='0.0.0.0', port=port, debug=debug)
