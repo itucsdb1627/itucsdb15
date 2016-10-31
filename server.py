@@ -141,7 +141,19 @@ def initialize_database_hakkimizda():
     connection.commit()
     return redirect(url_for('hakkimizda_page'))
 
+@app.route('/isfirsatlari/starteddb')
+def initialize_database_isfirsatlari():
+    connection = dbapi2.connect(app.config['dsn'])
+    cursor = coDnnection.cursor()
 
+    query = """DROP TABLE IF EXISTS ISFIRSATLARI CASCADE"""
+    cursor.execute(query)
+    query = """CREATE TABLE ISFIRSATLARI (ID SERIAL PRIMARY KEY, FNAME VARCHAR(20) NOT NULL , LNAME VARCHAR(50) NOT NULL , IL VARCHAR(20) NOT NULL, SEKTOR VARCHAR(50) NOT NULL)"""
+    cursor.execute(query)
+    query = """INSERT INTO ISFIRSATLARI (FNAME, LNAME, IL, SEKTOR) VALUES ('ERDEM','SAHIN', 'ISTANBUL', 'YAZILIM')"""
+    cursor.execute(query)
+    connection.commit()
+    return redirect(url_for('isfirsatlari_page')) 
 
 if __name__ == '__main__':
     VCAP_APP_PORT = os.getenv('VCAP_APP_PORT')
