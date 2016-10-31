@@ -95,7 +95,7 @@ def initialize_database_eklenmemis_kisiler():
     return redirect(url_for('kisiler_page'))
 
 
-@app.route('/baglantilar/firstdb')
+@app.route('/baglantilar/initdb')
 def initialize_database_baglantilar():
     connection=dbapi2.connect(app.config['dsn'])
     cursor=connection.cursor()
