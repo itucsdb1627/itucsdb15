@@ -127,6 +127,21 @@ def initialize_database_ilgialanlari():
     return redirect(url_for('ilgialanlari_page'))
 
 
+@app.route('/hakkimizda/activedb')
+def initialize_database_hakkimizda():
+    connection = dbapi2.connect(app.config['dsn'])
+    cursor = connection.cursor()
+
+    query = """DROP TABLE IF EXISTS HAKKIMIZDA CASCADE"""
+    cursor.execute(query)
+    query = """CREATE TABLE HAKKIMIZDA(ID SERIAL PRIMARY KEY, CONTENT VARCHAR(200) NOT NULL , MESSAGE VARCHAR(100) NOT NULL)"""
+    cursor.execute(query)
+    query = """INSERT INTO HAKKIMIZDA(CONTENT, MESSAGE) VALUES('Jobs for you. The use of the professional business world, welcome to the communication network' , 'Your dreams will come true.')"""
+    cursor.execute(query)
+    connection.commit()
+    return redirect(url_for('hakkimizda_page'))
+
+
 
 if __name__ == '__main__':
     VCAP_APP_PORT = os.getenv('VCAP_APP_PORT')
