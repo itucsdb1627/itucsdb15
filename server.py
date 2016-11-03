@@ -1,16 +1,17 @@
-import datetime
 import json
+import datetime
+import re
 import os
 import psycopg2 as dbapi2
-import re
-
 
 from flask import Flask
-from flask import redirect
 from flask import render_template
+from flask import redirect
+from flask import request
 from flask.helpers import url_for
 
 
+from profil import *
 
 app = Flask(__name__)
 
@@ -64,9 +65,72 @@ def counter_page():
 @app.route('/ilgialanlari')
 def ilgialanlari_page():
     return render_template('ilgialanlari.html')
-@app.route('/kisiler')
-def kisiler_page():
-    return render_template('kisiler.html')
+
+@app.route('/profil', methods=['GET', 'POST'])
+def profil_page():
+    if request.method == 'GET':
+        connection = dbapi2.connect(app.config['dsn'])
+        cursor = connection.cursor()
+        cursor.execute("""SELECT * FROM EDUCATION ORDER BY SCHOOLNAME , YEAR , GPA""")
+        connection.commit()
+        education = [(key, SchoolName,Year, Gpa)
+                        for key, SchoolName, Year, Gpa in cursor]
+        return render_template('profil.html', education = education)
+        
+        
+    else:
+        if 'Add' in request.form:
+            SchoolName = request.form['SchoolName']
+            Year = request.form['Year']
+            Gpa = request.form['Gpa']
+            connection = dbapi2.connect(app.config['dsn'])
+            cursor = connection.cursor()
+            cursor.execute("""
+            INSERT INTO EDUCATION (SCHOOLNAME, YEAR, GPA)
+            VALUES (%s, %s, %s) """,
+            (SchoolName, Year, Gpa))
+            connection.commit()   
+            return redirect(url_for('profil_page'))
+        
+        elif 'Delete' in request.form:
+            id = request.form['id']
+            connection = dbapi2.connect(app.config['dsn'])
+            cursor = connection.cursor()
+            cursor.execute( """ DELETE FROM EDUCATION WHERE ID =%s """,[id])
+            connection.commit()   
+            return redirect(url_for('profil_page'))
+        elif 'Update' in request.form:
+            educationid = request.form['id']
+            return render_template('education_edit.html', key = educationid)
+        elif 'Search' in request.form:
+            SchoolName = request.form['SchoolName']
+            connection = dbapi2.connect(app.config['dsn'])
+            cursor = connection.cursor()
+            cursor.execute( "SELECT * FROM EDUCATION WHERE SCHOOLNAME LIKE %s",(SchoolName,))
+            connection.commit() 
+            education = [(key, SchoolName,Year, Gpa)
+                        for key, SchoolName, Year, Gpa in cursor]
+            return render_template('profil.html',education = education)   
+        
+        
+@app.route('/profil/editeducation/<educationid>', methods=['GET', 'POST'])
+def edit_education(educationid):
+    if request.method == 'GET': 
+        return render_template('education_edit.html')
+    else:
+         if 'Update' in request.form:
+             SchoolName = request.form['SchoolName']
+             Year = request.form['Year']
+             Gpa = request.form['Gpa']
+             connection = dbapi2.connect(app.config['dsn'])
+             cursor = connection.cursor()
+             cursor.execute(""" UPDATE EDUCATION SET SCHOOLNAME = %s, YEAR= %s, GPA= %s WHERE ID = %s """,
+             (SchoolName, Year, Gpa, educationid))
+             connection.commit()   
+             return redirect(url_for('profil_page'))
+             
+             
+        
 @app.route('/baglantilar')
 def baglantilar_page():
     return render_template('baglantilar.html')
@@ -78,21 +142,19 @@ def isfirsatlari_page():
     return render_template('isfirsatlari.html')
 
 
-@app.route('/kisiler/db')
+@app.route('/profil/db')
 def initialize_database_eklenmemis_kisiler():
     connection = dbapi2.connect(app.config['dsn'])
     cursor = connection.cursor()
-
-    query = """DROP TABLE IF EXISTS EKLENMEMISKISILER CASCADE"""
-    cursor.execute(query)
-    query = """CREATE TABLE EKLENMEMISKISILER (ID SERIAL PRIMARY KEY, PersonName VARCHAR NOT NULL , PersonSurname VARCHAR NOT NULL , Company VARCHAR NOT NULL)"""
-    cursor.execute(query)
-    query = """INSERT INTO EKLENMEMISKISILER (PersonName, PersonSurname, Company) VALUES ('ANIL','AGCA', 'IBM')"""
-    cursor.execute(query)
-    query = """INSERT INTO EKLENMEMISKISILER (PersonName, PersonSurname, Company) VALUES ('YUSUF','AKSOY', 'ORACLE')"""
-    cursor.execute(query)
+    cursor.execute('''
+    DROP TABLE IF EXISTS KISILER CASCADE;
+    ''')
+    init_education_database(cursor)
+    
     connection.commit()
-    return redirect(url_for('kisiler_page'))
+    return redirect(url_for('home_page'))
+    
+    
 
 
 @app.route('/baglantilar/initdb')
@@ -153,7 +215,7 @@ def initialize_database_isfirsatlari():
     query = """INSERT INTO ISFIRSATLARI (FNAME, LNAME, IL, SEKTOR) VALUES ('ERDEM','SAHIN', 'ISTANBUL', 'YAZILIM')"""
     cursor.execute(query)
     connection.commit()
-    return redirect(url_for('isfirsatlari_page')) 
+    return redirect(url_for('isfirsatlari_page'))
 
 if __name__ == '__main__':
     VCAP_APP_PORT = os.getenv('VCAP_APP_PORT')

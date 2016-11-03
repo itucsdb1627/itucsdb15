@@ -1,0 +1,76 @@
+  {% extends "layout.html" %}
+  {% block content %}
+ 
+
+ 
+ 	<table class="table table-bordered table-striped">
+		<tr>
+		    <th>Okul Adi</th>
+		    <th>Yil</th>
+		    <th>Mezuniyet Derecesi</th>
+		 </tr>
+		{% for key, SchoolName, Year, Gpa in education %}
+		<tr>
+			<td> {{ SchoolName }} </td>
+			<td> {{ Year }} </td>
+			<td> {{ Gpa }} </td>
+			<td>
+			<form action="{{ url_for('profil_page') }}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="Delete" type="submit">Sil</button>
+			</form>
+			<form action="{{url_for('profil_page')}}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="Update" type="submit">Duzenle</button>
+			</form>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+ 
+ 
+ 
+ 
+	<div class="page-header">
+  		<h1>Yeni Okul Ekle</h1>
+	</div>
+	<form action="{{ url_for('profil_page') }}" method="post" role="form">
+		<div class="col-sm-3">
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="SchoolName">Okul Adi:</label>
+					<input type="text" name="SchoolName" class="form-control" required autofocus />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="Year">Yil:</label>
+					<input type="text" name="Year" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="Gpa">Not:</label>
+					<input type="text" name="Gpa" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			
+			<br>
+			<div class="pull-right">
+	      		<button name="Add" type="submit" class="btn btn-default">Ekle</button>
+			</div> <!-- End of form-group -->
+		</div>
+	 </form>
+	 
+	 <div class="col-sm-3">
+	 	<form action ="{{url_for('profil_page')}}" method="post">
+  			<b>Okul Ara:</b><br>
+  			<input type="text" name="SchoolName">&nbsp
+ 			<input type="submit" value="Ara" name="Search">
+		</form>
+	 </div>
+		
+	  
+
+
+  {% endblock %}
