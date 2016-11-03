@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+  {% block content %}
+  <form>
+	<table class=table  border="2px">
+		<tr>
+			
+			<th>E-mail</th>
+			<th>Password</th>
+			
+	</tr>
+		{% for key,email,password in backupmaindata %}
+		<tr>
+		   
+			<td>{{email}}</td>
+			<td>*****</td>
+		</tr>
+		{% endfor %}
+	</table>
+		
+</form>
+  
+  
+  
+  
+  
+ {% for key,email,password in backupmaindata %}
+  	  <form action="{{ url_for('update_user',asdid=key)}}" method= "POST">
+      
+ 
+      <h1 name="updateheader">  </h1>
+       E-Posta: <br>
+       <input type="text" name="email" <br>
+       Sifre: <br>
+       <input type="password" name="password"> <br>
+       
+       <br>
+       
+       <button style="height:50px;width:100px" type="submit" name="Update" value="update">Guncelle</button>
+	</form>
+             {% endfor %}
+
+   {% endblock %}

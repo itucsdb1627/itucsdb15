@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+  {% block content %}
+ <!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+	<title>Sample Commit Page</title>
+	<link rel="stylesheet" href="/static/style.css" />
+</head>
+
+<body>
+	<h2 name="headertext">Admin Page to Manage Members Accounts</h2>
+
+
+
+
+	<form>
+	<table class=table  border="2px">
+		<tr>
+
+			<th>E-mail</th>
+			<th>Password</th>
+
+	</tr>
+		{% for key,email,password in maindata %}
+		<tr>
+
+			<td>{{email}}</td>
+			<td>*****</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+</form>
+
+
+ <br>
+	<form action="{{url_for('delete_user')}}" method="POST") >
+	 Silmek istediginiz e-postayi giriniz:
+
+	 <input type="text" name="email" class="form-control"  required autofocus/>
+	<input style="height:50px;width:100px" type="submit" name="Delete" value="Sil"></>
+</form>
+ <br>
+    <form action= "{{ url_for('search_user')}}" method="POST")>
+       Guncellemek istediginiz e-postayı giriniz:
+     <input type="text" name="emailaddress" >
+	 <input style="height:50px;width:100px" type="submit" name="search" value="Ara& Guncelle"></button>
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {% endblock %}

@@ -12,6 +12,9 @@ from flask.helpers import url_for
 
 
 from profil import *
+from maindata import *
+from flask.globals import request
+from pip.utils import backup_dir
 
 app = Flask(__name__)
 
@@ -153,7 +156,71 @@ def initialize_database_eklenmemis_kisiler():
     
     connection.commit()
     return redirect(url_for('home_page'))
+@app.route('/admin',methods=['GET','POST'])
+def admin_page():
+
+        connection = dbapi2.connect(app.config['dsn'])
+        cursor = connection.cursor()
+        if request.method == 'GET':
+          cursor.execute("""SELECT * FROM MAINDATA ORDER BY  EMAIL , PASSWORD""")
+          backupmaindata=cursor.fetchall()
+          connection.commit()
+          maindata = [(key,email,password)
+                 for key,email,password in cursor]
+        return render_template('admin.html', maindata = backupmaindata)
+@app.route('/admin/deleteuser',methods=['POST','GET'])
+def delete_user():
+        connection = dbapi2.connect(app.config['dsn'])
+        cursor = connection.cursor()
+        if request.method=='POST':
+          eposta=request.form['email']
+          cursor.execute("DELETE FROM MAINDATA WHERE EMAIL= %s",(eposta,))
+
+          cursor.execute("SELECT * FROM MAINDATA")
+          backupmaindata=cursor.fetchall()
+          connection.commit()
+          return redirect(url_for('admin_page',maindata=backupmaindata))
+        elif request.method == 'GET':
+          return redirect(url_for('admin_page',maindata=backupmaindata))
+@app.route('/admin/searchuser',methods=['POST','GET'])
+def search_user():
     
+    if request.method=='POST':
+      emailadd=request.form['emailaddress']
+      connection = dbapi2.connect(app.config['dsn'])
+      cursor = connection.cursor()
+      cursor.execute("SELECT * FROM MAINDATA WHERE EMAIL=%s",(emailadd,))
+      connection.commit()
+      backupmaindata=[(key,email,password)
+                      for key,email,password in cursor]
+      
+      return render_template('updateuser.html',backupmaindata=backupmaindata)
+@app.route('/admin/updateuser/<asdid>',methods=['POST','GET'])
+def update_user(asdid):
+    connection = dbapi2.connect(app.config['dsn'])
+    cursor = connection.cursor()
+    if request.method=='POST':
+      
+       posta=request.form['email']
+       psswd=request.form['password']
+       cursor.execute("""UPDATE MAINDATA SET EMAIL=%s,PASSWORD=%s  WHERE ID= %s""" ,(posta,psswd,asdid))
+       connection.commit()
+      
+       return redirect(url_for('admin_page'))
+    elif request.method=='GET':
+        return render_template('updateuser.html')
+@app.route('/signup',methods=['POST','GET'])
+def signup_page():
+
+     if request.method=='POST':
+      mssg=request.form['email']
+      psswrd=request.form['password']
+      with dbapi2.connect(app.config['dsn']) as connection:
+       cursor = connection.cursor()
+      query= """ INSERT INTO MAINDATA(EMAIL,PASSWORD) VALUES ('%s','%s')"""  % (mssg,psswrd)
+      cursor.execute(query)
+      connection.commit()
+     return render_template('signup.html')    
     
 
 
@@ -229,6 +296,6 @@ if __name__ == '__main__':
         app.config['dsn'] = get_elephantsql_dsn(VCAP_SERVICES)
     else:
         app.config['dsn'] = """user='vagrant' password='vagrant'
-                               host='localhost' port=1234 dbname='itucsdb'"""
+                               host='localhost' port=5432 dbname='itucsdb'"""
 
     app.run(host='0.0.0.0', port=port, debug=debug)
