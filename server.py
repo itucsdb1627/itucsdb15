@@ -12,7 +12,7 @@ from flask.helpers import url_for
 
 
 from profil import *
-from maindata import *
+
 from flask.globals import request
 from pip.utils import backup_dir
 
@@ -156,6 +156,20 @@ def initialize_database_eklenmemis_kisiler():
     
     connection.commit()
     return redirect(url_for('home_page'))
+@app.route('/admin/initdb')
+def initialize_maindata_db():
+    connection=dbapi2.connect(app.config['dsn'])
+    cursor=connection.cursor()
+
+    query=""" DROP TABLE IF EXISTS BAGLANTILAR CASCADE"""
+    cursor.execute(query)
+    query="""CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,PASSWORD VARCHAR(50) NOT NULL)"""
+    cursor.execute(query)
+    query="""INSERT INTO MAINDATA(EMAIL,PASSWORD) VALUES('BURAK','SIMSEK')"""
+    cursor.execute(query)
+    connection.commit()
+    return redirect(url_for('admin_page'))
+
 @app.route('/admin',methods=['GET','POST'])
 def admin_page():
 
