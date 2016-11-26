@@ -11,13 +11,14 @@ from flask import request
 from flask.helpers import url_for
 
 
-from profil import *
+
 
 from flask.globals import request
 from pip.utils import backup_dir
 
 app = Flask(__name__)
 from maindatadb import *
+from profil import *
 
 
 def get_elephantsql_dsn(vcap_services):
@@ -39,8 +40,8 @@ def signin_page():
         connection = dbapi2.connect(app.config['dsn'])
         cursor = connection.cursor()
         cursor.execute("SELECT ID FROM MAINDATA WHERE EMAIL=%s AND  PASSWORD=%s",(email,password))
-        personid = cursor.fetchone()
-        connection.commit() 
+        idd= cursor.fetchone()
+        personid=idd[0]
         return render_template('home.html', personid = personid)
     elif request.method == 'GET':
         return render_template('signin.html')
@@ -86,70 +87,6 @@ def counter_page():
 def ilgialanlari_page():
     return render_template('ilgialanlari.html')
 
-@app.route('/profil', methods=['GET', 'POST'])
-def profil_page():
-    if request.method == 'GET':
-        connection = dbapi2.connect(app.config['dsn'])
-        cursor = connection.cursor()
-        cursor.execute("""SELECT * FROM EDUCATION ORDER BY SCHOOLNAME , YEAR , GPA""")
-        connection.commit()
-        education = [(key, SchoolName,Year, Gpa)
-                        for key, SchoolName, Year, Gpa in cursor]
-        return render_template('profil.html', education = education)
-        
-        
-    else:
-        if 'Add' in request.form:
-            SchoolName = request.form['SchoolName']
-            Year = request.form['Year']
-            Gpa = request.form['Gpa']
-            connection = dbapi2.connect(app.config['dsn'])
-            cursor = connection.cursor()
-            cursor.execute("""
-            INSERT INTO EDUCATION (SCHOOLNAME, YEAR, GPA)
-            VALUES (%s, %s, %s) """,
-            (SchoolName, Year, Gpa))
-            connection.commit()   
-            return redirect(url_for('profil_page'))
-        
-        elif 'Delete' in request.form:
-            id = request.form['id']
-            connection = dbapi2.connect(app.config['dsn'])
-            cursor = connection.cursor()
-            cursor.execute( """ DELETE FROM EDUCATION WHERE ID =%s """,[id])
-            connection.commit()   
-            return redirect(url_for('profil_page'))
-        elif 'Update' in request.form:
-            educationid = request.form['id']
-            return render_template('education_edit.html', key = educationid)
-        elif 'Search' in request.form:
-            SchoolName = request.form['SchoolName']
-            connection = dbapi2.connect(app.config['dsn'])
-            cursor = connection.cursor()
-            cursor.execute( "SELECT * FROM EDUCATION WHERE SCHOOLNAME LIKE %s",(SchoolName,))
-            connection.commit() 
-            education = [(key, SchoolName,Year, Gpa)
-                        for key, SchoolName, Year, Gpa in cursor]
-            return render_template('profil.html',education = education)   
-        
-        
-@app.route('/profil/editeducation/<educationid>', methods=['GET', 'POST'])
-def edit_education(educationid):
-    if request.method == 'GET': 
-        return render_template('education_edit.html')
-    else:
-         if 'Update' in request.form:
-             SchoolName = request.form['SchoolName']
-             Year = request.form['Year']
-             Gpa = request.form['Gpa']
-             connection = dbapi2.connect(app.config['dsn'])
-             cursor = connection.cursor()
-             cursor.execute(""" UPDATE EDUCATION SET SCHOOLNAME = %s, YEAR= %s, GPA= %s WHERE ID = %s """,
-             (SchoolName, Year, Gpa, educationid))
-             connection.commit()   
-             return redirect(url_for('profil_page'))
-             
-             
         
 @app.route('/baglantilar')
 def baglantilar_page():
@@ -162,17 +99,6 @@ def isfirsatlari_page():
     return render_template('isfirsatlari.html')
 
 
-@app.route('/profil/db')
-def initialize_database_eklenmemis_kisiler():
-    connection = dbapi2.connect(app.config['dsn'])
-    cursor = connection.cursor()
-    cursor.execute('''
-    DROP TABLE IF EXISTS KISILER CASCADE;
-    ''')
-    init_education_database(cursor)
-    
-    connection.commit()
-    return redirect(url_for('home_page'))
 @app.route('/signup',methods=['POST','GET'])
 def signup_page():
 
@@ -262,6 +188,6 @@ if __name__ == '__main__':
         app.config['dsn'] = get_elephantsql_dsn(VCAP_SERVICES)
     else:
         app.config['dsn'] = """user='vagrant' password='vagrant'
-                               host='localhost' port=5432 dbname='itucsdb'"""
+                               host='localhost' port=1234 dbname='itucsdb'"""
 
     app.run(host='0.0.0.0', port=port, debug=debug)
