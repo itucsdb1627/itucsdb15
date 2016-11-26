@@ -3,38 +3,42 @@
   <form>
 	<table class=table  border="2px">
 		<tr>
-			
+
 			<th>E-mail</th>
 			<th>Password</th>
-			
+
 	</tr>
-		{% for key,email,password in backupmaindata %}
+		{% for key,email,password,name,surname in backupmaindata %}
 		<tr>
-		   
+
 			<td>{{email}}</td>
 			<td>*****</td>
 		</tr>
 		{% endfor %}
 	</table>
-		
+
 </form>
-  
-  
-  
-  
-  
- {% for key,email,password in backupmaindata %}
+
+
+
+
+
+ {% for key,email,password,name,surname in backupmaindata %}
   	  <form action="{{ url_for('update_user',asdid=key)}}" method= "POST">
-      
- 
+
+
       <h1 name="updateheader">  </h1>
        E-Posta: <br>
        <input type="text" name="email" <br>
        Sifre: <br>
        <input type="password" name="password"> <br>
-       
+       Name: <br>
+       <input type="text" name="name"> <br>
+       Surname: <br>
+       <input type="text" name="surname"> <br>
+
        <br>
-       
+
        <button style="height:50px;width:100px" type="submit" name="Update" value="update">Guncelle</button>
 	</form>
              {% endfor %}

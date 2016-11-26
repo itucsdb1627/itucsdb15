@@ -22,13 +22,16 @@
 
 			<th>E-mail</th>
 			<th>Password</th>
-
+			<th>Name</th>
+			<th>Surname</th>
 	</tr>
-		{% for key,email,password in maindata %}
+		{% for key,email,password,name,surname in maindata %}
 		<tr>
 
 			<td>{{email}}</td>
 			<td>*****</td>
+			<td>{{name}}</td>
+			<td>{{surname}}</td>
 		</tr>
 		{% endfor %}
 	</table>
