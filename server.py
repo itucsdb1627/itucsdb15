@@ -28,13 +28,28 @@ def get_elephantsql_dsn(vcap_services):
              dbname='{}'""".format(user, password, host, port, dbname)
     return dsn
 
+@app.route('/',methods = ['GET','POST'])
+def signin_page():
+    if request.method=='POST':
+        now = datetime.datetime.now()
+        email = request.form['email']
+        password = request.form['password']
+        connection = dbapi2.connect(app.config['dsn'])
+        cursor = connection.cursor()
+        cursor.execute("SELECT ID FROM MAINDATA WHERE EMAIL=%s AND  PASSWORD=%s",(email,password))
+        personid = cursor.fetchone()
+        connection.commit() 
+        return render_template('home.html', personid = personid)
+    elif request.method == 'GET':
+        return render_template('signin.html')
 
 
 
-@app.route('/')
+@app.route('/home')
 def home_page():
-    now = datetime.datetime.now()
-    return render_template('home.html', current_time=now.ctime())
+    return render_template('home.html')
+
+
 @app.route('/initdb')
 def initialize_database():
     with dbapi2.connect(app.config['dsn']) as connection:
@@ -310,6 +325,6 @@ if __name__ == '__main__':
         app.config['dsn'] = get_elephantsql_dsn(VCAP_SERVICES)
     else:
         app.config['dsn'] = """user='vagrant' password='vagrant'
-                               host='localhost' port=5432 dbname='itucsdb'"""
+                               host='localhost' port=1234 dbname='itucsdb'"""
 
     app.run(host='0.0.0.0', port=port, debug=debug)

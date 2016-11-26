@@ -1,0 +1,38 @@
+  {% extends "layoutsignin.html" %}
+  {% block content %}
+         <!-- CONTENT -->
+          <div class="col-sm-7">
+            <div class="text-area">
+              <div class="position-left-center col-md-10">
+                <h1> Beklediginiz Sosyal  iletisim Platformuna Hosgeldiniz</h1>
+                <h6>400 milyon+ uye | Profesyonel kimliginizi yonetin. Profesyonel aglarinizi kurun ve aglarinizla baglantiya gecin.</h6>
+              </div>
+            </div>
+          </div>
+          
+      <div class="col-sm-7">
+      <div class="position-rigth-center col-md-10">
+         <form action="{{ url_for('signin_page')}}" method= "POST">
+
+      	<h1 name="signupheader"> Lutfen asagidaki bilgileri doldurunuz </h1>
+       E-Posta: <br>
+       <input type="text" name="email" <br>
+       Sifre: <br>
+       <input type="password" name="password"> <br>
+       <br>
+       <button style="height:50px;width:100px" type="submit" name="Submit" value="register">Giris</button>
+		</form>
+		</div>
+  	</div>
+
+
+			
+
+
+
+
+              
+				
+
+
+{% endblock %}
