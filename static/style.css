@@ -3158,12 +3158,17 @@ CANVAS PAGE STYLE
 }
 
 #header998 {
-    width: 50%;
-    background-color: #e6e6e6;
-    height: 250px;
-    margin-top: 20px;
+    width: 100%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
+#profile {
+    width: 600px;
+    float: left;
+    height: 400px;
+}
 
 #first {
     width: 200px;
