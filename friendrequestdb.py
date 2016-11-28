@@ -30,9 +30,9 @@ def baglantilar_page(personid):
         connection.commit()
         maindata = [(key,email,password,name,surname)
                 for key,email,password,name,surname in cursor]
-        
-    
-       
+
+
+
         connection = dbapi2.connect(app.config['dsn'])
         cursor = connection.cursor()
         cursor.execute("""
@@ -41,11 +41,11 @@ def baglantilar_page(personid):
         connection.commit()
         maindata2 = [(key,requestid)
                 for key,requestid in cursor]
-        
-        return render_template('baglantilar.html',personid=personid,maindata=backupmaindata,maindata2=backupmaindata2)
-        
-        
-        
+
+        return render_template('baglantilar.html',personid=personid,maindata=backupmaindata,maindata2=backupmaindata2,)
+
+
+
     else:
 
       if 'AddRequest' in request.form:
@@ -65,5 +65,18 @@ def baglantilar_page(personid):
             cursor.execute("""DELETE FROM FRIENDREQUEST WHERE PERSONID=%s AND REQUESTID=%s""",(personid,key,))
             connection.commit()
             return redirect(url_for('baglantilar_page',personid=personid))
-
-   
+      elif 'AddFriend' in request.form:
+            key = request.form['id']
+            connection = dbapi2.connect(app.config['dsn'])
+            cursor = connection.cursor()
+            cursor.execute("""
+            INSERT INTO FRIENDLIST (PERSONID,FRIENDID)
+            VALUES (%s, %s) """,
+            (personid,key,))
+            cursor.execute("""DELETE FROM FRIENDREQUEST WHERE PERSONID=%s AND REQUESTID=%s""",(personid,key,))
+            cursor.execute("""
+            INSERT INTO FRIENDLIST (PERSONID,FRIENDID)
+            VALUES (%s, %s) """,
+            (key,personid,))
+            connection.commit()
+            return redirect(url_for('baglantilar_page',personid=personid))
