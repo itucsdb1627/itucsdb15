@@ -1,16 +1,11 @@
-import json
 import datetime
-import re
-import os
-import psycopg2 as dbapi2
-
-from flask import Flask
-from flask import render_template
 from flask import redirect
 from flask import request
-from flask.helpers import url_for
-
-app = Flask(__name__)
+from flask import flash
+from flask import url_for
+import psycopg2 as dbapi2
+from flask import render_template
+from config import app
 
 class Education:
     def __init__(self, SchoolName, Year, Gpa):
@@ -111,7 +106,7 @@ def edit_education(educationid):
              return redirect(url_for('profil_page'))
              
 @app.route('/profil/deletedb')
-def  delete_db():
+def  deleteprofil_db():
     connection = dbapi2.connect(app.config['dsn'])
     cursor = connection.cursor()
     cursor.execute("""DROP TABLE EDUCATION""" )

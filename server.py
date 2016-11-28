@@ -12,13 +12,15 @@ from flask.helpers import url_for
 
 
 
-
 from flask.globals import request
 from pip.utils import backup_dir
 
 app = Flask(__name__)
-from maindatadb import *
+
 from profil import *
+from maindatadb import *
+
+
 
 
 def get_elephantsql_dsn(vcap_services):
