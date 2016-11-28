@@ -18,9 +18,14 @@ from pip.utils import backup_dir
 app = Flask(__name__)
 
 from profil import *
+
 from maindatadb import *
 
 from friendrequestdb import *
+
+
+from maindatadb import *
+from experience import *
 
 from ilgialanlari import *
 
