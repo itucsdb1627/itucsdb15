@@ -9,6 +9,8 @@ from config import app
 
 from education import *
 from experience import *
+from profilpicture import *
+from language import *
 
 
 class Education:
@@ -36,7 +38,9 @@ def profil_page(personid):
     if request.method == 'GET':
         education = showeducation_page(personid)
         experience = showexperience_page(personid)
-        return render_template('profil.html', education = education,experience=experience,personid=personid)
+        profilpic = showprofilpicture(personid)
+        language  = showlanguage(personid)
+        return render_template('profil.html', education = education,experience=experience,profilpic=profilpic,language=language,personid=personid)
 
     else:
             
@@ -71,5 +75,22 @@ def profil_page(personid):
         elif 'SearchExperience' in request.form:
                 experience=searchexperience_page(personid)
                 return render_template('profil.html',experience = experience,personid=personid)
- 
-
+            
+        elif 'AddPicture' in request.form:
+                addprofilpicture(personid)  
+                return redirect(url_for('profil_page',personid=personid)) 
+            
+        elif 'AddLanguage' in request.form:
+                addlanguage(personid)  
+                return redirect(url_for('profil_page',personid=personid)) 
+        elif 'DeleteLanguage' in request.form:
+                deletelanguage(personid)  
+                return redirect(url_for('profil_page',personid=personid)) 
+            
+        elif 'UpdateLanguage' in request.form:
+                languageid=updateexperience_page(personid)
+                return render_template('language_edit.html', key = languageid,personid=personid)
+          
+        elif 'SearchLanguage' in request.form:
+                language=searchlanguage(personid)
+                return render_template('profil.html',language = language,personid=personid)

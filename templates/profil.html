@@ -1,7 +1,7 @@
   {% extends "layout.html" %}
   {% block content %}
+ 	
  
-
  
  	<table class="table table-bordered table-striped">
 		<tr>
@@ -39,19 +39,19 @@
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="SchoolName">Okul Adi:</label>
-					<input type="text" name="SchoolName" class="form-control" required autofocus />
+					<input type="text" style="color:black" name="SchoolName" class="form-control" required autofocus />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="Year">Yil:</label>
-					<input type="text" name="Year" class="form-control"  />
+					<input type="text" style="color:black" name="Year" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="Gpa">Not:</label>
-					<input type="text" name="Gpa" class="form-control"  />
+					<input type="text" style="color:black" name="Gpa" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			
@@ -65,7 +65,7 @@
 	 <div class="col-sm-3">
 	 	<form action ="{{url_for('profil_page',personid=personid)}}" method="post">
   			<b>Okul Ara:</b><br>
-  			<input type="text" name="SchoolName">&nbsp
+  			<input type="text" style="color:black" name="SchoolName">&nbsp
  			<input type="submit" value="Ara" name="Search">
 		</form>
 	 </div>
@@ -107,13 +107,13 @@
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="CompanyName">Sirket Adi:</label>
-					<input type="text" name="CompanyName" class="form-control" required autofocus />
+					<input type="text" style="color:black" name="CompanyName" class="form-control" required autofocus />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="Year">Yil:</label>
-					<input type="text" name="Year" class="form-control"  />
+					<input type="text" style="color:black" name="Year" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			
@@ -127,10 +127,68 @@
 	  <div class="col-sm-3">
 	 	<form action ="{{url_for('profil_page',personid=personid)}}" method="post">
   			<b>Sirket Ara:</b><br>
-  			<input type="text" name="CompanyName">&nbsp
- 			<input type="submit" value="Ara" name="SearchExperience">
+  			<input type="text" style="color:black" name="CompanyName">&nbsp
+ 			<input type="submit"  value="Ara" name="SearchExperience">
 		</form>
 	 </div>
-
+	
+	
+	
+	<table class="table table-bordered table-striped">
+		<tr>
+		    <th>Dil</th>
+		    <th>Seviye</th>
+		 </tr>
+		{% for key, LanguageName, Level,Personid  in language %}
+		<tr>
+			<td> {{ LanguageName }} </td>
+			<td> {{ Level }} </td>
+			<td>
+			<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="DeleteLanguage" type="submit">Sil</button>
+			</form>
+			<form action="{{url_for('profil_page',personid=personid)}}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="UpdateLanguage" type="submit">Duzenle</button>
+			</form>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+	
+	<div class="page-header">
+  		<h1>Dil Ekle</h1>
+	</div>
+	<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form">
+		<div class="col-sm-3">
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="LanguageName">Dil:</label>
+					<input type="text" style="color:black" name="LanguageName" class="form-control" required autofocus />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="Level">Seviye:</label>
+					<input type="text" style="color:black" name="Level" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			
+			
+			<br>
+			<div class="pull-right">
+	      		<button name="AddLanguage" type="submit" class="btn btn-default">Ekle</button>
+			</div> <!-- End of form-group -->
+		</div>
+	 </form>
+	 
+	 <div class="col-sm-3">
+	 	<form action ="{{url_for('profil_page',personid=personid)}}" method="post">
+  			<b>Dil Ara:</b><br>
+  			<input type="text" style="color:black" name="LanguageName">&nbsp
+ 			<input type="submit"  value="Ara" name="SearchLanguage">
+		</form>
+	 </div>
 
   {% endblock %}
