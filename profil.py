@@ -25,8 +25,11 @@ def init_education_database():
     ID SERIAL PRIMARY KEY,
     SCHOOLNAME VARCHAR(90),
     YEAR VARCHAR(30) NULL,
-    PERSONID INTEGER REFERENCES MAINDATA (ID),
-    GPA VARCHAR(30) NULL)"""
+    PERSONID INTEGER,
+    GPA VARCHAR(30) NULL,
+    FOREIGN KEY (PERSONID)
+    REFERENCES MAINDATA (ID)
+    ON DELETE CASCADE)"""
     cursor.execute(query)
     connection.commit()
     return redirect(url_for('home_page'))
@@ -74,23 +77,23 @@ def profil_page(personid):
             cursor = connection.cursor()
             cursor.execute( """ DELETE FROM EDUCATION WHERE ID =%s """,[id])
             connection.commit()   
-            return redirect(url_for('profil_page'))
+            return redirect(url_for('profil_page',personid=personid))
         elif 'Update' in request.form:
             educationid = request.form['id']
-            return render_template('education_edit.html', key = educationid)
+            return render_template('education_edit.html', key = educationid,personid=personid)
         elif 'Search' in request.form:
             SchoolName = request.form['SchoolName']
             connection = dbapi2.connect(app.config['dsn'])
             cursor = connection.cursor()
             cursor.execute( "SELECT * FROM EDUCATION WHERE SCHOOLNAME LIKE %s",(SchoolName,))
             connection.commit() 
-            education = [(key, SchoolName,Year, Gpa)
-                        for key, SchoolName, Year, Gpa in cursor]
-            return render_template('profil.html',education = education)   
+            education = [(key, SchoolName,Year,personid ,Gpa)
+                        for key, SchoolName, Year,personid , Gpa in cursor]
+            return render_template('profil.html',education = education,personid=personid)   
         
         
-@app.route('/profil/editeducation/<educationid>', methods=['GET', 'POST'])
-def edit_education(educationid):
+@app.route('/profil/editeducation/<educationid>,<personid>', methods=['GET', 'POST'])
+def edit_education(educationid,personid):
     if request.method == 'GET': 
         return render_template('education_edit.html')
     else:
@@ -103,7 +106,7 @@ def edit_education(educationid):
              cursor.execute(""" UPDATE EDUCATION SET SCHOOLNAME = %s, YEAR= %s, GPA= %s WHERE ID = %s """,
              (SchoolName, Year, Gpa, educationid))
              connection.commit()   
-             return redirect(url_for('profil_page'))
+             return redirect(url_for('profil_page',personid=personid))
              
 @app.route('/profil/deletedb')
 def  deleteprofil_db():
