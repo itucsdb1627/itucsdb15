@@ -18,8 +18,15 @@ from pip.utils import backup_dir
 app = Flask(__name__)
 
 from profil import *
+
+from maindatadb import *
+
+from friendrequestdb import *
+
+
 from maindatadb import *
 from experience import *
+
 from ilgialanlari import *
 
 
@@ -89,10 +96,9 @@ def counter_page():
 
 
 
-        
-@app.route('/baglantilar')
-def baglantilar_page():
-    return render_template('baglantilar.html')
+
+
+
 @app.route('/hakkimizda')
 def hakkimizda_page():
     return render_template('hakkimizda.html')
@@ -114,23 +120,11 @@ def signup_page():
       query= """ INSERT INTO MAINDATA(EMAIL,PASSWORD,NAME,SURNAME) VALUES ('%s','%s','%s','%s')"""  % (mssg,psswrd,name,surname)
       cursor.execute(query)
       connection.commit()
-     return render_template('signup.html')    
-    
+     return render_template('signup.html')
 
 
-@app.route('/baglantilar/initdb')
-def initialize_database_baglantilar():
-    connection=dbapi2.connect(app.config['dsn'])
-    cursor=connection.cursor()
 
-    query=""" DROP TABLE IF EXISTS BAGLANTILAR CASCADE"""
-    cursor.execute(query)
-    query="""CREATE TABLE BAGLANTILAR(ID SERIAL PRIMARY KEY, FIRSTNAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50) NOT NULL,COMPANYNAME VARCHAR(50),MUTUALCONNECTIONNUMBER INTEGER,TOTALCONNECTIONNUMBER INTEGER)"""
-    cursor.execute(query)
-    query="""INSERT INTO BAGLANTILAR(FIRSTNAME,SURNAME,COMPANYNAME,MUTUALCONNECTIONNUMBER,TOTALCONNECTIONNUMBER) VALUES('BURAK','SIMSEK','ITU','10','40')"""
-    cursor.execute(query)
-    connection.commit()
-    return redirect(url_for('baglantilar_page'))
+
 
 
 
@@ -176,6 +170,6 @@ if __name__ == '__main__':
         app.config['dsn'] = get_elephantsql_dsn(VCAP_SERVICES)
     else:
         app.config['dsn'] = """user='vagrant' password='vagrant'
-                               host='localhost' port=1234 dbname='itucsdb'"""
+                               host='localhost' port=5432 dbname='itucsdb'"""
 
     app.run(host='0.0.0.0', port=port, debug=debug)

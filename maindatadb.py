@@ -12,7 +12,7 @@ def initialize_maindata_db():
     connection=dbapi2.connect(app.config['dsn'])
     cursor=connection.cursor()
 
-    query=""" DROP TABLE IF EXISTS BAGLANTILAR CASCADE"""
+    query=""" DROP TABLE IF EXISTS MAINDATA CASCADE"""
     cursor.execute(query)
     query="""CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,PASSWORD VARCHAR(50) NOT NULL,NAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50) NOT NULL,UNIQUE(EMAIL))"""
     cursor.execute(query)

@@ -43,7 +43,7 @@
             <li> <a href="{{ url_for('isfirsatlari_page') }}">İş Fırsatları</a> </li>
             <li> <a href="{{ url_for('ilgialanlari_page',personid=personid) }}">İlgi Alanları</a> </li>
 
-            <li> <a href="{{ url_for('baglantilar_page') }}">Bağlantılar</a></li>
+            <li> <a href="{{ url_for('baglantilar_page',personid=personid) }}">Bağlantılar</a></li>
             <li><a href="{{ url_for('profil_page',personid=personid) }}">Profil</a></li>
             <li><a href="{{ url_for('hakkimizda_page') }}">Hakkımızda</a></li>
           </ul>
