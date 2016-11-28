@@ -38,9 +38,8 @@ def profil_page(personid):
     if request.method == 'GET':
         education = showeducation_page(personid)
         experience = showexperience_page(personid)
-        profilpic = showprofilpicture(personid)
         language  = showlanguage(personid)
-        return render_template('profil.html', education = education,experience=experience,profilpic=profilpic,language=language,personid=personid)
+        return render_template('profil.html', education = education,experience=experience,language=language,personid=personid)
 
     else:
             
@@ -75,10 +74,6 @@ def profil_page(personid):
         elif 'SearchExperience' in request.form:
                 experience=searchexperience_page(personid)
                 return render_template('profil.html',experience = experience,personid=personid)
-            
-        elif 'AddPicture' in request.form:
-                addprofilpicture(personid)  
-                return redirect(url_for('profil_page',personid=personid)) 
             
         elif 'AddLanguage' in request.form:
                 addlanguage(personid)  
