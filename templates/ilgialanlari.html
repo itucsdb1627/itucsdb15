@@ -1,34 +1,80 @@
   {% extends "layout.html" %}
   {% block content %}
-  <div id="header1000">
-		<div style="color:#400040">
-  			<div id="group"><p><img src="https://static.pexels.com/photos/132700/pexels-photo-132700.jpeg" alt="group1" style="width:1000px;height:350px"> </p></div>
-    		<div id="area">
-    				<h3>Group name for interests</h3>
-  					<p>Group contents and shares </p>
-    		</div>
-		</div>
-	</div>
+ 
 
-	<div id="header1000">
-		<div style="color:#400040">
-  			<div id="group"><p><img src="https://static.pexels.com/photos/90807/pexels-photo-90807.jpeg" alt="group2" style="width:1000px;height:350px"> </p></div>
-    		<div id="area">
-    			 <h3>Group name for interests</h3>
-  			     <p>Group contents and shares </p>
-    		</div>
-		</div>
+ 
+ 	<table class="table table-bordered table-striped">
+		<tr>
+		    <th>Grup Adi</th>
+		    <th>Aciklama</th>
+		    <th>Kurulus Yili</th>
+		    <th>Sektor</th>
+		 </tr>
+		{% for key, GroupName, Explanation,StartDate ,Sector, Personid in grup %}
+		<tr>
+			<td> {{ GroupName }} </td>
+			<td> {{ Explanation }} </td>
+			<td> {{ StartDate }} </td>
+			<td> {{ Sector }} </td>
+			<td>
+			<form action="{{ url_for('ilgialanlari_page',personid=personid) }}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="Delete" type="submit">Ilgilenmiyorum</button>
+			</form>
+			<form action="{{url_for('ilgialanlari_page',personid=personid)}}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="Update" type="submit">Duzenle</button>
+			</form>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+	<div class="page-header">
+  		<h1>Grup Kur</h1>
 	</div>
-
-	<div id="header1000">
-		<div style="color:#400040">
-  			<div id="group"><p><img src="https://static.pexels.com/photos/188777/pexels-photo-188777.jpeg" alt="group3" style="width:1000px;height:350px"> </p></div>
-    		<div id="area">
-    				<h3>Group name for interests</h3>
-  					<p>Group contents and shares </p>
-    		</div>
+	<form action="{{ url_for('ilgialanlari_page',personid=personid) }}" method="post" role="form">
+		<div class="col-sm-3">
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="GroupName">Grup Adi:</label>
+					<input type="text" name="GroupName" class="form-control" required autofocus />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="Explanation">Aciklama:</label>
+					<input type="text" name="Explanation" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="StartDate">Kurulus Tarihi(GG-AA-YYYY):</label>
+					<input type="date" name="StartDate" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="Sector">Sektor:</label>
+					<input type="text" name="Sector" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			
+			<br>
+			<div class="pull-right">
+	      		<button name="Add" type="submit" class="btn btn-default">Kur</button>
+			</div> <!-- End of form-group -->
 		</div>
-	</div>
+	 </form>
+	 
+	 <div class="col-sm-3">
+	 	<form action ="{{url_for('ilgialanlari_page',personid=personid)}}" method="post">
+  			<b>Grup Ara:</b><br>
+  			<input type="text" name="GroupName">&nbsp
+ 			<input type="submit" value="Ara" name="Search">
+		</form>
+	 </div>
+		
+	  
 
 
   {% endblock %}

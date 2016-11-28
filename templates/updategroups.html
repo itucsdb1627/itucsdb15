@@ -1,0 +1,45 @@
+  {% extends "layout.html" %}
+  {% block content %}
+
+
+
+  	<div class="page-header">
+  		<h1>Grup Bilgilerini Duzenle</h1>
+	</div>
+	<form action="{{url_for('update_groups', grupid=key,personid=personid)}}" method="post" role="form">
+		<div class="col-sm-3">
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="GroupName">Grup Adi:</label>
+					<input type="text" name="GroupName" class="form-control" required autofocus />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="Explanation">Aciklama:</label>
+					<input type="text" name="Explanation" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="StartDate">Kurulus Tarihi(GG-AA-YYYY):</label>
+					<input type="date" name="StartDate" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="Sector">Sector:</label>
+					<input type="text" name="Sector" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+
+			<br>
+			<div class="pull-right">
+	      		<button name="Update" type="submit" class="btn btn-default">Degistir</button>
+			</div> <!-- End of form-group -->
+		</div>
+	 </form>
+
+
+
+  {% endblock %}
