@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 from profil import *
 from maindatadb import *
-
+from ilgialanlari import *
 
 
 
@@ -85,9 +85,7 @@ def counter_page():
         count = cursor.fetchone()[0]
     return "This page was accessed %d times." % count
 
-@app.route('/ilgialanlari')
-def ilgialanlari_page():
-    return render_template('ilgialanlari.html')
+
 
         
 @app.route('/baglantilar')
@@ -133,21 +131,7 @@ def initialize_database_baglantilar():
     return redirect(url_for('baglantilar_page'))
 
 
-@app.route('/ilgialanlari/initiatedb')
-def initialize_database_ilgialanlari():
-    connection=dbapi2.connect(app.config['dsn'])
-    cursor=connection.cursor()
 
-    query=""" DROP TABLE IF EXISTS ILGIALANLARI CASCADE"""
-    cursor.execute(query)
-    query="""CREATE TABLE ILGIALANLARI(ID SERIAL PRIMARY KEY, GROUPNAME VARCHAR(50) NOT NULL,DESCRYPTION VARCHAR(300) NOT NULL)"""
-    cursor.execute(query)
-    query="""INSERT INTO ILGIALANLARI(GROUPNAME, DESCRYPTION) VALUES('Data Mining','The group is intended for discussions concerning Data Mining.')"""
-    cursor.execute(query)
-    query="""INSERT INTO ILGIALANLARI(GROUPNAME, DESCRYPTION) VALUES('Android Programming','Join the Android Programming group to network with people interested in Android Programming.')"""
-    cursor.execute(query)
-    connection.commit()
-    return redirect(url_for('ilgialanlari_page'))
 
 
 @app.route('/hakkimizda/activedb')
