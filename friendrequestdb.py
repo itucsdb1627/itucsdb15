@@ -42,7 +42,16 @@ def baglantilar_page(personid):
         maindata2 = [(key,requestid)
                 for key,requestid in cursor]
 
-        return render_template('baglantilar.html',personid=personid,maindata=backupmaindata,maindata2=backupmaindata2,)
+        connection = dbapi2.connect(app.config['dsn'])
+        cursor = connection.cursor()
+        cursor.execute("""
+        SELECT * FROM  FRIENDLIST WHERE PERSONID=%s""",(personid,))
+        backupmaindata3=cursor.fetchall()
+        connection.commit()
+        maindata3 = [(key1,requestid)
+                for key1,requestid in cursor]
+
+        return render_template('baglantilar.html',personid=personid,maindata=backupmaindata,maindata2=backupmaindata2,maindata3=backupmaindata3)
 
 
 
@@ -62,7 +71,7 @@ def baglantilar_page(personid):
             key = request.form['id']
             connection = dbapi2.connect(app.config['dsn'])
             cursor = connection.cursor()
-            cursor.execute("""DELETE FROM FRIENDREQUEST WHERE PERSONID=%s AND REQUESTID=%s""",(personid,key,))
+            cursor.execute("""DELETE FROM FRIENDREQUEST WHERE PERSONID=%s AND REQUESTID=%s""",(key,personid,))
             connection.commit()
             return redirect(url_for('baglantilar_page',personid=personid))
       elif 'AddFriend' in request.form:
@@ -73,10 +82,27 @@ def baglantilar_page(personid):
             INSERT INTO FRIENDLIST (PERSONID,FRIENDID)
             VALUES (%s, %s) """,
             (personid,key,))
-            cursor.execute("""DELETE FROM FRIENDREQUEST WHERE PERSONID=%s AND REQUESTID=%s""",(personid,key,))
+            cursor.execute("""DELETE FROM FRIENDREQUEST WHERE PERSONID=%s AND REQUESTID=%s""",(key,personid,))
             cursor.execute("""
             INSERT INTO FRIENDLIST (PERSONID,FRIENDID)
             VALUES (%s, %s) """,
             (key,personid,))
             connection.commit()
             return redirect(url_for('baglantilar_page',personid=personid))
+        #delete de key i görmüyo onun dýþýnda bi sýkýntý yok.
+      elif 'DeleteFriend' in request.form:
+            key = request.form['id']
+            connection = dbapi2.connect(app.config['dsn'])
+            cursor = connection.cursor()
+            cursor.execute("""
+            DELETE FROM FRIENDLIST WHERE PERSONID=%s AND FRIENDID=%s
+             """,
+            (personid,key,))
+            cursor.execute("""
+            DELETE FROM FRIENDLIST WHERE PERSONID=%s AND FRIENDID=%s
+             """,
+            (key,personid,))
+
+            connection.commit()
+            return redirect(url_for('baglantilar_page',personid=personid))
+

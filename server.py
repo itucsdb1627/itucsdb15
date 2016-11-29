@@ -147,7 +147,7 @@ def initialize_database_hakkimizda():
 @app.route('/isfirsatlari/starteddb')
 def initialize_database_isfirsatlari():
     connection = dbapi2.connect(app.config['dsn'])
-    cursor = coDnnection.cursor()
+    cursor = connection.cursor()
 
     query = """DROP TABLE IF EXISTS ISFIRSATLARI CASCADE"""
     cursor.execute(query)
@@ -170,6 +170,6 @@ if __name__ == '__main__':
         app.config['dsn'] = get_elephantsql_dsn(VCAP_SERVICES)
     else:
         app.config['dsn'] = """user='vagrant' password='vagrant'
-                               host='localhost' port=1234 dbname='itucsdb'"""
+                               host='localhost' port=5432 dbname='itucsdb'"""
 
     app.run(host='0.0.0.0', port=port, debug=debug)
