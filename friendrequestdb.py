@@ -100,7 +100,7 @@ def baglantilar_page(personid):
              """,
             (personid,key,))
             cursor.execute("""
-            DELETE FROM FRIENDLIST WHERE PERSONID=%s AND FRIENDID=%s)
+            DELETE FROM FRIENDLIST WHERE PERSONID=%s AND FRIENDID=%s
              """,
             (key,personid,))
 
