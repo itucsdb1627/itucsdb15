@@ -1,0 +1,32 @@
+  {% extends "layout.html" %}
+  {% block content %}
+  
+  	 <!-- FORM SECTION -->
+     		     <div class="col-sm-7">
+            	 <div class="login-sec"> 
+              
+              		<!-- TABS -->
+              		<div class="uou-tabs">
+					<li class="active"><a href="#log-in">Bilgileri Düzenle...</a></li>
+					
+						<form action="{{url_for('edit_network', networkid=key,personid=personid)}}" method="post" role="form">
+						<!-- LOGIN -->
+                  		<div id="log-in" class="active">
+                    		<form>
+								<input type="text" name="Il" placeholder="Hangi Şehirde Yaşıyorsunuz?" required autofocus />
+			        			<input type="text" name="Sirket" placeholder="Hangi Şirkette Çalışıyorsunuz?" required autofocus />
+                    			<input type="text" name="Sektor" placeholder="Hangi sektörde Çalışıyorsunuz?" required autofocus />
+            					<button name="Update" type="submit">Kaydet</button>
+							</form>
+							
+			
+					</div>
+              	</div>
+            </div>
+            </div>
+            
+            
+	
+	
+  
+  {% endblock %}
