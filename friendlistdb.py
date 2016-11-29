@@ -14,7 +14,7 @@ def initialize_friendlist_db():
     cursor=connection.cursor()
     query=""" DROP TABLE IF EXISTS LOCATION CASCADE"""
     cursor.execute(query)
-    query="""CREATE TABLE FRIENDLIST(PERSONID INTEGER,FRIENDID INTEGER, FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID) ON DELETE CASCADE ON UPDATE CASCADE )"""
+    query="""CREATE TABLE FRIENDLIST(PERSONID INTEGER,FRIENDID INTEGER,TITLE VARCHAR(50), FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID) ON DELETE CASCADE ON UPDATE CASCADE )"""
     cursor.execute(query)
     connection.commit()
     return redirect(url_for('baglantilar_page'))

@@ -48,8 +48,8 @@ def baglantilar_page(personid):
         SELECT * FROM  FRIENDLIST WHERE PERSONID=%s""",(personid,))
         backupmaindata3=cursor.fetchall()
         connection.commit()
-        maindata3 = [(key1,requestid)
-                for key1,requestid in cursor]
+        maindata3 = [(key1,requestid,title)
+                for key1,requestid,title in cursor]
 
         return render_template('baglantilar.html',personid=personid,maindata=backupmaindata,maindata2=backupmaindata2,maindata3=backupmaindata3)
 
@@ -76,12 +76,13 @@ def baglantilar_page(personid):
             return redirect(url_for('baglantilar_page',personid=personid))
       elif 'AddFriend' in request.form:
             key = request.form['id']
+            title=request.form['title']
             connection = dbapi2.connect(app.config['dsn'])
             cursor = connection.cursor()
             cursor.execute("""
-            INSERT INTO FRIENDLIST (PERSONID,FRIENDID)
-            VALUES (%s, %s) """,
-            (personid,key,))
+            INSERT INTO FRIENDLIST (PERSONID,FRIENDID,TITLE)
+            VALUES (%s, %s ,%s) """,
+            (personid,key,title))
             cursor.execute("""DELETE FROM FRIENDREQUEST WHERE PERSONID=%s AND REQUESTID=%s""",(key,personid,))
             cursor.execute("""
             INSERT INTO FRIENDLIST (PERSONID,FRIENDID)
@@ -89,7 +90,7 @@ def baglantilar_page(personid):
             (key,personid,))
             connection.commit()
             return redirect(url_for('baglantilar_page',personid=personid))
-        #delete de key i görmüyo onun dýþýnda bi sýkýntý yok.
+
       elif 'DeleteFriend' in request.form:
             key = request.form['id']
             connection = dbapi2.connect(app.config['dsn'])
@@ -99,10 +100,29 @@ def baglantilar_page(personid):
              """,
             (personid,key,))
             cursor.execute("""
-            DELETE FROM FRIENDLIST WHERE PERSONID=%s AND FRIENDID=%s
+            DELETE FROM FRIENDLIST WHERE PERSONID=%s AND FRIENDID=%s)
              """,
             (key,personid,))
 
             connection.commit()
             return redirect(url_for('baglantilar_page',personid=personid))
+
+@app.route('/baglantilar/update/<personid>,<requestid>', methods=['GET', 'POST'])
+def baglantilar_guncelle(personid,requestid):
+
+
+
+        return render_template('baglantilarupdate.html',personid=personid,requestid=requestid)
+
+@app.route('/baglantilar/titleguncelle/<personid>,<requestid>', methods=['GET', 'POST'])
+def title_guncelle(personid,requestid):
+         title=request.form['title']
+         connection = dbapi2.connect(app.config['dsn'])
+         cursor = connection.cursor()
+         cursor.execute("""UPDATE FRIENDLIST SET TITLE=%s WHERE PERSONID= %s AND FRIENDID=%s""" ,(title,personid,requestid))
+         connection.commit()
+
+         return redirect(url_for('baglantilar_page',personid=personid))
+
+
 
