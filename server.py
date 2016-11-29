@@ -22,7 +22,7 @@ from profil import *
 from maindatadb import *
 from friendlistdb import *
 from friendrequestdb import *
-
+from network import *
 
 
 from experience import *
