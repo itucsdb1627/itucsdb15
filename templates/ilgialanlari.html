@@ -37,13 +37,13 @@
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="GroupName">Grup Adi:</label>
-					<input type="text" name="GroupName" class="form-control" required autofocus />
+					<input type="text" style="color:black" name="GroupName" class="form-control" required autofocus />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="Explanation">Aciklama:</label>
-					<input type="text" name="Explanation" class="form-control"  />
+					<input type="text" style="color:black" name="Explanation" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
@@ -55,7 +55,7 @@
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="Sector">Sektor:</label>
-					<input type="text" name="Sector" class="form-control"  />
+					<input type="text" style="color:black" name="Sector" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 
@@ -69,7 +69,7 @@
 	 <div class="col-sm-3">
 	 	<form action ="{{url_for('ilgialanlari_page',personid=personid)}}" method="post">
   			<b>Grup Ara:</b><br>
-  			<input type="text" name="GroupName">&nbsp
+  			<input type="text" style="color:black" name="GroupName">&nbsp
  			<input type="submit" value="Ara" name="Search">
 		</form>
 	 </div>
@@ -108,19 +108,19 @@
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="EssayType">Yayin Turu:</label>
-					<input type="text" name="EssayType" class="form-control" required autofocus />
+					<input type="text" style="color:black" name="EssayType" class="form-control" required autofocus />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="PublishName">Yayin Adi:</label>
-					<input type="text" name="PublishName" class="form-control"  />
+					<input type="text" style="color:black" name="PublishName" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="PublishContent">Yayin Icerigi:</label>
-					<input type="text" name="PublishContent" class="form-control"  />
+					<input type="text" style="color:black" name="PublishContent" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
@@ -140,8 +140,71 @@
 	 <div class="col-sm-3">
 	 	<form action ="{{url_for('ilgialanlari_page',personid=personid)}}" method="post">
   			<b>Yayin Ara:</b><br>
-  			<input type="text" name="PublishName">&nbsp
+  			<input type="text" style="color:black" name="PublishName">&nbsp
  			<input type="submit" value="Ara" name="Searchpublishes">
+		</form>
+	 </div>
+
+	 	  <table class="table table-bordered table-striped">
+		<tr>
+		    <th>Etkinlik Adi</th>
+		    <th>Etkinlik Icerigi</th>
+		    <th>Etkinlik Tarihi</th>
+		 </tr>
+		{% for key, ActivityName,ActivityContent,ActivityDate, Personid in activities %}
+		<tr>
+			<td> {{ ActivityName }} </td>
+			<td> {{ ActivityContent }} </td>
+			<td> {{ ActivityDate }} </td>
+			<td>
+			<form action="{{ url_for('ilgialanlari_page',personid=personid) }}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="Deleteactivities" type="submit">Etkinligi Sil</button>
+			</form>
+			<form action="{{url_for('ilgialanlari_page',personid=personid)}}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="Updateactivities" type="submit">Duzenle</button>
+			</form>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+	<div class="page-header">
+  		<h1>Etkinlik Olustur</h1>
+	</div>
+	<form action="{{ url_for('ilgialanlari_page',personid=personid) }}" method="post" role="form">
+		<div class="col-sm-3">
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="ActivityName">Etkinlik Adi:</label>
+					<input type="text" style="color:black" name="ActivityName" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="ActivityContent">Etkinlik Icerigi:</label>
+					<input type="text" style="color:black" name="ActivityContent" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="ActivityDate">Etkinlik Tarihi(GG-AA-YYYY):</label>
+					<input type="date" name="ActivityDate" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+
+			<br>
+			<div class="pull-right">
+	      		<button name="Addactivities" type="submit" class="btn btn-default">Olustur</button>
+			</div> <!-- End of form-group -->
+		</div>
+	 </form>
+
+	 <div class="col-sm-3">
+	 	<form action ="{{url_for('ilgialanlari_page',personid=personid)}}" method="post">
+  			<b>Etkinlik Ara:</b><br>
+  			<input type="text" style="color:black" name="ActivityName">&nbsp
+ 			<input type="submit" value="Ara" name="Searchactivities">
 		</form>
 	 </div>
 
