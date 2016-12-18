@@ -95,7 +95,7 @@ def edit_experience(experienceid,personid):
              connection = dbapi2.connect(app.config['dsn'])
              cursor = connection.cursor()
              cursor.execute(""" UPDATE EXPERIENCE SET COMPANYNAME = %s, YEARSTART= %s,YEAREND= %s,POSITION= %s WHERE ID = %s """,
-             (SchoolName, Year, experienceid))
+             (SchoolName, YearStart,YearEnd,Position, experienceid))
              connection.commit()   
              return redirect(url_for('profil_page',personid=personid))
 
