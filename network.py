@@ -12,6 +12,7 @@ class Network:
         self.Il = Il
         self.Sirket = Sirket
         self.Sektor = Sektor
+        
        
 
 @app.route('/network/db')
@@ -52,9 +53,17 @@ def network_page(personid):
         cursor = connection.cursor()
         cursor.execute("""select distinct a.*,b.schoolname,c.name from network a, education b,maindata c where a.personid=b.personid and  c.id=a.personid and  a.PERSONID = %s """,[personid])
         connection.commit()
-        network = [(key, Il,Sirket,Personid ,Sektor,SchoolName,FirstName)
-                        for key, Il,Sirket,Personid ,Sektor,SchoolName,FirstName in cursor]
-        return render_template('network.html', network = network,personid=personid)
+        network = [(key, Il,Sirket,Personid ,Sektor, SchoolName,FirstName)
+                        for key, Il,Sirket,Personid ,Sektor, SchoolName,FirstName in cursor]
+        
+        connection2 = dbapi2.connect(app.config['dsn'])
+        cursor2 = connection2.cursor()
+        cursor2.execute("""select distinct a.*,b.schoolname,c.name from network a, education b,maindata c where a.personid=b.personid and  c.id=a.personid """)
+        connection2.commit()
+        network2 = [(key, Il,Sirket,Personid ,Sektor, SchoolName,FirstName)
+                        for key, Il,Sirket,Personid ,Sektor, SchoolName,FirstName in cursor2]
+        
+        return render_template('network.html', network = network,network2=network2,personid=personid)
         
         
     else:
@@ -65,9 +74,9 @@ def network_page(personid):
             connection = dbapi2.connect(app.config['dsn'])
             cursor = connection.cursor()
             cursor.execute("""
-            INSERT INTO NETWORK (IL, SIRKET,PERSONID,SEKTOR)
+            INSERT INTO NETWORK (IL, SIRKET,SEKTOR, PERSONID)
             VALUES (%s, %s, %s, %s) """,
-            (Il,Sirket,personid ,Sektor))
+            (Il,Sirket,Sektor,personid))
             connection.commit()   
             return redirect(url_for('network_page',personid=personid))
         
@@ -89,8 +98,7 @@ def network_page(personid):
             connection.commit() 
             network = [(key, Il,Sirket,Personid ,Sektor)
                         for key, Il,Sirket,Personid ,Sektor in cursor]
-            return render_template('network.html',network = network,personid=personid)   
-        
+            return render_template('network.html',network = network,personid=personid)
         
 @app.route('/network/editnetwork/<networkid>,<personid>', methods=['GET', 'POST'])
 def edit_network(networkid,personid):
