@@ -1,7 +1,39 @@
   {% extends "layout.html" %}
   {% block content %}
  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 
+<script type="text/javascript">
+function validate() {
+	
+	if (document.zeynepForm.Sirket.value=="") {
+		alert('Şirket alanı bos birakilamaz')
+		return false;
+	}
+	if (document.zeynepForm.Sektor.value=="") {
+		alert('Sektör alanı bos birakilamaz')
+		return false;
+	}
+	if (document.zeynepForm.Il.value=="") {
+		alert('İl alanı bos birakilamaz')
+		return false;
+	}
+	return true;
+}
+</script>
+ 
+ <script>
+$(document).ready(function(){
+    $(".uou-block-6a").hover(function(){
+        $(this).css("background-color", "#808080");
+        }, function(){
+        $(this).css("background-color", "white");
+    });
+});
+</script>
+
+
+ 
  
  	<table class="table-style-two">
 		<tr>
@@ -12,7 +44,7 @@
 		    <th>Adı</th>
 		    <th>Processes</th>
 		 </tr>
-		{% for key, Il, Sırket, Personid ,Sektor,SchoolName,FirstName in network %}
+		{% for key, Il, Sırket,Personid ,Sektor, SchoolName,FirstName in network %}
 		<tr>
 			<td> {{ Il }} </td>
 			<td> {{ Sırket }} </td>
@@ -40,23 +72,53 @@
               
               		<!-- TABS -->
               		<div class="uou-tabs">
-					<li class="active"><a href="#log-in">Network Bilgilerinizi Girin...</a></li>
-					<form action="{{ url_for('network_page',personid=personid) }}" method="post" role="form">
+					<li class="active"><a href="#log-in">Oluşturmak İstediğiniz İlan İle İlgili Bilgiler</a></li>
+					<form action="{{ url_for('network_page',personid=personid) }}" name="zeynepForm"  method="post" role="form" onsubmit="return(validate());">
 						<!-- LOGIN -->
                   		<div id="log-in" class="active">
                     		<form>
 					
-				  				<input type="text" name="Il" placeholder="Hangi Şehirde Yaşıyorsunuz?" required autofocus />
-			        			<input type="text" name="Sirket" placeholder="Hangi Şirkette Çalışıyorsunuz?" required autofocus />
-                    			<input type="text" name="Sektor" placeholder="Hangi sektörde Çalışıyorsunuz?" required autofocus />
-            					<button name="Add" type="submit">Kaydet</button>
+				  				<input type="text" name="Sirket" placeholder="Şirket Adı"  autofocus />
+			        			<input type="text" name="Sektor" placeholder="Sektör Bilgisi"  autofocus />
+                    			<input type="text" name="Il" placeholder="Şehir"  autofocus />
+            					<button name="Add" type="submit" >Kaydet</button>
 							</form>
 	 					</div>
 					</div>
               	</div>
             </div>
+            
           </div>
+          
+   <section class="pro-mem">
+    <div class="container pb30">
+      
+      
+      
+      
+      <h3>İş İlanları </h3>
+      
+      {% for key, Il, Sırket, Personid , Sektor, SchoolName,FirstName in network2 %}
+      
+      
+      <div class="row">
+        <div   class="col-sm-3">
+          <div class="uou-block-6a"> 
+            <h6>  {{ Sırket }}  <span>  {{ Sektor }} </span></h6>
+            <p><i class="fa fa-map-marker"></i> {{ Il }} </p>
+          </div>
+          <!-- end .uou-block-6a --> 
         </div>
+    
+              
+    {% endfor %}    
+        </div>
+    </div>
+  </section>
+</div>
+
+</div>
+
 
 
 
