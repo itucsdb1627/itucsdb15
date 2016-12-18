@@ -1,9 +1,67 @@
   {% extends "layout.html" %}
   {% block content %}
-
-
-
- 	<table class="table table-bordered table-striped">
+	
+	<head>
+	<style> 
+	h1 {
+    	color: #1ab2ff;
+	}
+	</style>
+	</head>
+	
+	<button type="button" class="btn btn-primary btn-lg btn-block" onclick="showhidegroup(); scrolltogroup();">Gruplar</button>
+	<script>
+     	function showhidegroup()
+     	{
+           	var div = document.getElementById("groupsection");
+   			if (div.style.display !== "none") {
+        	div.style.display = "none";
+    	}
+   		 else {
+        	div.style.display = "block";
+    	}
+     	}
+     	function scrolltogroup(){
+ 			document.getElementById("groupsection").scrollIntoView();
+ 		}
+ 	</script>
+ 
+	<button type="button" class="btn btn-default btn-lg btn-block" onclick="showhidepublish(); scrolltopublish();">Yayinlar</button>
+	<script>
+     	function showhidepublish()
+     	{
+           	var div = document.getElementById("publishsection");
+    	if (div.style.display !== "none") {
+       	 	div.style.display = "none";
+   	 	}
+    	else {
+        	div.style.display = "block";
+    	}
+     	}
+ 		function scrolltopublish(){
+			document.getElementById("publishsection").scrollIntoView();
+		}
+	</script>
+	<button type="button" class="btn btn-info btn-lg btn-block" onclick="showhideevent(); scrolltoevent();">Etkinlikler</button>
+	<script>
+     	function showhideevent()
+     	{
+           	var div = document.getElementById("eventsection");
+    	if (div.style.display !== "none") {
+        	div.style.display = "none";
+    	}
+    	else {
+        	div.style.display = "block";
+    	}
+     	}
+     	function scrolltoevent(){
+ 			document.getElementById("eventsection").scrollIntoView();
+ 		}
+	</script>
+	<br>
+	<br>
+	<div id="groupsection" style="display:none">
+ 	<table class="table table-bordered table-striped table-hover">
 		<tr>
 		    <th>Grup Adi</th>
 		    <th>Aciklama</th>
@@ -19,11 +77,11 @@
 			<td>
 			<form action="{{ url_for('ilgialanlari_page',personid=personid) }}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Delete" type="submit">Gruplarimdan Cikar</button>
+							<button class="btn btn-error" name="Delete" type="submit">Gruplarimdan Cikar</button>
 			</form>
 			<form action="{{url_for('ilgialanlari_page',personid=personid)}}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Update" type="submit">Duzenle</button>
+							<button class="btn btn-info" name="Update" type="submit">Duzenle</button>
 			</form>
 			</td>
 		</tr>
@@ -61,7 +119,7 @@
 
 			<br>
 			<div class="pull-right">
-	      		<button name="Add" type="submit" class="btn btn-default">Kur</button>
+	      		<button name="Add" type="submit" class="btn btn-success">Olustur</button>
 			</div> <!-- End of form-group -->
 		</div>
 	 </form>
@@ -70,11 +128,14 @@
 	 	<form action ="{{url_for('ilgialanlari_page',personid=personid)}}" method="post">
   			<b>Grup Ara:</b><br>
   			<input type="text" style="color:black" name="GroupName">&nbsp
- 			<input type="submit" value="Ara" name="Search">
+ 			<input class="btn btn-primary" type="submit" value="Ara" name="Search">
 		</form>
 	 </div>
-
-	  <table class="table table-bordered table-striped">
+	</div>
+	<br>
+	<br>
+	<div id="publishsection" style="display:none">
+	  <table class="table table-bordered table-striped table-hover">
 		<tr>
 		    <th>Yayin Turu</th>
 		    <th>Yayin Adi</th>
@@ -90,11 +151,11 @@
 			<td>
 			<form action="{{ url_for('ilgialanlari_page',personid=personid) }}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Deletepublishes" type="submit">Yayini Sil</button>
+							<button class="btn btn-error" name="Deletepublishes" type="submit">Yayini Sil</button>
 			</form>
 			<form action="{{url_for('ilgialanlari_page',personid=personid)}}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Updatepublishes" type="submit">Duzenle</button>
+							<button class="btn btn-info" name="Updatepublishes" type="submit">Duzenle</button>
 			</form>
 			</td>
 		</tr>
@@ -132,7 +193,7 @@
 
 			<br>
 			<div class="pull-right">
-	      		<button name="Addpublishes" type="submit" class="btn btn-default">Kur</button>
+	      		<button name="Addpublishes" type="submit" class="btn btn-success">Kur</button>
 			</div> <!-- End of form-group -->
 		</div>
 	 </form>
@@ -141,11 +202,14 @@
 	 	<form action ="{{url_for('ilgialanlari_page',personid=personid)}}" method="post">
   			<b>Yayin Ara:</b><br>
   			<input type="text" style="color:black" name="PublishName">&nbsp
- 			<input type="submit" value="Ara" name="Searchpublishes">
+ 			<input class="btn btn-primary" type="submit" value="Ara" name="Searchpublishes">
 		</form>
 	 </div>
-
-	 	  <table class="table table-bordered table-striped">
+	</div>
+	<br>
+	<br>
+	<div id="eventsection" style="display:none">
+	<table class="table table-bordered table-striped table-hover">
 		<tr>
 		    <th>Etkinlik Adi</th>
 		    <th>Etkinlik Icerigi</th>
@@ -159,11 +223,11 @@
 			<td>
 			<form action="{{ url_for('ilgialanlari_page',personid=personid) }}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Deleteactivities" type="submit">Etkinligi Sil</button>
+							<button class="btn btn-error" name="Deleteactivities" type="submit">Etkinligi Sil</button>
 			</form>
 			<form action="{{url_for('ilgialanlari_page',personid=personid)}}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Updateactivities" type="submit">Duzenle</button>
+							<button class="btn btn-info" name="Updateactivities" type="submit">Duzenle</button>
 			</form>
 			</td>
 		</tr>
@@ -195,7 +259,7 @@
 
 			<br>
 			<div class="pull-right">
-	      		<button name="Addactivities" type="submit" class="btn btn-default">Olustur</button>
+	      		<button name="Addactivities" type="submit" class="btn btn-success">Olustur</button>
 			</div> <!-- End of form-group -->
 		</div>
 	 </form>
@@ -204,9 +268,9 @@
 	 	<form action ="{{url_for('ilgialanlari_page',personid=personid)}}" method="post">
   			<b>Etkinlik Ara:</b><br>
   			<input type="text" style="color:black" name="ActivityName">&nbsp
- 			<input type="submit" value="Ara" name="Searchactivities">
+ 			<input class="btn btn-success" type="submit" value="Ara" name="Searchactivities">
 		</form>
 	 </div>
-
+	</div>
 
   {% endblock %}
