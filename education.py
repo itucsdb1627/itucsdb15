@@ -19,7 +19,8 @@ def init_education_database():
     query = """CREATE TABLE IF NOT EXISTS EDUCATION (
     ID SERIAL PRIMARY KEY,
     SCHOOLNAME VARCHAR(90),
-    YEAR VARCHAR(30) NULL,
+    YEARSTART VARCHAR(30) NULL,
+    YEAREND VARCHAR(30) NULL,
     PERSONID INTEGER,
     GPA VARCHAR(30) NULL,
     FOREIGN KEY (PERSONID)
@@ -39,21 +40,22 @@ def showeducation_page(personid):
         cursor = connection.cursor()
         cursor.execute("""SELECT * FROM EDUCATION WHERE PERSONID = %s """,[personid])
         connection.commit()
-        education = [(key, SchoolName,Year,Personid ,Gpa)
-                        for key, SchoolName, Year,Personid ,Gpa in cursor]
+        education = [(key, SchoolName,YearStart,YearEnd,Personid ,Gpa)
+                        for key, SchoolName, YearStart, YearEnd, Personid ,Gpa in cursor]
         return education
     
     
 def addeducation_page(personid):    
         SchoolName = request.form['SchoolName']
-        Year = request.form['Year']
+        YearStart = request.form['YearStart']
+        YearEnd = request.form['YearEnd']
         Gpa = request.form['Gpa']
         connection = dbapi2.connect(app.config['dsn'])
         cursor = connection.cursor()
         cursor.execute("""
-        INSERT INTO EDUCATION (SCHOOLNAME, YEAR,PERSONID,GPA)
-        VALUES (%s, %s, %s, %s) """,
-        (SchoolName, Year,personid ,Gpa))
+        INSERT INTO EDUCATION (SCHOOLNAME, YEARSTART,YEAREND,PERSONID,GPA)
+        VALUES (%s, %s, %s, %s, %s) """,
+        (SchoolName, YearStart,YearEnd,personid ,Gpa))
         connection.commit()   
 
         
@@ -74,9 +76,18 @@ def searcheducation_page(personid):
             cursor = connection.cursor()
             cursor.execute( "SELECT * FROM EDUCATION WHERE SCHOOLNAME LIKE %s",(SchoolName,))
             connection.commit() 
-            education = [(key, SchoolName,Year,personid ,Gpa)
-                        for key, SchoolName, Year,personid , Gpa in cursor]
+            education = [(key, SchoolName,YearStart,YearEnd,personid ,Gpa)
+                        for key, SchoolName, YearStart,YearEnd,personid , Gpa in cursor]
             return education
+        
+def show_education_update_value(educationid): 
+            connection = dbapi2.connect(app.config['dsn'])
+            cursor = connection.cursor()
+            cursor.execute( "SELECT * FROM EDUCATION WHERE ID=%s",(educationid,))
+            connection.commit() 
+            UpdateEducationValue = [(key, SchoolName,YearStart,YearEnd,personid ,Gpa)
+                        for key, SchoolName, YearStart,YearEnd,personid , Gpa in cursor]
+            return UpdateEducationValue
 
 
        
@@ -87,12 +98,13 @@ def edit_education(educationid,personid):
     else:
          if 'Update' in request.form:
              SchoolName = request.form['SchoolName']
-             Year = request.form['Year']
+             YearStart = request.form['YearStart']
+             YearEnd = request.form['YearEnd']
              Gpa = request.form['Gpa']
              connection = dbapi2.connect(app.config['dsn'])
              cursor = connection.cursor()
-             cursor.execute(""" UPDATE EDUCATION SET SCHOOLNAME = %s, YEAR= %s, GPA= %s WHERE ID = %s """,
-             (SchoolName, Year, Gpa, educationid))
+             cursor.execute(""" UPDATE EDUCATION SET SCHOOLNAME = %s, YEARSTART= %s,YEAREND= %s, GPA= %s WHERE ID = %s """,
+             (SchoolName, YearStart,YearEnd, Gpa, educationid))
              connection.commit()   
              return redirect(url_for('profil_page',personid=personid))
              

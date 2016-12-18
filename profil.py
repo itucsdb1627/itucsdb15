@@ -9,7 +9,6 @@ from config import app
 
 from education import *
 from experience import *
-from profilpicture import *
 from language import *
 
 
@@ -21,16 +20,6 @@ class Education:
        
 
 
-     
-
-def add_education(self, education):
-        with dbapi2.connect(self.app.config['dsn']) as connection:
-                cursor = connection.cursor()
-                cursor.execute("""
-                    INSERT INTO EDUCATION (SCHOOLNAME, YEAR, GPA)
-                    VALUES (%s, %s, %s) """,
-                    (education.SchoolName, education.Year, education.Gpa))
-                connection.commit()   
     
 
 @app.route('/profil/<personid>', methods=['GET', 'POST'])
@@ -43,19 +32,20 @@ def profil_page(personid):
 
     else:
             
-        if 'Add' in request.form:
+        if 'AddEducation' in request.form:
                 addeducation_page(personid)  
                 return redirect(url_for('profil_page',personid=personid))
                         
-        elif 'Delete' in request.form:
+        elif 'DeleteEducation' in request.form:
                 deleteeducation_page(personid)  
                 return redirect(url_for('profil_page',personid=personid))
                 
-        elif 'Update' in request.form:
+        elif 'UpdateEducation' in request.form:
                 educationid=updateeducation_page(personid)
-                return render_template('education_edit.html', key = educationid,personid=personid)
+                UpdateEducationValue = show_education_update_value(educationid);
+                return render_template('education_edit.html', key = educationid,personid=personid,UpdateEducationValue=UpdateEducationValue)
                 
-        elif 'Search' in request.form:
+        elif 'SearchEducation' in request.form:
                 education=searcheducation_page(personid)
                 return render_template('profil.html',education = education,personid=personid)
             
@@ -69,7 +59,8 @@ def profil_page(personid):
             
         elif 'UpdateExperience' in request.form:
                 experienceid=updateexperience_page(personid)
-                return render_template('experience_edit.html', key = experienceid,personid=personid)
+                UpdateExperienceValue=show_experience_update_value(experienceid)
+                return render_template('experience_edit.html', key = experienceid,personid=personid,UpdateExperienceValue=UpdateExperienceValue)
             
         elif 'SearchExperience' in request.form:
                 experience=searchexperience_page(personid)
@@ -84,7 +75,8 @@ def profil_page(personid):
             
         elif 'UpdateLanguage' in request.form:
                 languageid=updateexperience_page(personid)
-                return render_template('language_edit.html', key = languageid,personid=personid)
+                UpdateLanguageValue=show_language_update_value(languageid)
+                return render_template('language_edit.html', key = languageid,personid=personid,UpdateLanguageValue=UpdateLanguageValue)
           
         elif 'SearchLanguage' in request.form:
                 language=searchlanguage(personid)

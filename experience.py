@@ -18,7 +18,9 @@ def init_experience_database():
     query = """CREATE TABLE IF NOT EXISTS EXPERIENCE (
     ID SERIAL PRIMARY KEY,
     COMPANYNAME VARCHAR(90),
-    YEAR VARCHAR(30) NULL,
+    YEARSTART VARCHAR(30) NULL,
+    YEAREND VARCHAR(30) NULL,
+    POSITION VARCHAR(30) NULL,
     PERSONID INTEGER,
     FOREIGN KEY (PERSONID)
     REFERENCES MAINDATA (ID)
@@ -32,20 +34,22 @@ def showexperience_page(personid):
         cursor = connection.cursor()
         cursor.execute("""SELECT * FROM EXPERIENCE WHERE PERSONID = %s """,[personid])
         connection.commit()
-        experience = [(key, CompanyName,Year,Personid )
-                        for key, CompanyName, Year,Personid  in cursor]
+        experience = [(key, CompanyName,YearStart,YearEnd,Position,Personid )
+                        for key, CompanyName,YearStart,YearEnd,Position,Personid  in cursor]
         return experience
 
 
 def addexperience_page(personid):    
         CompanyName = request.form['CompanyName']
-        Year = request.form['Year']
+        YearStart = request.form['YearStart']
+        YearEnd = request.form['YearEnd']
+        Position = request.form['Position']
         connection = dbapi2.connect(app.config['dsn'])
         cursor = connection.cursor()
         cursor.execute("""
-        INSERT INTO EXPERIENCE (COMPANYNAME, YEAR,PERSONID)
-        VALUES (%s, %s, %s) """,
-        (CompanyName, Year,personid ))
+        INSERT INTO EXPERIENCE (COMPANYNAME, YEARSTART,YEAREND,POSITION,PERSONID)
+        VALUES (%s, %s, %s,%s, %s) """,
+        (CompanyName, YearStart,YearEnd,Position,personid ))
         connection.commit() 
 
 def deleteexperience_page(personid):         
@@ -65,11 +69,18 @@ def searchexperience_page(personid):
             cursor = connection.cursor()
             cursor.execute( "SELECT * FROM EXPERIENCE WHERE COMPANYNAME LIKE %s",(CompanyName,))
             connection.commit() 
-            experience = [(key, CompanyName,Year,personid )
-                        for key, CompanyName, Year,personid  in cursor]
+            experience = [(key, CompanyName,YearStart,YearEnd,Position,personid )
+                        for key, CompanyName, YearStart,YearEnd,Position,personid  in cursor]
             return experience
 
-
+def show_experience_update_value(experienceid): 
+            connection = dbapi2.connect(app.config['dsn'])
+            cursor = connection.cursor()
+            cursor.execute( "SELECT * FROM EXPERIENCE WHERE ID=%s",(experienceid,))
+            connection.commit() 
+            UpdateExperienceValue = [(key, CompanyName,YearStart,YearEnd,Position,personid )
+                        for key, CompanyName, YearStart,YearEnd,Position,personid  in cursor]
+            return UpdateExperienceValue
       
 @app.route('/profil/editexperience/<experienceid>,<personid>', methods=['GET', 'POST'])
 def edit_experience(experienceid,personid):
@@ -78,10 +89,12 @@ def edit_experience(experienceid,personid):
     else:
          if 'UpdateExperience' in request.form:
              SchoolName = request.form['CompanyName']
-             Year = request.form['Year']
+             YearStart = request.form['YearStart']
+             YearEnd = request.form['YearEnd']
+             Position = request.form['Position']
              connection = dbapi2.connect(app.config['dsn'])
              cursor = connection.cursor()
-             cursor.execute(""" UPDATE EXPERIENCE SET COMPANYNAME = %s, YEAR= %s WHERE ID = %s """,
+             cursor.execute(""" UPDATE EXPERIENCE SET COMPANYNAME = %s, YEARSTART= %s,YEAREND= %s,POSITION= %s WHERE ID = %s """,
              (SchoolName, Year, experienceid))
              connection.commit()   
              return redirect(url_for('profil_page',personid=personid))

@@ -2,38 +2,56 @@
   {% block content %}
   
   	
-  	
+  
   	<div class="page-header">
   		<h1>Bilgiyi Duzenle</h1>
 	</div>
+		
 	<form action="{{url_for('edit_education', educationid=key,personid=personid)}}" method="post" role="form">
-		<div class="col-sm-3">
+		<div  class="col-sm-3" style="background-color:#F0F0F0">
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="SchoolName">Okul Adi:</label>
-					<input type="text" style="color:black" name="SchoolName" class="form-control" required autofocus />
+					<input id="SchoolName" value="{{ SchoolName }}" type="text" style="color:black" name="SchoolName" class="form-control" required autofocus />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
-				  	<label class="control-label" for="Year">Yil:</label>
-					<input type="text" style="color:black" name="Year" class="form-control"  />
+				  	<label class="control-label" for="YearStart">Baslangic:</label>
+					<input id="YearStart" value = "{{ YearStart }}"type="date" style="color:black" name="YearStart" class="form-control "   />
 				</div>
 			</div> <!-- End of form-group -->
+			
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="YearEnd">Bitis:</label>
+					<input id="YearEnd" value = "{{ YearEnd }}"  type="date" style="color:black" name="YearEnd" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="Gpa">Not:</label>
-					<input type="text" style="color:black" name="Gpa" class="form-control"  />
+					<input id="Gpa" value = "{{ Personid }}" type="text" style="color:black" name="Gpa" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			
 			<br>
 			<div class="pull-right">
-	      		<button name="Update" type="submit" class="btn btn-default">Duzenle</button>
+	      		<button class="btn btn-primary" name="Update" type="submit" class="btn btn-default">Duzenle</button>
 			</div> <!-- End of form-group -->
 		</div>
 	 </form>
 	
-	
+		
+  	{% for key, SchoolName, YearStart,YearEnd ,Personid ,Gpa  in UpdateEducationValue %}	
+  		<script>
+  		document.getElementById('SchoolName').value="{{SchoolName}}" ; 
+  		document.getElementById('YearStart').value="{{YearStart}}" ; 
+  		document.getElementById('YearEnd').value="{{YearEnd}}" ; 
+  		document.getElementById('Gpa').value="{{Gpa}}" ; 
+  		</script>
+  	{% endfor %}
+  
   
   {% endblock %}

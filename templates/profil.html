@@ -1,51 +1,68 @@
   {% extends "layout.html" %}
   {% block content %}
  	
+ 		
+ 	
  
- 
- 	<table class="table table-bordered table-striped">
-		<tr>
-		    <th>Okul Adi</th>
-		    <th>Yil</th>
-		    <th>Mezuniyet Derecesi</th>
+	<table class="table table-hover">
+ 		
+ 		 <tr >
+		    <th bgcolor="#303030"><font color="white"> Okul Adi</font></th>
+		    <th bgcolor="#303030"><font color="white"> Baslangic </font></th>
+		    <th bgcolor="#303030"><font color="white"> Bitis </font></th>
+		    <th bgcolor="#303030"><font color="white"> Mezuniyet Derecesi</font></th>
+		    <th bgcolor="#303030"></th>
 		 </tr>
-		{% for key, SchoolName, Year,Personid ,Gpa in education %}
+		
+		<tbody>
+			{% for key, SchoolName, YearStart,YearEnd,Personid ,Gpa in education %}	
 		<tr>
-			<td> {{ SchoolName }} </td>
-			<td> {{ Year }} </td>
-			<td> {{ Gpa }} </td>
-			<td>
-			<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form" tyle="height:50px;width:100px"">
+			<td bgcolor="#F0F0F0" > {{ SchoolName }} </td>
+			<td bgcolor="#F0F0F0"> {{ YearStart }} </td>
+			<td bgcolor="#F0F0F0"> {{ YearEnd }} </td>
+			<td bgcolor="#F0F0F0"> {{ Gpa }} </td>
+			<td bgcolor="#F0F0F0">
+			
+			<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Delete" type="submit">Sil</button>
+							<button class="btn btn-error" name="DeleteEducation" type="submit">Sil</button>
 			</form>
 			<form action="{{url_for('profil_page',personid=personid)}}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Update" type="submit">Duzenle</button>
+							<button class="btn btn-warning" name="UpdateEducation" type="submit">Duzenle</button>
 			</form>
 			</td>
 		</tr>
+		</tbody>
 	{% endfor %}
 	</table>
  
  
+ <button class="btn btn-success" id='button1'>Yeni Okul Ekle & Ara</button>
  
- 
+ <div id="egitimDiv" >
 	<div class="page-header">
   		<h1>Yeni Okul Ekle</h1>
 	</div>
+	
 	<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form">
-		<div class="col-sm-3">
-			<div class="form-group">
-			 	<div class="row">
+		<div class="col-sm-3" style="background-color:#F0F0F0" >
+			<div class="form-group" >
+			 	<div class="row" >
 				  	<label class="control-label" for="SchoolName">Okul Adi:</label>
 					<input type="text" style="color:black" name="SchoolName" class="form-control" required autofocus />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
-				  	<label class="control-label" for="Year">Yil:</label>
-					<input type="text" style="color:black" name="Year" class="form-control"  />
+				  	<label class="control-label" for="YearStart">Yil:</label>
+					<input type="date" style="color:black" name="YearStart" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="YearEnd">Yil:</label>
+					<input type="date" style="color:black" name="YearEnd" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			<div class="form-group">
@@ -57,39 +74,50 @@
 			
 			<br>
 			<div class="pull-right">
-	      		<button name="Add" type="submit" class="btn btn-default">Ekle</button>
+	      		<button class="btn btn-primary" name="AddEducation" type="submit" class="btn btn-default">Ekle</button>
+	      		
+			<br></br>
+			<br></br>
 			</div> <!-- End of form-group -->
 		</div>
 	 </form>
+	 	
 	 
-	 <div class="col-sm-3">
+	 <div class="col-sm-3" style="background-color:#F0F0F0">
 	 	<form action ="{{url_for('profil_page',personid=personid)}}" method="post">
   			<b>Okul Ara:</b><br>
   			<input type="text" style="color:black" name="SchoolName">&nbsp
- 			<input type="submit" value="Ara" name="Search">
+ 			<input class="btn btn-primary" type="submit" value="Ara" name="SearchEducation">
 		</form>
 	 </div>
 	
+	</div>
 	
+	<br></br>
+	<br></br>
 	
-	
-	<table class="table table-bordered table-striped">
+	<table class="table table-hover">
 		<tr>
-		    <th>Sirket Adi</th>
-		    <th>Yil</th>
+		    <th bgcolor="#303030"><font color="white"> Sirket Adi</font></th>
+		    <th bgcolor="#303030"><font color="white"> Baslangic</font></th>
+		    <th bgcolor="#303030"><font color="white"> Bitis</font></th>
+		    <th bgcolor="#303030"><font color="white"> Pozisyon</font></th>
+		    <th bgcolor="#303030"> </th>
 		 </tr>
-		{% for key, CompanyName, Year,Personid  in experience %}
+		{% for key, CompanyName, YearStart,YearEnd,Position,Personid  in experience %}
 		<tr>
-			<td> {{ CompanyName }} </td>
-			<td> {{ Year }} </td>
-			<td>
+			<td bgcolor="#F0F0F0" >{{ CompanyName }} </td>
+			<td bgcolor="#F0F0F0" >{{ YearStart }} </td>
+			<td bgcolor="#F0F0F0" >{{ YearEnd }} </td>
+			<td bgcolor="#F0F0F0" >{{ Position }} </td>
+			<td bgcolor="#F0F0F0" >
 			<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="DeleteExperience" type="submit">Sil</button>
+							<button class="btn btn-error" name="DeleteExperience" type="submit">Sil</button>
 			</form>
 			<form action="{{url_for('profil_page',personid=personid)}}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="UpdateExperience" type="submit">Duzenle</button>
+							<button class="btn btn-warning" name="UpdateExperience" type="submit">Duzenle</button>
 			</form>
 			</td>
 		</tr>
@@ -97,13 +125,15 @@
 	</table>
 	
 	
+	 <button class="btn btn-success" id='button2'>Yeni Sirket Ekle & Ara</button>
+ 
+ <div id="tecrubeDiv">
 	
-	
-	<div class="page-header">
+	<div class="page-header " >
   		<h1>Yeni Sirket Ekle</h1>
 	</div>
 	<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form">
-		<div class="col-sm-3">
+		<div class="col-sm-3" style="background-color:#F0F0F0">
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="CompanyName">Sirket Adi:</label>
@@ -112,56 +142,78 @@
 			</div> <!-- End of form-group -->
 			<div class="form-group">
 			 	<div class="row">
-				  	<label class="control-label" for="Year">Yil:</label>
-					<input type="text" style="color:black" name="Year" class="form-control"  />
+				  	<label class="control-label" for="YearStart">Baslangic:</label>
+					<input type="date" style="color:black" name="YearStart" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="YearEnd">Bitis:</label>
+					<input type="date" style="color:black" name="YearEnd" class="form-control"  />
+				</div>
+			</div> <!-- End of form-group -->
+			<div class="form-group">
+			 	<div class="row">
+				  	<label class="control-label" for="Position">Pozisyon:</label>
+					<input type="text" style="color:black" name="Position" class="form-control"  />
 				</div>
 			</div> <!-- End of form-group -->
 			
 			<br>
 			<div class="pull-right">
-	      		<button name="AddExperience" type="submit" class="btn btn-default">Ekle</button>
+	      		<button class="btn btn-primary" name="AddExperience" type="submit" class="btn btn-default">Ekle</button>
+			<br></br>
+			<br></br>
 			</div> <!-- End of form-group -->
 		</div>
 	 </form>
-	  
-	  <div class="col-sm-3">
+ 
+	  <div class="col-sm-3" style="background-color:#F0F0F0">
 	 	<form action ="{{url_for('profil_page',personid=personid)}}" method="post">
   			<b>Sirket Ara:</b><br>
   			<input type="text" style="color:black" name="CompanyName">&nbsp
- 			<input type="submit"  value="Ara" name="SearchExperience">
+ 			<input class="btn btn-primary" type="submit"  value="Ara" name="SearchExperience">
 		</form>
 	 </div>
 	
-	
-	
-	<table class="table table-bordered table-striped">
+</div>
+
+			<br></br>
+			<br></br>
+
+	<table class="table table-hover">
 		<tr>
-		    <th>Dil</th>
-		    <th>Seviye</th>
+		    <th bgcolor="#303030"><font color="white"> Dil</font></th>
+		    <th bgcolor="#303030"><font color="white"> Seviye</font></th>
+		    <th bgcolor="#303030"> </th>
 		 </tr>
 		{% for key, LanguageName, Level,Personid  in language %}
 		<tr>
-			<td> {{ LanguageName }} </td>
-			<td> {{ Level }} </td>
-			<td>
+			<td bgcolor="#F0F0F0" > {{ LanguageName }} </td>
+			<td bgcolor="#F0F0F0" >{{ Level }} </td>
+			<td bgcolor="#F0F0F0" >
 			<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="DeleteLanguage" type="submit">Sil</button>
+							<button class="btn btn-error" name="DeleteLanguage" type="submit">Sil</button>
 			</form>
 			<form action="{{url_for('profil_page',personid=personid)}}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="UpdateLanguage" type="submit">Duzenle</button>
+							<button class="btn btn-warning" name="UpdateLanguage" type="submit">Duzenle</button>
 			</form>
 			</td>
 		</tr>
-	{% endfor %}
+		{% endfor %}
 	</table>
 	
+	
+<button class="btn btn-success" id='button3'>Yeni Dil Ekle & Ara</button>
+ 
+ <div id="dilDiv">
 	<div class="page-header">
   		<h1>Dil Ekle</h1>
 	</div>
 	<form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form">
-		<div class="col-sm-3">
+		<div class="col-sm-3" style="background-color:#F0F0F0">
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="LanguageName">Dil:</label>
@@ -171,24 +223,80 @@
 			<div class="form-group">
 			 	<div class="row">
 				  	<label class="control-label" for="Level">Seviye:</label>
-					<input type="text" style="color:black" name="Level" class="form-control"  />
+				  	 <select name="Level">
+					    <option value="Temel ">Temel </option>
+					    <option value="Orta">Orta</option>
+					    <option value="Ileri">Ileri</option>
+					  </select>
 				</div>
 			</div> <!-- End of form-group -->
 			
 			
 			<br>
 			<div class="pull-right">
-	      		<button name="AddLanguage" type="submit" class="btn btn-default">Ekle</button>
+	      		<button class="btn btn-primary" name="AddLanguage" type="submit" class="btn btn-default">Ekle</button>
+	      		
+			<br></br>
+			<br></br>
 			</div> <!-- End of form-group -->
 		</div>
 	 </form>
 	 
-	 <div class="col-sm-3">
+	 <div class="col-sm-3" style="background-color:#F0F0F0">
 	 	<form action ="{{url_for('profil_page',personid=personid)}}" method="post">
   			<b>Dil Ara:</b><br>
   			<input type="text" style="color:black" name="LanguageName">&nbsp
- 			<input type="submit"  value="Ara" name="SearchLanguage">
+ 			<input class="btn btn-primary" type="submit"  value="Ara" name="SearchLanguage">
 		</form>
 	 </div>
+	 
+	</div>
+	 
+	 <script>
+	 
+	    var div1 = document.getElementById('tecrubeDiv');
+        div1.style.display = 'none';
+
+	    var div2 = document.getElementById('egitimDiv');
+        div2.style.display = 'none';
+
+	    var div3 = document.getElementById('dilDiv');
+        div3.style.display = 'none';
+
+	    
+	 
+	 var button1 = document.getElementById('button1');
+	 button1.onclick = function() {
+		    var div = document.getElementById('egitimDiv');
+		    if (div.style.display !== 'none') {
+		        div.style.display = 'none';
+		    }
+		    else {
+		        div.style.display = 'block';
+		    }
+		};
+		
+		var button2 = document.getElementById('button2');
+		 button2.onclick = function() {
+			    var div = document.getElementById('tecrubeDiv');
+			    if (div.style.display !== 'none') {
+			        div.style.display = 'none';
+			    }
+			    else {
+			        div.style.display = 'block';
+			    }
+			};
+			
+			var button3 = document.getElementById('button3');
+			 button3.onclick = function() {
+				    var div = document.getElementById('dilDiv');
+				    if (div.style.display !== 'none') {
+				        div.style.display = 'none';
+				    }
+				    else {
+				        div.style.display = 'block';
+				    }
+				};
+	</script>
 
   {% endblock %}

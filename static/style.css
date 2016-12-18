@@ -3215,6 +3215,10 @@ CANVAS PAGE STYLE
     margin-top: 20px;
 }
 
+p.three {
+    border-style: solid;
+    border-color: #ff0000 #00ff00 #0000ff;
+}
 
 
 

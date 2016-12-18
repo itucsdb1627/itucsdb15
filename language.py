@@ -81,8 +81,16 @@ def searchlanguage(personid):
             connection.commit() 
             language = [(key, LanguageName,Level,personid )
                         for key, LanguageName, Level,personid  in cursor]
-            return language
-
+            return language   
+        
+def show_language_update_value(languageid): 
+            connection = dbapi2.connect(app.config['dsn'])
+            cursor = connection.cursor()
+            cursor.execute( "SELECT * FROM LANGUAGE WHERE ID= %s",(languageid,))
+            connection.commit() 
+            UpdateLanguageValue = [(key, LanguageName,Level,personid )
+                        for key, LanguageName, Level,personid  in cursor]
+            return UpdateLanguageValue
 
 @app.route('/language/deletedb')
 def  deletelanguage_db():
