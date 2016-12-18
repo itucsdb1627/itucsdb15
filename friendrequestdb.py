@@ -33,25 +33,43 @@ def baglantilar_page(personid):
 
 
 
-        connection = dbapi2.connect(app.config['dsn'])
-        cursor = connection.cursor()
-        cursor.execute("""
-        SELECT * FROM  FRIENDREQUEST WHERE REQUESTID=%s""",(personid,))
-        backupmaindata2=cursor.fetchall()
+       # connection = dbapi2.connect(app.config['dsn'])
+        #cursor = connection.cursor()
+        #cursor.execute("""
+        #SELECT PERSONID FROM  FRIENDREQUEST WHERE REQUESTID=%s""",(personid,))
+        #backupmaindata2=cursor.fetchall()
+        #connection.commit()
+        #try:
+        #    ideatoname=backupmaindata2[0]
+        #except IndexError:
+        #   ideatoname=333
+        #connection=dbapi2.connect(app.config['dsn'])
+        #cursor=connection.cursor()
+        #cursor.execute("""SELECT ID,NAME,SURNAME FROM MAINDATA WHERE ID=%s""",(ideatoname,))
+        #connection.commit()
+        #backupmaindata4=cursor.fetchall()
+        #maindata4=[(key2,name,surname)
+         #          for key2,name,surname in cursor]
+
+        connection=dbapi2.connect(app.config['dsn'])
+        cursor=connection.cursor()
+        cursor.execute("""SELECT FRIENDREQUEST.PERSONID,MAINDATA.NAME,MAINDATA.SURNAME
+        FROM FRIENDREQUEST INNER JOIN MAINDATA ON FRIENDREQUEST.PERSONID=MAINDATA.ID WHERE REQUESTID=%s""",(personid))
+        backupmaindata4=cursor.fetchall()
         connection.commit()
-        maindata2 = [(key,requestid)
-                for key,requestid in cursor]
+        maindata4=[(key2,name,surname)
+                    for key2,name,surname in cursor]
 
         connection = dbapi2.connect(app.config['dsn'])
         cursor = connection.cursor()
         cursor.execute("""
-        SELECT * FROM  FRIENDLIST WHERE PERSONID=%s""",(personid,))
+        SELECT FRIENDLIST.FRIENDID,MAINDATA.ID,MAINDATA.NAME,MAINDATA.SURNAME,FRIENDLIST.TITLE FROM  FRIENDLIST INNER JOIN MAINDATA ON FRIENDLIST.FRIENDID=MAINDATA.ID WHERE PERSONID=%s""",(personid,))
         backupmaindata3=cursor.fetchall()
         connection.commit()
-        maindata3 = [(key1,requestid,title)
-                for key1,requestid,title in cursor]
+        maindata3 = [(key1,requestid,name,surname,title)
+                for key1,requestid,name,surname,title in cursor]
 
-        return render_template('baglantilar.html',personid=personid,maindata=backupmaindata,maindata2=backupmaindata2,maindata3=backupmaindata3)
+        return render_template('baglantilar.html',personid=personid,maindata=backupmaindata,maindata3=backupmaindata3,maindata4=backupmaindata4)
 
 
 

@@ -1,6 +1,6 @@
   {% extends "layoutsignin.html" %}
   {% block content %}
-        
+
       <div class="col-sm-7">
       <div class="position-rigth-center col-md-10">
          <form action="{{ url_for('signin_page')}}" method= "POST">
@@ -11,19 +11,19 @@
        Sifre: <br>
        <input type="password" style="color:black" name="password"> <br>
        <br>
-       <button style="height:50px;width:100px" type="submit" name="Submit" value="register">Giris</button>
+       <button style="height:50px;width:100px" type="submit" name="Submit" value="register" class="btn btn-info">Giris Yap</button>
 		</form>
 		</div>
   	</div>
 
 
-			
 
 
 
 
-              
-				
+
+
+
 
 
 {% endblock %}

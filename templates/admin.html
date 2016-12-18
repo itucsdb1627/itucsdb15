@@ -44,13 +44,14 @@
 	 Silmek istediginiz e-postayi giriniz:
 
 	 <input type="text" name="email" class="form-control"  required autofocus/>
-	<input style="height:50px;width:100px" type="submit" name="Delete" value="Sil"></>
+	<input style="height:50px;width:100px" type="submit" name="Delete"
+	class="btn btn-error" value="Sil"></>
 </form>
  <br>
     <form action= "{{ url_for('search_user')}}" method="POST")>
        Guncellemek istediginiz e-postayı giriniz:
      <input type="text" name="emailaddress" >
-	 <input style="height:50px;width:100px" type="submit" name="search" value="Ara& Guncelle"></button>
+	 <input style="height:50px;width:100px" type="submit" name="search" class="btn btn-warning" value="Ara& Guncelle"></button>
 
 
 

@@ -2,7 +2,7 @@
   {% block content %}
 
 <form>
-	<table class=table  border="2px">
+	<table class="table-striped"  border="2px">
 		<tr>
 
 			<h1>ARKADAS ONERILERI</h1>
@@ -21,7 +21,16 @@
 			<td>
 			<form action="{{ url_for('baglantilar_page',personid=personid,key=key) }}" method="post" role="form" style="display: inline">
 							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="AddRequest" type="submit"  >Arkadaslik Istegi Gonder</button>
+
+							<input class="btn btn-info" onclick="change({{key}})" name="AddRequest" type="submit" value="Arkadaslik Istegi Gonder" id="{{key}}" ></input>
+							<script>
+							function change(key)
+							{
+							document.getElementById(key).value="Istek Gonderildi";
+							}
+
+
+							</script>
 			</form>
 
 			</td>
@@ -35,23 +44,23 @@
 
 			<h1>GELEN BAGLANTI ISTEKLERI</h1>
 
-			<th>ID</th>
+			<th>Isým Soyisim</th>
 			<th>Secenekler</th>
 
 	</tr>
-		{% for key,requestid in maindata2 %}
+		{% for key2,name,surname in maindata4 %}
 
 
-			<td>{{key}}</td>
+			<td> {{name}} {{surname}}</td>
 		   <td>
-		   <form action="{{ url_for('baglantilar_page',personid=personid,key=key,title=title) }}" method="post" role="form" style="display: inline">
-							<input value="{{key}}" name="id" type="hidden" />
+		   <form action="{{ url_for('baglantilar_page',personid=personid,key=key2,title=title) }}" method="post" role="form" style="display: inline">
+							<input value="{{key2}}" name="id" type="hidden" />
 							<input type="text" style="color:black" name="title" <br>
-							<button class="btn btn-default" name="AddFriend" type="submit"  >Title Ekle&Onayla</button>
+							<button class="btn btn-primary" name="AddFriend" type="submit"  >Title Ekle&Onayla</button>
 			</form>
-		   <form action="{{ url_for('baglantilar_page',personid=personid,key=key) }}" method="post" role="form" style="display: inline">
-							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="DeleteRequest" type="submit"  >Arkadaslik Istegini Sil</button>
+		   <form action="{{ url_for('baglantilar_page',personid=personid,key=key2) }}" method="post" role="form" style="display: inline">
+							<input value="{{key2}}" name="id" type="hidden" />
+							<button class="btn btn-error" name="DeleteRequest" type="submit"  >Arkadaslik Istegini Sil</button>
 			</form>
 			</td>
 
@@ -70,24 +79,24 @@
 	<tr>
 			<h1>BAGLANTILAR</h1>
 
-			<th>ID</th>
+			<th>Isým Soyisim</th>
 			<th>Unvan</th>
 			<th>Secenekler</th>
 
 	</tr>
-		{% for key1,requestid,title in maindata3 %}
+		{% for key1,requestid,name,surname,title in maindata3 %}
    <tr>
 
-			<td>{{requestid}}</td>
+			<td>{{name}} {{surname}}</td>
 			<td>{{title}}</td>
 		   <td>
 		   <form action="{{ url_for('baglantilar_page',personid=personid,requestid=requestid) }}" method="post" role="form" style="display: inline">
 							<input value="{{requestid}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="DeleteFriend" type="submit"  >Arkadasi Sil</button>
+							<button class="btn btn-error" name="DeleteFriend" type="submit"  >Arkadasi Sil</button>
 			</form>
 		   <form action="{{ url_for('baglantilar_guncelle',personid=personid,key1=key1,requestid=requestid) }}" method="post" role="form" style="display: inline">
 							<input value="{{key1}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="UpdateFriend" type="submit"  >Arkadasi Guncelle</button>
+							<button class="btn btn-warning" name="UpdateFriend" type="submit"  >Arkadasi Guncelle</button>
 			</form>
 			</td>
          </tr>

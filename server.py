@@ -50,10 +50,13 @@ def signin_page():
         password = request.form['password']
         connection = dbapi2.connect(app.config['dsn'])
         cursor = connection.cursor()
-        cursor.execute("SELECT ID FROM MAINDATA WHERE EMAIL=%s AND  PASSWORD=%s",(email,password))
+        cursor.execute("SELECT ID,NAME,SURNAME FROM MAINDATA WHERE EMAIL=%s AND  PASSWORD=%s",(email,password))
         idd= cursor.fetchone()
         personid=idd[0]
-        return render_template('home.html', personid = personid)
+        personname=idd[1]
+        personsurname=idd[2]
+
+        return render_template('home.html',personid=personid, personname = personname,personsurname=personsurname)
     elif request.method == 'GET':
         return render_template('signin.html')
 
