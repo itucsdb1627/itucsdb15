@@ -47,14 +47,14 @@ I. Ekleme İşlemi
 	
 	..figure:: Zeynep/eklemeislemi.jpg
 	
-	Yeni oluşturulan ilanın görüntülenmesi sayfada iki alanda olur. 
+Yeni oluşturulan ilanın görüntülenmesi sayfada iki alanda olur. 
 
-	Birincisi; kullanıcının kendi iş ilanları arasında; 
+Birincisi; kullanıcının kendi iş ilanları arasında; 
 	
 	..figure:: Zeynep/eklemeislemisonrasıtablo.jpg
 	
 	
-	İkincisi ise; diğer bütün ilanlar arasında eklenen ilan görüntülenir. 
+İkincisi ise; diğer bütün ilanlar arasında eklenen ilan görüntülenir. 
 
 	..figure:: Zeynep/eklemeislemisonrasıgeneltablo.jpg
 	
@@ -67,19 +67,19 @@ II. Gücelleme İşlemi
 	..figure:: Zeynep/duzenlebutonu.jpg
 	
 	
-	Bu butona tıkladığında düzenle yapabilmesi için yeni bir sayfa açılır. Bu sayfada yer alan alanları istediği şekilde güncelleyerek "Kaydet" butonuna tıklamalıdır. 
+Bu butona tıkladığında düzenle yapabilmesi için yeni bir sayfa açılır. Bu sayfada yer alan alanları istediği şekilde güncelleyerek "Kaydet" butonuna tıklamalıdır. 
 
 	..figure:: Zeynep/duzenlemeislemi.jpg
 	
 	
-	Bu işlemden sonra kullanıcı tekrar tabloların bulunduğu "İşler" sayfasına yönlendirilir ve ilgili değişiklikler iki alanda görülebilir. 
+Bu işlemden sonra kullanıcı tekrar tabloların bulunduğu "İşler" sayfasına yönlendirilir ve ilgili değişiklikler iki alanda görülebilir. 
 	
-	Birincisi; kullanıcının kendi iş ilanları arasında;
+Birincisi; kullanıcının kendi iş ilanları arasında;
 	
 	..figure:: Zeynep/duzenlemeislemisonrasitablo.jpg
 	
 	
-	İkincisi ise; diğer bütün ilanlar arasında güncellenen ilan görüntülenir.
+İkincisi ise; diğer bütün ilanlar arasında güncellenen ilan görüntülenir.
 	
 	..figure:: Zeynep/duzenlemeislemisonrasigeneltablo.jpg
 	
@@ -92,14 +92,14 @@ III. Silme İşlemi
 	.figure:: Zeynep/silbutonu.jpg
 	
 	
-	Silme işlemi gerçektikten sonra ilgili verilerin olmadığı iki alanda da görülebilir. 
+Silme işlemi gerçektikten sonra ilgili verilerin olmadığı iki alanda da görülebilir. 
 	
 	Birincisi; kullanıcının kendi iş ilanları tablosunda;
 	
 	.figure:: Zeynep/silmeislemisonrasitablo.jpg
 	
 	
-	İkincisi ise; diğer bütün ilanların listelendiği alanda; 
+İkincisi ise; diğer bütün ilanların listelendiği alanda; 
 	
 	.figure:: Zeynep/silmeislemisonrasigeneltablo.jpg
 	
