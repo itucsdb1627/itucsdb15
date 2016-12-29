@@ -36,7 +36,8 @@ kullanıcı okul adı, başlangış tarihi, bitiş tarihi ve not bilgilerini gir
 
 Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
-.. figure:: zihni/EğitimTablosuEklemeGözlemleme.jpg
+.. figure:: zihni/EğitimTablosuEklemeGözlemle.jpg
+
       :scale: 100 %
 
       *Ekran Görüntüsü 4: Eğitim Tablosu Ekleme Sonrası*
@@ -53,7 +54,7 @@ Kullanıcı eğitim tablosundaki herhangi bir bilgiyi silmek istediğinde eğiti
 
 Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
-.. figure:: zihni/EğitimTablosuSilmeGözlemleme.jpg
+.. figure:: zihni/EğitimTablosuSilmeGözlemle.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 6: Eğitim Tablosu Silme Sonrası*
@@ -276,7 +277,7 @@ kullanıcı bulmak istediği dil bilgisi için "Dil Ara" başlığı altındaki 
 
 Tıklamadan sonra kullanıcı dil tablosunda sonuçları gözlemleyebilir.
 
-.. figure:: zihni/TecrübeTablosuAramaSonrası.jpg
+.. figure:: zihni/DilTablosuAramaSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 31: Dil Tablosu Arama Sonrası*
