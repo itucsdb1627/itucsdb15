@@ -26,7 +26,7 @@ Kullanıcı bu tabloda eğitim bilgisi ekleyebilir, düzenleyebilir , silebilir 
 1.1 Ekleme İşlemi
 -----------------
 
-Kullanıcı yeni bir eğitim bilgisi girmek istedğinde tablonun hemen altındaki "YENI OKUL EKLE & ARA" butonuna tıklar. Tıkladıktan sonra tablonun altına açılan formda
+Kullanıcı yeni bir eğitim bilgisi girmek istediğinde tablonun hemen altındaki "YENI OKUL EKLE & ARA" butonuna tıklar. Tıkladıktan sonra tablonun altına açılan formda
 kullanıcı okul adı, başlangış tarihi, bitiş tarihi ve not bilgilerini girerek "EKLE" butonuna tıklar.
 
 .. figure:: zihni/EğitimTablosuEkleme.jpg
@@ -62,7 +62,7 @@ Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 1.3 Düzenleme İşlemi
 --------------------
 
-Kullanıcı eğitim tablosundaki herhangi bir bilgiyi düzenleme istediğinde eğitim tablosunun sağ tarafındaki "DÜZENLE" butonuna tıklar.
+Kullanıcı eğitim tablosundaki herhangi bir bilgiyi düzenlemek istediğinde eğitim tablosunun sağ tarafındaki "DÜZENLE" butonuna tıklar.
 
 .. figure:: zihni/EğitimTablosuDüzenleme.jpg
       :scale: 100 %
@@ -145,7 +145,7 @@ Kullanıcı tecrübe tablosundaki herhangi bir bilgiyi silmek istediğinde tecr�
 
 Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
-.. figure:: zihni/TecrübeTablosuSilmeSonrası.jpg
+.. figure:: zihni/TecrübeTablosuSilmeGözlemle.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 16: Tecrübe Tablosu Silme Sonrası*
@@ -155,14 +155,14 @@ Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
 Kullanıcı tecrübe tablosundaki herhangi bir bilgiyi düzenleme istediğinde tecrübe tablosunun sağ tarafındaki "DÜZENLE" butonuna tıklar.
 
-.. figure:: zihni/TecrübeTablosuArama.jpg
+.. figure:: zihni/TecrübeTablosuDüzenleme.jpg
       :scale: 100 %
 
-      *Ekran Görüntüsü 17: Tecrübe Tablosu Arama *
+      *Ekran Görüntüsü 18: Tecrübe Tablosu Düzenleme Sayfası *
 
 Tıklamadan sonra kullanıcı düzenleme sayfasına yönlendirilir.
 
-.. figure:: zihni/TecrübeTablosuDüzenleme.jpg
+.. figure:: zihni/TecrübeTablosuDüzenlemeSayfası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 18: Tecrübe Tablosu Düzenleme Sayfası *

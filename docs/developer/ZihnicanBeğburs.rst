@@ -1,5 +1,5 @@
 #############################################
-Zihni Beğburs tarafından Gerçeklenen Kısımlar
+Zihni Beğburs Tarafından Gerçeklenen Kısımlar
 #############################################
 
 Profil Sayfası 3 tablodan oluşmaktadır. Bu tablolar Education, Experience ve Languages tablolarıdır.
