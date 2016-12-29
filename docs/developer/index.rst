@@ -23,6 +23,7 @@ Maindata tablosu 5 niteliğe sahiptir. Bu nitelikler ID,email,password,name ve s
 sistemde kullanılmaktadır. Maindata tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
 
 .. code-block:: sql
+
       CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,
       PASSWORD VARCHAR(50) NOT NULL,NAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50)
       NOT NULL,UNIQUE(EMAIL))
@@ -31,6 +32,7 @@ FriendRequest tablosu 2 niteliğe sahiptir.Bu nitelikler personid ve friendreque
 dış anahtarı ile Maindata tablosuna bağlıdır. FriendRequest tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
 
 .. code-block:: sql
+
     CREATE TABLE FRIENDREQUEST
     (PERSONID INTEGER,REQUESTID INTEGER,
     FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID) ON
@@ -41,6 +43,7 @@ FriendList tablosu 3 niteliğe sahiptir.Bu nitelikler personid,friendid ve title
 dış anahtarı ile Maindata tablosuna bağlıdır. FriendList tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
 
 .. code-block:: sql
+
     CREATE TABLE FRIENDLIST(PERSONID INTEGER,FRIENDID INTEGER,TITLE VARCHAR(50),
     FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID)
     ON DELETE CASCADE ON UPDATE CASCADE )
