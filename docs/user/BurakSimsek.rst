@@ -5,8 +5,8 @@ Kayıt Sayfası
 Kullanıcı itucsdb1627.mybluemix.net sayfasına girdikten sonra sağ üstte bulunan "Kayıt Ol" sekmesine tıklayarak Bnetwork adlı sosyal medya
 sitesinin kayıt olma ekranına gelir. Burada gerekli bilgileri doldurduktan sonra "Kayıt Ol" butonuna basarak üyeliğini gerçekler.
 
-..figure:: BurakImages/kayitekrani.PNG
-:figclass: align-center
+.. figure:: BurakImages/kayitekrani.PNG
+   :figclass: align-center
 
 Kayıt Olma Ekranı
 Kullanıcı sitemize üye olduktan sonra ana sayfadan üye olurken doldurduğu e-mail ve şifre bilgilerini kullanarak üye  girişi yapar.
@@ -24,8 +24,8 @@ Kullanıcı bağlantılar sayfasına girdiğinde karşısına 3 farklı kısım 
 3.Bağlantılar
 
 
-..figure:: BurakImages/baglantilaranasayfa.PNG
-:figclass: align-center
+.. figure:: BurakImages/baglantilaranasayfa.PNG
+   :figclass: align-center
 
 Bağlantılar Sayfası
 
@@ -34,8 +34,8 @@ Bağlantılar Sayfası
 Yeni üye olan kullanıcı bağlantılar sayfasından arkadaş önerilerini görür ve eğer isterse tanıdığı kişilere isimlerinin yanında bulunan "Arkadaşlık
 İsteği Gönder" butonuna tıklayarak arkadaşlık isteği gönderebilir.
 
-..figure::BurakImages/arkadasonerileri.PNG
-:figclass: align-center
+.. figure:: BurakImages/arkadasonerileri.PNG
+   :figclass: align-center
 
 Arkadaş Önerileri Bölümü
 
@@ -45,8 +45,8 @@ Bağlantılar Sayfasında arkadaş önerileri kısmının altında Gelen Bağlan
 bağlantı kurma istekleri yer almaktadır. Kullanıcı gelen bağlantı isteklerinin yanındaki butonları kullanarak bu kişiyi bağlantı olarak ekleyebilir
 ya da bağlantı kurma isteğini reddedebilir.
 
-..figure:: BurakImages/friendrequest.PNG
-:figclass: align-center
+.. figure:: BurakImages/friendrequest.PNG
+   :figclass: align-center
 
 Bağlantı İstekleri Bölümü
 Reddetmesi veya kabul etmesi durumunda bu istek sayfadan silinir. Aynı zamanda kullanıcı bu isteği kabul
@@ -58,15 +58,16 @@ Kullanıcı eğer "Gelen Bağlantı İstekleri" kısmından gelen bir isteği on
 istek kabul edildiyse isteğin kabul edildiği kişiyle bağlantı kurmuş olur. Bağlantı kurmuş olduğu kişiler kendileri tarafından eklenen ünvanla bağlantılar sekmesinin
 altında bulunmaktadır.
 
-..figure:: BurakImages/baglantilarkismi.PNG
-:figclass: align-center
+.. figure:: BurakImages/baglantilarkismi.PNG
+   :figclass: align-center
 
 Bağlantılar Bölümü
 Kullanıcı bu tabloda bağlantılarının isimlerinin yanında bulunan Güncelle butonunu kullanarak bağlantısının kendisi tarafından verilen ünvanını
 günceller.
 
-..figure:: BurakImages/baglantiguncelleme.PNG
-:figclass: align-center
+.. figure:: BurakImages/baglantiguncelleme.PNG
+   :figclass: align-center
+
 
 Bağlantı Güncelleme Sayfası
 Veya "Arkadasi Sil" butonunu kullanarak bağlantısını bağlantı listesinden kaldırır.
@@ -76,8 +77,8 @@ Admin Sayfası
 Admin sayfası web uygulamasının yöneticisi için tasarlanmış bir sayfadır. Bu sayfa üzerinde web uygulamasına üye olmuş tüm kullanıcılar görünmekte ve bu kullanılara ait
 üyelik bilgileri güncellenebilmekte ya da üyelikleri silinebilmektedir.
 
-..figure:: BurakImages/admin.PNG
-:figclass: align-center
+.. figure:: BurakImages/admin.PNG
+   :figclass: align-center
 
 Admin Sayfası
 
@@ -86,8 +87,8 @@ Admin Sayfası
 Sitenin yöneticisi, gerekli hallerde kullanıcılara ait bilgileri,kullanıcının e-posta bilgisini kullanarak güncelleyebilmektedir. Gerekli olan
 e-posta alanını geçerli bir e-posta ile doldurduktan sonra güncelle butonunu kullanarak güncelleme sayfasına geçmekte,buradan gerekli alanları doldurarak güncelleme yapabilmektedir.
 
-..figure:: BurakImages/adminguncelleme.PNG
-:figclass: align-center
+.. figure:: BurakImages/adminguncelleme.PNG
+   :figclass: align-center
 
 Kullanıcı Bilgilerini Güncelleme
 
@@ -95,8 +96,9 @@ Kullanıcı Bilgilerini Güncelleme
 
 Sitenin yöneticisi,yine gerekli hallerde siteye kayıtlı kullanıcıyı,kullanıcının elektronik postasını gerekli alana yazarak ve ardından sil
 tuşuna basarak silme işlemini gerçekleyebilir.
-..figure:: BurakImages/adminsilme.PNG
-:figclass: align-center
+
+.. figure:: BurakImages/adminsilme.PNG
+   :figclass: align-center
 
 Kullanıcı Bilgilerini Güncelleme
 
