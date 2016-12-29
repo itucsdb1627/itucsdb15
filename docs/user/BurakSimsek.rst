@@ -8,7 +8,7 @@ sitesinin kayıt olma ekranına gelir. Burada gerekli bilgileri doldurduktan son
 .. figure:: Burak/kayitekrani.PNG
    :figclass: align-center
    :alt: Ekran Görüntüsü 1 :Kayıt Olma Ekranı
-   *Ekran Görüntüsü 1 :Kayıt Olma Ekranı*
+    *Ekran Görüntüsü 1 :Kayıt Olma Ekranı*
 
 Kullanıcı sitemize üye olduktan sonra ana sayfadan üye olurken doldurduğu e-mail ve şifre bilgilerini kullanarak üye  girişi yapar.
 Kullanıcı giriş yaptıktan sonra 4 farklı işlem yapabilir.Kullanıcı  "Bağlantılar" sayfasına tıklayarak bağlantılar sayfasına ulaşır.
@@ -28,7 +28,7 @@ Kullanıcı bağlantılar sayfasına girdiğinde karşısına 3 farklı kısım 
 .. figure:: Burak/baglantilaranasayfa.PNG
    :figclass: align-center
    :alt: Ekran Görüntüsü 2 :Bağlantılar Sayfası
-   *Ekran Görüntüsü 2 :Bağlantılar Sayfası*
+    *Ekran Görüntüsü 2 :Bağlantılar Sayfası*
 
 
 **Arkadaş Önerileri**
@@ -50,7 +50,7 @@ ya da bağlantı kurma isteğini reddedebilir.
 .. figure:: Burak/friendrequest.PNG
    :figclass: align-center
    :alt: Ekran Görüntüsü 4 :Bağlantı İstekleri Bölümü
-    **
+    *Ekran Görüntüsü 4 :Bağlantı İstekleri Bölümü*
 
 Reddetmesi veya kabul etmesi durumunda bu istek sayfadan silinir. Aynı zamanda kullanıcı bu isteği kabul
 etme sırasında isteği gönderen kişinin isminin yanındaki ünvan kısmını doldurarak o kişiyi bir ünvanla kendi bağlantılar listesine ekleyebilir.
@@ -64,7 +64,7 @@ altında bulunmaktadır.
 .. figure:: Burak/baglantilarkismi.PNG
    :figclass: align-center
    :alt: Ekran Görüntüsü 5 :Bağlantılar Bölümü
-    **
+      *Ekran Görüntüsü 5 :Bağlantılar Bölümü*
 
 Kullanıcı bu tabloda bağlantılarının isimlerinin yanında bulunan Güncelle butonunu kullanarak bağlantısının kendisi tarafından verilen ünvanını
 günceller.
@@ -72,7 +72,7 @@ günceller.
 .. figure:: Burak/baglantiguncelleme.PNG
    :figclass: align-center
    :alt: Ekran Görüntüsü 6 :Bağlantı Güncelleme Sayfası
-   *Ekran Görüntüsü 6 :Bağlantı Güncelleme Sayfası*
+    *Ekran Görüntüsü 6 :Bağlantı Güncelleme Sayfası*
 
 Veya "Arkadasi Sil" butonunu kullanarak bağlantısını bağlantı listesinden kaldırır.
 
@@ -84,7 +84,7 @@ Admin sayfası web uygulamasının yöneticisi için tasarlanmış bir sayfadır
 .. figure:: Burak/admin.PNG
    :figclass: align-center
    :alt: Ekran Görüntüsü 7 :Admin Sayfası
-   *Ekran Görüntüsü 7 :Admin Sayfası*
+     *Ekran Görüntüsü 7 :Admin Sayfası*
 
 
 **Güncelleme**
@@ -94,7 +94,7 @@ e-posta alanını geçerli bir e-posta ile doldurduktan sonra güncelle butonunu
 
 .. figure:: Burak/adminguncelleme.PNG
    :figclass: align-center
-    :alt: Ekran Görüntüsü 8 :Kullanıcı Bilgilerini Güncelleme
+   :alt: Ekran Görüntüsü 8 :Kullanıcı Bilgilerini Güncelleme
      *Ekran Görüntüsü 8 :Kullanıcı Bilgilerini Güncelleme*
 
 
