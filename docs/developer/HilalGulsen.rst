@@ -259,7 +259,7 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 
    ilgialanlari_page fonksiyonuna geldiğinde aşağıdaki kodla deletegrup_page fonksiyonuna gönderilir.
 
-   ..code-block:: python
+   .. code-block:: python
 
          elif 'Delete' in request.form:
                      deletegrup_page(personid)
@@ -340,7 +340,7 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 
    ilgialanlari_page fonksiyonuna geldiğinde aşağıdaki kodla searchgrup_page fonksiyonuna gönderilir.
 
-   ..code-block:: python
+   .. code-block:: python
 
         elif 'Search' in request.form:
             grup=searchgrup_page(personid)
@@ -410,7 +410,7 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 
    ilgialanlari_page fonksiyonuna geldiğinde aşağıdaki kodla deletepublishes_page fonksiyonuna gönderilir.
 
-   ..code-block:: python
+   .. code-block:: python
 
         elif 'Deletepublishes' in request.form:
             deletepublishes_page(personid)
@@ -440,7 +440,7 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 
    ilgialanlari_page fonksiyonuna geldiğinde aşağıdaki kodla updatepublishes_page fonksiyonuna gönderilir.
 
-   ..code-block:: python
+   .. code-block:: python
 
         elif 'Updatepublishes' in request.form:
             publishesid=updatepublishes_page(personid)
@@ -491,7 +491,7 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 
    ilgialanlari_page fonksiyonuna geldiğinde aşağıdaki kodla searchpublishes_page fonksiyonuna gönderilir.
 
-   ..code-block:: python
+   .. code-block:: python
 
         elif 'Searchpublishes' in request.form:
             publishes=searchpublishes_page(personid)
@@ -560,7 +560,7 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 
    ilgialanlari_page fonksiyonuna geldiğinde aşağıdaki kodla deleteactivities_page fonksiyonuna gönderilir.
 
-   ..code-block:: python
+   .. code-block:: python
 
         elif 'Deleteactivities' in request.form:
             deleteactivities_page(personid)
@@ -590,7 +590,7 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 
    ilgialanlari_page fonksiyonuna geldiğinde aşağıdaki kodla updateactivities_page fonksiyonuna gönderilir.
 
-   ..code-block:: python
+   .. code-block:: python
 
         elif 'Updateactivities' in request.form:
             activitiesid=updateactivities_page(personid)
@@ -640,7 +640,7 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 
    ilgialanlari_page fonksiyonuna geldiğinde aşağıdaki kodla searchactivities_page fonksiyonuna gönderilir.
 
-   ..code-block:: python
+   .. code-block:: python
 
         elif 'Searchactivities' in request.form:
             activities=searchactivities_page(personid)
