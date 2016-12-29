@@ -1,22 +1,13 @@
-User Guide
-==========
+Kullanıcı Kılavuzu
+==================
 
-**explain how your application works from the user perspective, use
-screenshots whereever appropriate**
+Bu kılavuz kullanıcılar için projemizi açıklamaktadır.
 
-**to add a picture, use the following example**::
-
-   .. figure:: picture.png
-      :scale: 50 %
-      :alt: map to buried treasure
-
-      This is the caption of the figure (a simple paragraph).
+Her takım üyesi aşağıda kendi kısımlarına değinmektedir.
 
 .. toctree::
 
-   member1
-   member2
-   member3
-   member4
-   member5
-   
+   BurakSimsek
+   ZihnicanBeğburs
+   HilalGulsen
+   ZeynepAnkara

@@ -1,17 +1,29 @@
-Welcome to itucsdb's documentation!
-===================================
+itucsdb1627'nin dokümantasyonuna hoşgeldiniz!
+=============================================
 
-:Team: Team Name
+:Takım: itucsdb1627
 
-:Members:
+:Üyeler:
 
-   * Member 1
-   * Member 2
-   * Member 3
-   * Member 4
-   * Member 5
+   * Burak Şimşek
+   * Zihnican Beğburs
+   * Hilal Gülşen
+   * Zeynep Ankara
 
-**project description goes here (a few paragraphs)**
+
+Projemizin amacı sosyal iletişim platformu oluşturmaktır.
+
+Projemiz birbirleriyle ilişkili 4 ana bölümden oluşmaktadır.
+
+Bu bölümler:
+
+*Bağlantılar
+
+*Profil
+
+*İlgi Alanları
+
+*İşler
 
 Contents:
 
