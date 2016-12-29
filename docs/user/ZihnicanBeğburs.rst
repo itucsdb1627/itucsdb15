@@ -5,7 +5,7 @@ Kullanıcı siteye şifre ve e-postasıyla giriş yaptıktan sonra profil sayfas
 Bu sayfa 3 ana tablodan oluşur. Bu tablolar eğitim bilgileri, tecrübe bilgileri ve dil bilgilerini içeren tablolardır. Kullanıcı bu sayfada bu bilgiler üzerinde
 Ekleme,Arama,Silme ve Düzenleme işlemlerini gerçekleştirebilir.
 
-.. figure:: zihni/ProfilSayfası.JPG
+.. figure:: zihni/ProfilSayfası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 1: Profil Sayfası*
@@ -15,7 +15,7 @@ Ekleme,Arama,Silme ve Düzenleme işlemlerini gerçekleştirebilir.
 
 Bu tablo kişini eğitim bilgilerini içeren tablodur.
 
-.. figure:: zihni/EğitimTablosu.JPG
+.. figure:: zihni/EğitimTablosu.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 2: Eğitim Tablosu*
@@ -29,14 +29,14 @@ Kullanıcı bu tabloda eğitim bilgisi ekleyebilir, düzenleyebilir , silebilir 
 Kullanıcı yeni bir eğitim bilgisi girmek istedğinde tablonun hemen altındaki "YENI OKUL EKLE & ARA" butonuna tıklar. Tıkladıktan sonra tablonun altına açılan formda
 kullanıcı okul adı, başlangış tarihi, bitiş tarihi ve not bilgilerini girerek "EKLE" butonuna tıklar.
 
-.. figure:: zihni/EğitimTablosuEkleme.JPG
+.. figure:: zihni/EğitimTablosuEkleme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 3: Eğitim Tablosu Ekleme*
 
 Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
-.. figure:: zihni/EğitimTablosuEklemeGözlemleme.JPG
+.. figure:: zihni/EğitimTablosuEklemeGözlemleme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 4: Eğitim Tablosu Ekleme Sonrası*
@@ -46,14 +46,14 @@ Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
 Kullanıcı eğitim tablosundaki herhangi bir bilgiyi silmek istediğinde eğitim bilgisinin sağ tarafındaki ona ait olan "SİL" butonuna tıklayarak veriyi tablodan siler.
 
-.. figure:: zihni/EğitimTablosuSilme.JPG
+.. figure:: zihni/EğitimTablosuSilme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 5: Eğitim Tablosu Silme*
 
 Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
-.. figure:: zihni/EğitimTablosuSilmeGözlemleme.JPG
+.. figure:: zihni/EğitimTablosuSilmeGözlemleme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 6: Eğitim Tablosu Silme Sonrası*
@@ -63,21 +63,21 @@ Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
 Kullanıcı eğitim tablosundaki herhangi bir bilgiyi düzenleme istediğinde eğitim tablosunun sağ tarafındaki "DÜZENLE" butonuna tıklar.
 
-.. figure:: zihni/EğitimTablosuDüzenleme.JPG
+.. figure:: zihni/EğitimTablosuDüzenleme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 7: Eğitim Tablosu Düzenleme*
 
 Tıklamadan sonra kullanıcı düzenleme sayfasına yönlendirilir.
 
-.. figure:: zihni/EğitimTablosuDüzenlemeSayfası.JPG
+.. figure:: zihni/EğitimTablosuDüzenlemeSayfası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 8: Eğitim Tablosu Düzenleme Sayfası*
 
 Düzenleme sayfasında kullanıcı değiştirmek istediği eğitim bilgisinin verilerini görür ve değiştirmek istediği veri veya verileri değiştirerek "DÜZENLE" butonuna tıklar. Tıklamadan sonra kullanıcı tekrar profil sayfasına yönlendirilir ve düzenlediği bilgiyi gözlemleyebilir.
 
-.. figure:: zihni/EğitimTablosuDüzenlemeSonrası.JPG
+.. figure:: zihni/EğitimTablosuDüzenlemeSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 9: Eğitim Tablosu Düzenleme Sonrası*
@@ -88,14 +88,14 @@ Düzenleme sayfasında kullanıcı değiştirmek istediği eğitim bilgisinin ve
 Kullanıcı eğitim tablosundaki bilgilerda arama yapmak istedğinde tablonun hemen altındaki "YENI OKUL EKLE & ARA" butonuna tıklar. Tıkladıktan sonra tablonun altına açılan formda
 kullanıcı bulmak istediği eğitim bilgisi için "Okul Ara" başlığı altındaki alana okul adını girer ve daha sonra "ARA" butonuna tıklar.
 
-.. figure:: zihni/EğitimTablosuArama.JPG
+.. figure:: zihni/EğitimTablosuArama.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 10: Eğitim Tablosu Arama*
 
 Tıklamadan sonra kullanıcı eğitim tablosunda sonuçları gözlemleyebilir.
 
-.. figure:: zihni/EğitimTablosuAramaSonrası.JPG
+.. figure:: zihni/EğitimTablosuAramaSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 11: Eğitim Tablosu Arama Sonrası*
@@ -106,7 +106,7 @@ Tıklamadan sonra kullanıcı eğitim tablosunda sonuçları gözlemleyebilir.
 
 Bu tablo kişini tecrübe bilgilerini içeren tablodur.
 
-.. figure:: zihni/TecrübeTablosu.JPG
+.. figure:: zihni/TecrübeTablosu.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 12: Tecrübe Tablosu*
@@ -120,14 +120,14 @@ Kullanıcı bu tabloda tecrübe bilgisi ekleyebilir, düzenleyebilir , silebilir
 Kullanıcı yeni bir tecrübe bilgisi girmek istediğinde tablonun hemen altındaki "YENI ŞİRKET EKLE & ARA" butonuna tıklar. Tıkladıktan sonra tablonun altına açılan formda
 kullanıcı şirket adı, başlangıç tarihi, bitiş tarihi ve pozisyon bilgilerini girerek "EKLE" butonuna tıklar.
 
-.. figure:: zihni/TecrübeTablosuEkleme.JPG
+.. figure:: zihni/TecrübeTablosuEkleme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 13: Tecrübe Tablosu Ekleme*
 
 Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
-.. figure:: zihni/TecrübeTablosuEklemeSonrası.JPG
+.. figure:: zihni/TecrübeTablosuEklemeSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 14: Tecrübe Tablosu Ekleme Sonrası*
@@ -137,14 +137,14 @@ Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
 Kullanıcı tecrübe tablosundaki herhangi bir bilgiyi silmek istediğinde tecrübe bilgisinin sağ tarafındaki ona ait olan "SİL" butonuna tıklayarak veriyi tablodan siler.
 
-.. figure:: zihni/TecrübeTablosuSilme.JPG
+.. figure:: zihni/TecrübeTablosuSilme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 15: Tecrübe Tablosu Silme*
 
 Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
-.. figure:: zihni/TecrübeTablosuSilmeSonrası.JPG
+.. figure:: zihni/TecrübeTablosuSilmeSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 16: Tecrübe Tablosu Silme Sonrası*
@@ -154,21 +154,21 @@ Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
 Kullanıcı tecrübe tablosundaki herhangi bir bilgiyi düzenleme istediğinde tecrübe tablosunun sağ tarafındaki "DÜZENLE" butonuna tıklar.
 
-.. figure:: zihni/TecrübeTablosuArama.JPG
+.. figure:: zihni/TecrübeTablosuArama.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 17: Tecrübe Tablosu Arama *
 
 Tıklamadan sonra kullanıcı düzenleme sayfasına yönlendirilir.
 
-.. figure:: zihni/TecrübeTablosuDüzenleme.JPG
+.. figure:: zihni/TecrübeTablosuDüzenleme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 18: Tecrübe Tablosu Düzenleme Sayfası *
 
 Düzenleme sayfasında kullanıcı değiştirmek istediği tecrübe bilgisinin verilerini görür ve değiştirmek istediği veri veya verileri değiştirerek "DÜZENLE" butonuna tıklar. Tıklamadan sonra kullanıcı tekrar profil sayfasına yönlendirilir ve düzenlediği bilgiyi gözlemleyebilir.
 
-.. figure:: zihni/TecrübeTablosuDüzenlemeSonrası.JPG
+.. figure:: zihni/TecrübeTablosuDüzenlemeSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 19: Tecrübe Tablosu Düzenleme Sonrası *
@@ -179,14 +179,14 @@ Düzenleme sayfasında kullanıcı değiştirmek istediği tecrübe bilgisinin v
 Kullanıcı tecrübe tablosundaki bilgilerda arama yapmak istedğinde tablonun hemen altındaki "YENI ŞİRKET EKLE & ARA" butonuna tıklar. Tıkladıktan sonra tablonun altına açılan formda
 kullanıcı bulmak istediği tecrübe bilgisi için "Şirket Ara" başlığı altındaki alana şirket adını girer ve daha sonra "ARA" butonuna tıklar.
 
-.. figure:: zihni/TecrübeTablosuArama.JPG
+.. figure:: zihni/TecrübeTablosuArama.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 20: Tecrübe Tablosu Arama*
 
 Tıklamadan sonra kullanıcı tecrübe tablosunda sonuçları gözlemleyebilir.
 
-.. figure:: zihni/TecrübeTablosuAramaSonrası.JPG
+.. figure:: zihni/TecrübeTablosuAramaSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 21: Tecrübe Tablosu Arama Sonrası*
@@ -196,7 +196,7 @@ Tıklamadan sonra kullanıcı tecrübe tablosunda sonuçları gözlemleyebilir.
 
 Bu tablo kişini dil bilgilerini içeren tablodur.
 
-.. figure:: zihni/DilTablosu.JPG
+.. figure:: zihni/DilTablosu.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 22: Dil Tablosu*
@@ -210,14 +210,14 @@ Kullanıcı bu tabloda dil bilgisi ekleyebilir, düzenleyebilir , silebilir ve a
 Kullanıcı yeni bir dil bilgisi girmek istediğinde tablonun hemen altındaki "YENİ DİL EKLE & ARA" butonuna tıklar. Tıkladıktan sonra tablonun altına açılan formda
 kullanıcı dil ve seviye bilgilerini girerek "EKLE" butonuna tıklar.
 
-.. figure:: zihni/DilTablosuEkleme.JPG
+.. figure:: zihni/DilTablosuEkleme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 23: Dil Tablosu Ekleme*
 
 Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
-.. figure:: zihni/DilTablosuEklemeSonrası.JPG
+.. figure:: zihni/DilTablosuEklemeSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 24: Dil Tablosu Ekleme Sonrası*
@@ -227,14 +227,14 @@ Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
 Kullanıcı dil tablosundaki herhangi bir bilgiyi silmek istediğinde dil bilgisinin sağ tarafındaki ona ait olan "SİL" butonuna tıklayarak veriyi tablodan siler.
 
-.. figure:: zihni/DilTablosuSilme.JPG
+.. figure:: zihni/DilTablosuSilme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 25: Dil Tablosu Silme*
 
 Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
-.. figure:: zihni/DilTablosuSilmeSonrası.JPG
+.. figure:: zihni/DilTablosuSilmeSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 26: Dil Tablosu Silme Sonrası*
@@ -244,21 +244,21 @@ Silme işleminden sonra bilginin tabloda olmadığı gözlemlenir.
 
  Kullanıcı dil tablosundaki herhangi bir bilgiyi düzenlemek istediğinde tecrübe tablosunun sağ tarafındaki "DÜZENLE" butonuna tıklar.
 
-.. figure:: zihni/DilTablosuDüzenleme.JPG
+.. figure:: zihni/DilTablosuDüzenleme.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 27: Dil Tablosu Düzenleme*
 
 Tıklamadan sonra kullanıcı düzenleme sayfasına yönlendirilir.
 
-.. figure:: zihni/DilTablosuDüzenlemeSayfası.JPG
+.. figure:: zihni/DilTablosuDüzenlemeSayfası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 28: Dil Tablosu Düzenleme Sayfası*
 
 Düzenleme sayfasında kullanıcı değiştirmek istediği dil bilgisinin verilerini görür ve değiştirmek istediği veri veya verileri değiştirerek "DÜZENLE" butonuna tıklar. Tıklamadan sonra kullanıcı tekrar profil sayfasına yönlendirilir ve düzenlediği bilgiyi gözlemleyebilir.
 
-.. figure:: zihni/DilTablosuDüzenlemeSonrası.JPG
+.. figure:: zihni/DilTablosuDüzenlemeSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 29: Dil Tablosu Düzenleme Sonrası*
@@ -269,14 +269,14 @@ Düzenleme sayfasında kullanıcı değiştirmek istediği dil bilgisinin verile
 Kullanıcı dil tablosundaki bilgilerde arama yapmak istediğinde tablonun hemen altındaki "YENİ DİL EKLE & ARA" butonuna tıklar. Tıkladıktan sonra tablonun altına açılan formda
 kullanıcı bulmak istediği dil bilgisi için "Dil Ara" başlığı altındaki alana dil adını girer ve daha sonra "ARA" butonuna tıklar.
 
-.. figure:: zihni/DilTablosuArama.JPG
+.. figure:: zihni/DilTablosuArama.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 30: Dil Tablosu Arama *
 
 Tıklamadan sonra kullanıcı dil tablosunda sonuçları gözlemleyebilir.
 
-.. figure:: zihni/TecrübeTablosuAramaSonrası.JPG
+.. figure:: zihni/TecrübeTablosuAramaSonrası.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 31: Dil Tablosu Arama Sonrası*
