@@ -8,7 +8,7 @@ sitesinin kayıt olma ekranına gelir. Burada gerekli bilgileri doldurduktan son
 .. figure:: Burak/kayitekrani.PNG
    :figclass: align-center
    :alt: Ekran Görüntüsü 1 :Kayıt Olma Ekranı
-    *Ekran Görüntüsü 1 :Kayıt Olma Ekranı*
+   *Ekran Görüntüsü 1 :Kayıt Olma Ekranı*
 
 Kullanıcı sitemize üye olduktan sonra ana sayfadan üye olurken doldurduğu e-mail ve şifre bilgilerini kullanarak üye  girişi yapar.
 Kullanıcı giriş yaptıktan sonra 4 farklı işlem yapabilir.Kullanıcı  "Bağlantılar" sayfasına tıklayarak bağlantılar sayfasına ulaşır.
@@ -27,8 +27,8 @@ Kullanıcı bağlantılar sayfasına girdiğinde karşısına 3 farklı kısım 
 
 .. figure:: Burak/baglantilaranasayfa.PNG
    :figclass: align-center
-    :alt: Ekran Görüntüsü 2 :Bağlantılar Sayfası
-     *Ekran Görüntüsü 2 :Bağlantılar Sayfası*
+   :alt: Ekran Görüntüsü 2 :Bağlantılar Sayfası
+   *Ekran Görüntüsü 2 :Bağlantılar Sayfası*
 
 
 **Arkadaş Önerileri**
@@ -38,7 +38,7 @@ Yeni üye olan kullanıcı bağlantılar sayfasından arkadaş önerilerini gör
 
 .. figure:: Burak/arkadasonerileri.PNG
    :figclass: align-center
-      :alt: Ekran Görüntüsü 3 :Arkadaş Önerileri Bölümü
+   :alt: Ekran Görüntüsü 3 :Arkadaş Önerileri Bölümü
     *Ekran Görüntüsü 3 :Arkadaş Önerileri Bölümü*
 
 **Gelen Bağlantı İstekleri**
@@ -71,8 +71,8 @@ günceller.
 
 .. figure:: Burak/baglantiguncelleme.PNG
    :figclass: align-center
-    :alt: Ekran Görüntüsü 6 :Bağlantı Güncelleme Sayfası
-    *Ekran Görüntüsü 6 :Bağlantı Güncelleme Sayfası*
+   :alt: Ekran Görüntüsü 6 :Bağlantı Güncelleme Sayfası
+   *Ekran Görüntüsü 6 :Bağlantı Güncelleme Sayfası*
 
 Veya "Arkadasi Sil" butonunu kullanarak bağlantısını bağlantı listesinden kaldırır.
 
@@ -83,8 +83,8 @@ Admin sayfası web uygulamasının yöneticisi için tasarlanmış bir sayfadır
 
 .. figure:: Burak/admin.PNG
    :figclass: align-center
-      :alt: Ekran Görüntüsü 7 :Admin Sayfası
-       *Ekran Görüntüsü 7 :Admin Sayfası*
+   :alt: Ekran Görüntüsü 7 :Admin Sayfası
+   *Ekran Görüntüsü 7 :Admin Sayfası*
 
 
 **Güncelleme**
@@ -95,7 +95,7 @@ e-posta alanını geçerli bir e-posta ile doldurduktan sonra güncelle butonunu
 .. figure:: Burak/adminguncelleme.PNG
    :figclass: align-center
     :alt: Ekran Görüntüsü 8 :Kullanıcı Bilgilerini Güncelleme
-    *Ekran Görüntüsü 8 :Kullanıcı Bilgilerini Güncelleme*
+     *Ekran Görüntüsü 8 :Kullanıcı Bilgilerini Güncelleme*
 
 
 **Silme**
