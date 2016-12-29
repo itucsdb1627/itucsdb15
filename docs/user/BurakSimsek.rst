@@ -47,7 +47,7 @@ Bağlantılar Sayfasında arkadaş önerileri kısmının altında Gelen Bağlan
 bağlantı kurma istekleri yer almaktadır. Kullanıcı gelen bağlantı isteklerinin yanındaki butonları kullanarak bu kişiyi bağlantı olarak ekleyebilir
 ya da bağlantı kurma isteğini reddedebilir.
 
-.. figure:: Burak/friendrequest.PNG
+.. figure:: Burak/friendrequesttablo.PNG
    :figclass: align-center
    :alt: Ekran Görüntüsü 4 :Bağlantı İstekleri Bölümü
     *Ekran Görüntüsü 4 :Bağlantı İstekleri Bölümü*
