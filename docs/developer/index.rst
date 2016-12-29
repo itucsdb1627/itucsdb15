@@ -12,6 +12,58 @@ Veritabanı Dizaynı
 
    Projemizde sorgulama dili olarak PostgreSQL kullanılmıştır.
 
+1. Burak Şimşek'in Veritabanı ve E/R diagramı
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+1.1. Veritabanı Dizaynı
+"""""""""""""""""""""""
+
+Maindata tablosu 5 niteliğe sahiptir. Bu nitelikler ID,email,password,name ve surname olarak adlandırılmışlardır.ID değeri sadece
+sistemde kullanılmaktadır. Maindata tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
+
+.. code-block:: sql
+      CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,
+      PASSWORD VARCHAR(50) NOT NULL,NAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50)
+      NOT NULL,UNIQUE(EMAIL))
+
+FriendRequest tablosu 2 niteliğe sahiptir.Bu nitelikler personid ve friendrequestid olarak adlandırılmıştır.Bu tablo personid
+dış anahtarı ile Maindata tablosuna bağlıdır. FriendRequest tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
+
+.. code-block:: sql
+    CREATE TABLE FRIENDREQUEST
+    (PERSONID INTEGER,REQUESTID INTEGER,
+    FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID) ON
+    DELETE CASCADE ON UPDATE CASCADE )
+
+
+FriendList tablosu 3 niteliğe sahiptir.Bu nitelikler personid,friendid ve title olarak adlandırılmıştır.Bu tablo personid
+dış anahtarı ile Maindata tablosuna bağlıdır. FriendList tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
+
+.. code-block:: sql
+    CREATE TABLE FRIENDLIST(PERSONID INTEGER,FRIENDID INTEGER,TITLE VARCHAR(50),
+    FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID)
+    ON DELETE CASCADE ON UPDATE CASCADE )
+
+
+
+
+1.2. E/R Diyagramı
+""""""""""""""""""
+
+Yukarıdaki tablolar için oluşturulan ER diagramı aşağıda verilmiştir.
+
+.. figure:: Burak/BurakER.png
+      :scale: 100 %
+      :alt:
+
+      *Maindata,FriendRequest,FriendList tabloları için E/R Diyagramı*
+
+
+
+
+
+
 
 3. Hilal Gülşen'in Veritabanı ve E/R diagramı
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -33,23 +33,7 @@ def baglantilar_page(personid):
 
 
 
-       # connection = dbapi2.connect(app.config['dsn'])
-        #cursor = connection.cursor()
-        #cursor.execute("""
-        #SELECT PERSONID FROM  FRIENDREQUEST WHERE REQUESTID=%s""",(personid,))
-        #backupmaindata2=cursor.fetchall()
-        #connection.commit()
-        #try:
-        #    ideatoname=backupmaindata2[0]
-        #except IndexError:
-        #   ideatoname=333
-        #connection=dbapi2.connect(app.config['dsn'])
-        #cursor=connection.cursor()
-        #cursor.execute("""SELECT ID,NAME,SURNAME FROM MAINDATA WHERE ID=%s""",(ideatoname,))
-        #connection.commit()
-        #backupmaindata4=cursor.fetchall()
-        #maindata4=[(key2,name,surname)
-         #          for key2,name,surname in cursor]
+
 
         connection=dbapi2.connect(app.config['dsn'])
         cursor=connection.cursor()

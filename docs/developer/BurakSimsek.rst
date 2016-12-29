@@ -299,6 +299,7 @@ Yukarıda verilen python kodunda bir diğer tabloya ekleme yapılırken(aşağı
 silinmektedir.
 
 **ARAMA**
+
 FriendRequest tablosunda arama fonksiyonu yine baglantılar.html üzerinden,baglantılar.html sayfasının Gelen Bağlantı İstekleri
 kısmında gerçekleşmektedir. Arama fonksiyonu kullanılarak kullanıcıya gelen baglantı isteklerini göstermektedir.
 
@@ -332,10 +333,12 @@ kısmında gerçekleşmektedir. Arama fonksiyonu kullanılarak kullanıcıya gel
          <table class=table  border="2px">
       <tr>
 
+
+
 Gösterme işlemi, baglantilar.html de yukarıdaki şekilde implement edilmiştir, fakat burada önemli olan nokta veritabanından çekilen verilerin maindata4 e atanmasıdır.baglantılar.html
- de ise bu veri üzerinde for döngüsü ile dolaşılarak tüm gelen bağlantı isteklerinin gösterilmesi sağlanmıştır. maindata4 adlı veri yapısının elde edilmesi sırasında
- iç katma kullanılarak, maindata tablosundan id üzerinden isim ve soyisim niteliklerine erişilmiş, baglantı isteklerinin isim ve soyisim olarak
- gösterilmesi sağlanmıştır. Bu işlem de baglantılar_page() fonksiyonun içerisinde gerçekleştirmiştir.
+de ise bu veri üzerinde for döngüsü ile dolaşılarak tüm gelen bağlantı isteklerinin gösterilmesi sağlanmıştır. maindata4 adlı veri yapısının elde edilmesi sırasında
+iç katma kullanılarak, maindata tablosundan id üzerinden isim ve soyisim niteliklerine erişilmiş, baglantı isteklerinin isim ve soyisim olarak
+gösterilmesi sağlanmıştır. Bu işlem de baglantılar_page() fonksiyonun içerisinde gerçekleştirmiştir.
 
 .. code-block:: python
 
@@ -374,6 +377,7 @@ bölümü içerisinde bulunan bir bağlantıyı silerse FriendList tablosundan v
 Kullanıcı arkadaşına verdiği ünvanı değiştirmek isterse bu da güncelleme fonksiyonu aracılığıyla gerçekleşir.
 
 **EKLEME**
+
 Yukarıda da bahsedildiği gibi ekleme operasyonu kullanıcı gelen bağlantı isteğini kabul ettiğinde tabloya varlıklar ekler.Çünkü
 baglantı kurmak karşılıklı gerçekleştiği için kullanıcı karşı tarafın isteğini kabul ettiğinde bu işlemin iki şekilde karşılıklı olarak
 çalışması gerekir. Aşağıda ekleme fonksiyonları gösterilmiştir.
@@ -463,8 +467,8 @@ baglantilar.html sayfasından silme işlemi için komut verildiğinde baglantila
 **ARAMA**
 
 FriendList tablosunda arama fonksiyonu baglantilar.html de baglantiları gösterme amacı ile kullanılmaktadır. Burada da iç katma
- yapılarak maindata tablosundan o id ye sahip kullanıcının ismi ve soyisimini alarak kullanıcı arayüzünün kalitesi arttırılmış, karışıklıkların
- önüne geçilmiştir.
+yapılarak maindata tablosundan o id ye sahip kullanıcının ismi ve soyisimini alarak kullanıcı arayüzünün kalitesi arttırılmış, karışıklıkların
+önüne geçilmiştir.
 
  HTML:
 
