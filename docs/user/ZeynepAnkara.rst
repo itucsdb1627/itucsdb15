@@ -2,7 +2,7 @@ Zeynep Ankara Tarafından Tamamlanan Kısımlar
 ============================================
 	Kullanıcı e-posta ve şifresiyle web sitesine giriş yaptığından karşılaştığı ekrandan "İşler" kısmına tıkladığında; kendi iş ilanlarını görbileceği bir tablo, iş ilanı veribileceği bir alan ve diğer kullanıcıların verdiği ilanları görebileceği bir sayfa ile karşılaşır. 
 	  
-	  .. figure:: Zeynep/isler.JPG
+	  .. figure:: Zeynep/isler.jpg
       :scale: 75 %
       :alt: Main
       
