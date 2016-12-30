@@ -38,10 +38,10 @@ dış anahtarı ile Maindata tablosuna bağlıdır. FriendRequest tablosunun yar
 
 .. code-block:: sql
 
-    CREATE TABLE FRIENDREQUEST
-    (PERSONID INTEGER,REQUESTID INTEGER,
-    FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID) ON
-    DELETE CASCADE ON UPDATE CASCADE )
+   CREATE TABLE FRIENDREQUEST
+   (PERSONID INTEGER,REQUESTID INTEGER,
+   FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID) ON
+   DELETE CASCADE ON UPDATE CASCADE )
 
 
 FriendList tablosu 3 niteliğe sahiptir.Bu nitelikler personid,friendid ve title olarak adlandırılmıştır.Bu tablo personid
