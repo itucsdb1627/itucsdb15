@@ -231,9 +231,7 @@ Network.html sayfasına girildiğinde network.py dosyasına yönelendirilir. "GE
                          for key, Il,Sirket,Personid ,Sektor, SchoolName,FirstName in cursor2]
         
         	 return render_template('network.html', network = network,network2=network2,personid=personid)
-        
-        
-    	 else:
+         else:
          if 'Add' in request.form:
              Il = request.form['Il']
              Sirket = request.form['Sirket']
@@ -246,8 +244,7 @@ Network.html sayfasına girildiğinde network.py dosyasına yönelendirilir. "GE
              (Il,Sirket,Sektor,personid))
              connection.commit()   
              return redirect(url_for('network_page',personid=personid))
-         
-         elif 'Delete' in request.form:
+        elif 'Delete' in request.form:
              id = request.form['id']
              connection = dbapi2.connect(app.config['dsn'])
              cursor = connection.cursor()
@@ -346,17 +343,17 @@ Güncelleme işlemi gerçekleşebilmesi için; network_edit.html sayfasında ger
 		 def edit_network(networkid,personid):
    			 if request.method == 'GET': 
         	 return render_template('network_edit.html')
-    	 else:
-          if 'Update' in request.form:
-              Il = request.form['Il']
-              Sirket = request.form['Sirket']
-              Sektor = request.form['Sektor']
-              connection = dbapi2.connect(app.config['dsn'])
-              cursor = connection.cursor()
-              cursor.execute(""" UPDATE NETWORK SET IL = %s, SIRKET= %s, SEKTOR= %s WHERE ID = %s """,
-              (Il,Sirket,Sektor , networkid))
-              connection.commit()   
-              return redirect(url_for('network_page',personid=personid))
+    	         else:
+                 if 'Update' in request.form:
+                 Il = request.form['Il']
+                 Sirket = request.form['Sirket']
+                 Sektor = request.form['Sektor']
+                 connection = dbapi2.connect(app.config['dsn'])
+                 cursor = connection.cursor()
+                 cursor.execute(""" UPDATE NETWORK SET IL = %s, SIRKET= %s, SEKTOR= %s WHERE ID = %s """,
+                 (Il,Sirket,Sektor , networkid))
+                 connection.commit()   
+                 return redirect(url_for('network_page',personid=personid))
              
 
 Network_edit.HTML
@@ -388,8 +385,7 @@ Bu sayfa kullanıcının güncelleme yapması için oluşturulmuştur. Yanlızca
 			
 					 </div>
               	 </div>
-             </div>
-             </div>
+           
             
             
 
