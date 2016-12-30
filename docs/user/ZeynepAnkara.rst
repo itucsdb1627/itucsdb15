@@ -40,7 +40,7 @@ Network Tablosu ile İlgili İşlemler
 ===================================
 	Kullanıcının iş ilanları ile ilgili bilgiler bu tablo vasıtasıyla tutulmaktadır. 
 	
-I. Ekleme İşlemi
+Ekleme İşlemi
 ================
 
 	Yeni bir iş ilanı vermek için sayda bulanan alanlar girildikten sonra "Kaydet" butonu tıklanır. 
@@ -59,7 +59,7 @@ Birincisi; kullanıcının kendi iş ilanları arasında;
 	..figure:: Zeynep/eklemeislemisonrasıgeneltablo.jpg
 	
 	
-II. Gücelleme İşlemi 
+Gücelleme İşlemi 
 ====================
 
 	Kullanıcı kendi ilanlarından herhangi biri üzerinde değişlik yapmak isteğinde tablosunda yer alan "Düzenle" butonuna tıklamalıdır. 
@@ -84,7 +84,7 @@ Birincisi; kullanıcının kendi iş ilanları arasında;
 	..figure:: Zeynep/duzenlemeislemisonrasigeneltablo.jpg
 	
 	
-III. Silme İşlemi 
+Silme İşlemi 
 ====================
 
 	Kullanıcı kendi ilanlarından herhangi birini silebilir. Bunun için; ilanların listelendiği tabloda ilgili satırda bulunan "Sil" butonunu kullanmalıdır. 

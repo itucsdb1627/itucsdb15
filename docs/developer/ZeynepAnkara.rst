@@ -148,7 +148,7 @@ Sayfanın diğer bir bölümü ise yukarıda anlattılan tablonun altında yer a
 Bu kod bloğu ile kullanıcının veri girebilmesi düşülmüştür. 12. satırda sirket, 13.satırda sektor, 14. satırda ise il bilgisini girebilmesi için kullanıcıya text alanları oluşturulmuştur. 15. satırda yer alan buton ise "Add" fonsiyonunu çağırmaktadır.   Bu işlem sonrasında form "POST" edildiğinde "validate()" adlı bir javascript kodu ile alanların boş geçilmemesi için mesaj verilmiştir. İlgili JavaScript kodu aşağıdaki gibidir. 
 
 
-		..code-block::javascript 
+		..code-block:: javascript 
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 
