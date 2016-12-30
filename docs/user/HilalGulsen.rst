@@ -1,5 +1,6 @@
+############################################
 Hilal Gülşen Tarafından Gerçeklenen Kısımlar
-============================================
+############################################
    Kullanıcı e-posta ve şifresi ile sayfaya giriş yapıp ana sayfadaki İlgi Alanları kısmına tıkladığında 3 tane butonun yer aldığı bir sayfa karşımıza çıkar.
 
    .. figure:: Hilal/ilgialanlari.JPG

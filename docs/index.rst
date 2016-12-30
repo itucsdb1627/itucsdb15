@@ -25,7 +25,7 @@ Bu bölümler:
 
 *İşler
 
-Contents:
+İçindekiler:
 
 .. toctree::
    :maxdepth: 1
