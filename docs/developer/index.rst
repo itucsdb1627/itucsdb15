@@ -209,7 +209,7 @@ ACTIVITIES tablosu 5 niteliğe sahiptir. ID, ACTIVITYNAME, ACTIVITYCONTENT, ACTI
 NETWORK tablosu 5 niteliğe sahiptir. ID, IL, SIRKET, SEKTOR, PERSONID bu tablonun nitelikleridir. Bu tablo PERSONID dış anahtarı ile MAINDATA tablosuna bağlıdır. NETWORK tablosu aşağıdaki SQL kodu ile oluşturulmuştur:
 
 
-		..code-block:: sql
+		.. code-block:: sql
 		
 			CREATE TABLE IF NOT EXISTS NETWORK (
     		ID SERIAL PRIMARY KEY,
@@ -228,7 +228,7 @@ NETWORK tablosu 5 niteliğe sahiptir. ID, IL, SIRKET, SEKTOR, PERSONID bu tablon
 	
 	Oluşturulan Network Tablosuna ait E/R diyagramı aşağıdaki gibidir;
 	
-	..figure:: Zeynep/ERDiyagram.jpg
+	.. figure:: Zeynep/ERDiyagram.jpg
 	:scale: 100 %
 	:alt:	
 
