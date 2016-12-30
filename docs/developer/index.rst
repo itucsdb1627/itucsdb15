@@ -1,3 +1,38 @@
+Parts Implemented by Göktürk GÖK
+================================
+
+
+Complaints Table
+----------------
+
+- **CREATE**
+
+Creating a complaint table is operated by init_complaint() function and all columns with the rows to be ready to filled in being used on proper routes. This initialization is triggered by "Create Complaint Table" link under the Göktürk on navigation bar.
+When it is run then this table is initialized in database.
+
+.. code-block:: python
+
+   def init_complaint_tbl(self):
+        with dbapi2.connect(current_app.config['dsn']) as connection:
+            cursor = connection.cursor()
+            query = """CREATE TABLE complaint (
+                id SERIAL PRIMARY KEY,
+                complaint_text TEXT UNIQUE NOT NULL,
+                complaint_object TEXT NOT NULL,
+                complaint_object_id INT NOT NULL,
+                crt_id INT NOT NULL,
+                crt_time TIMESTAMP NOT NULL,
+                is_done INT NOT NULL,
+                FOREIGN KEY (crt_id) REFERENCES users (id)
+                    ON UPDATE CASCADE
+                    ON DELETE CASCADE
+            )"""
+            cursor.execute(query)
+            connection.commit()
+
+
+
+
 Geliştirici Kılavuzu
 ====================
 
