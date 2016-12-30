@@ -110,8 +110,7 @@ Maindata tablosunun her bir varlığının güncellemesi admin.html sayfası üz
 durumlarda admin.html de bulunan metin kutusu ve "ara ve güncelle" butonunu kullanarak önce tabloda arama işlemini gerçekleştirir ardından
 da güncelleme işlemini yapar.
 
-.. code-block:: html
-
+.. code-block:: python
     <form action= "{{ url_for('search_user')}}" method="POST")>
     Guncellemek istediginiz e-postayı giriniz:
     <input type="text" name="emailaddress" >
@@ -137,7 +136,7 @@ Yönetici bu işlemleri gerçekledikten sonra search_user() fonksiyonu çağrıl
 Search_user() fonksiyonu updateuser.html i döndürür ve updateuser.html sayfasındaki gerekli metin kutuları doldurulduktan sonra ve
 "Guncelle" butonuna basıldıktan sonra update_user(key) çağrılır.
 
-.. code-block:: html
+.. code-block::  python
 
     <form action= "{{ url_for('search_user')}}" method="POST")>
     Guncellemek istediginiz e-postayı giriniz:
@@ -189,7 +188,7 @@ EKLEME
 
 Üst satırlar da belirtildiği gibi bu tabloya varlık ekleme baglantılar.html sayfasından gerçekleşmektedir.
 
-.. code-block:: html
+.. code-block:: python
 
    <form>
    <table class="table-striped"  border="2px">
@@ -248,7 +247,7 @@ SILME
 Kullanıcı baglantılar.html dosyasından kendisine gelen baglantı isteklerini baglantı istekleri bölümünde görebilmektedir. Gelen baglantı isteğinin yanındaki
 "Arkadaslik İstegini Sil" butonunu kullanarak gelen bağlantı isteğini silebilir. Bu işlem geliştirme açısından aşağıdaki şekilde dizayn edilmiştir:
 
-.. code-block:: html
+.. code-block:: python
 
          </form>
          <form action="{{ url_for('baglantilar_page',personid=personid,key=key2) }}" method="post" role="form" style="display: inline">
@@ -274,7 +273,7 @@ olduğundan yine bu varlık FriendRequest tablosundan silinecektir. Bu işlemler
 
 HTML:
 
-.. code-block:: html
+.. code-block:: python
 
          <form action="{{ url_for('baglantilar_page',personid=personid,key=key2,title=title) }}" method="post" role="form" style="display: inline">
                      <input value="{{key2}}" name="id" type="hidden" />
@@ -311,7 +310,7 @@ ARAMA
 FriendRequest tablosunda arama fonksiyonu yine baglantılar.html üzerinden,baglantılar.html sayfasının Gelen Bağlantı İstekleri
 kısmında gerçekleşmektedir. Arama fonksiyonu kullanılarak kullanıcıya gelen baglantı isteklerini göstermektedir.
 
-.. code-block:: html
+.. code-block:: python
 
    <table class=table  border="2px">
       <tr>
@@ -391,7 +390,7 @@ Yukarıda da bahsedildiği gibi ekleme operasyonu kullanıcı gelen bağlantı i
 baglantı kurmak karşılıklı gerçekleştiği için kullanıcı karşı tarafın isteğini kabul ettiğinde bu işlemin iki şekilde karşılıklı olarak
 çalışması gerekir. Aşağıda ekleme fonksiyonları gösterilmiştir.
 
-.. code-block:: html
+.. code-block:: python
 
    {% for key2,name,surname in maindata4 %}
 
@@ -445,7 +444,7 @@ FriendList tablosundan bir varlık silme işlemi baglantilar.html sayfasının b
 "Arkadaşı Sil" butonunu kullanarak karşısında bulunan bağlantıyı siler, ekleme gibi bu fonksiyon da çift taraflı çalışmaktadır. Aşağıda
 bu fonksiyonun gerçekleşmesini sağlayan kodlar verilmiştir.
 
-.. code-block:: html
+.. code-block:: python
 
    <form action="{{ url_for('baglantilar_page',personid=personid,requestid=requestid) }}" method="post" role="form" style="display: inline">
                      <input value="{{requestid}}" name="id" type="hidden" />
@@ -483,8 +482,7 @@ yapılarak maindata tablosundan o id ye sahip kullanıcının ismi ve soyisimini
 
  HTML:
 
-.. code-block:: html
-
+.. code-block:: python
 
    <table class=table  border="2px">
    <tr>
@@ -546,7 +544,7 @@ Aşağıda FriendList tablosunun güncellenmesine yönelik kodlar bulunmaktadır
 
  HTML:
 
-.. code-block:: html
+.. code-block:: python
 
    <form action="{{ url_for('baglantilar_guncelle',personid=personid,key1=key1,requestid=requestid) }}" method="post" role="form" style="display: inline">
                      <input value="{{key1}}" name="id" type="hidden" />
