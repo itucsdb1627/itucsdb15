@@ -78,8 +78,7 @@ Yukarıdaki tablolar için oluşturulan ER diagramı aşağıda verilmiştir.
 
 Education tablosu 6 niteliğe sahiptir. Bu nitelikler ID,SCHOOLNAME,YEARSTART,YEAREND,PERSONID ve GPA dir. Bu tablo personid
 dış anahtarı ile Maindata tablosuna bağlıdır. Education tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
-
-        .. code-block:: sql
+.. code-block:: sql
 
                 CREATE TABLE IF NOT EXISTS EDUCATION (
                 ID SERIAL PRIMARY KEY,
