@@ -1,13 +1,14 @@
+###########################################
 Burak Şimşek Tarafından Tamamlanan Bölümler
-===========================================
+###########################################
 
 Bu projede benim tarafımdan ElephantSQL kullanılarak 3 tablo yaratılmıştır.
 Bu tablolar sırasıyla Maindata,FriendRequest,FriendList olarak adlandırılmışlardır.
 Bu geliştirici rehberinde bütün bu tabloların özellikleri ve kullanılan metodlar anlatılacaktır.Bu projede CSS,HTML,Python ve PostgreSQL
 kullanılarak nesne tabanlı programlama yaklaşımıyla bir web-uygulaması oluşturulmuş ve kullanıma sunulmuştur.
 
-Maindata Tablosu
-----------------
+1.Maindata Tablosu
+==================
 
 Maindata tablosu 5 nitelik içermektedir. Bu nitelikler ID,e-mail,password,name ve surname olarak isimlendirilmişlerdir. Bu tabloda
 web-uygulamasına kayıt olan kullanıcıların en temel özellikleri tutulmakta, ayrıca session için bu tabloda arama özelliği kullanılarak
@@ -17,7 +18,9 @@ giriş kontrolü sağlanmaktadır. Ayrıca uygulamadaki diğer tablolar da dış
 
 Geliştirmiş olduğumuz web-uygulamasında bu tabloya ait 4 ana fonksiyon yani Ekleme,Silme,Güncelleme ve Arama fonksiyonları kullanılmaktadır.
 
-**EKLEME**
+1.1.EKLEME
+----------
+
 Kullanıcı kayıt olmak için kayıt ol sekmesine tıkladığında signup.html sayfasına yönlendirilir ve orada doldurması gereken metin kutularını
 doldurarak "kayıt ol" butonuna basar. Böylece girdiği bilgiler signup_page() fonksiyonuna gönderilir.Aşağıda bu işleyişe dair kodlar verilmiştir.
 
@@ -64,7 +67,8 @@ Signup_page() fonksiyonu POST metodu ile signup.html üzerinden kullanıcıya ai
 sağlıyor ve signup.html değerini döndürmektedir.
 Maindata tablosunda ID niteliği, Veritabanı tarafından otomatik olarak arttırılan ve emsalsiz(unique) bir değeri temsil ediyor.
 
-**SİLME**
+1.2SİLME
+--------
 
 Eğer web-uygulaması üzerinde kullanıcıların hesaplarının silinmesi gerekirse,maindata üzerinden o kullanıcıya ait
 varlık silinerek o kullanıcıya ait hesap silinmektedir.Bu işlemi gerçekleştirebilmek için admin.html üzerinden silinmek istenen kullanıcıya
@@ -99,7 +103,8 @@ admin.html üzerinden çağrılan delete_user() fonksiyonu GET methodu ile çağ
           return redirect(url_for('admin_page',maindata=backupmaindata))
           @app.route('/admin/searchuser',methods=['POST','GET'])
 
-**GÜNCELLEME&ARAMA**
+1.3.GÜNCELLEME&ARAMA
+--------------------
 
 Maindata tablosunun her bir varlığının güncellemesi admin.html sayfası üzerinden gerçekleşmektedir.Site Yöneticisi(Administrator) gerekli
 durumlarda admin.html de bulunan metin kutusu ve "ara ve güncelle" butonunu kullanarak önce tabloda arama işlemini gerçekleştirir ardından
@@ -165,8 +170,8 @@ Yukarıda verilen örneklerin dışında tüm projede bu fonksiyonların kullan�
 tekrardan yazma gereğinde bulunmadım. Kodun tamamı incelendiği takdirde Maindata tablosuyla bağlantılı fonksiyonlar bulmak mümkündür.
 
 
-FriendRequest Tablosu
----------------------
+2.FriendRequest Tablosu
+=======================
 
  FriendRequest Tablosu kullanıcılar arası bağlantı kurma isteklerini tutan bir tablodur. 2 niteliği vardır; bunlar personid ve friendrequestid olarak isimlendiril
  mişlerdir. Personid sütununda bağlantı isteği gönderen kişinin id si, friendrequestid sütününda ise bağlantı isteği gönderilen kişinin id si tutulmaktadır.
@@ -179,7 +184,8 @@ FriendRequest Tablosu
 Kullanıcı baglantilar.html sayfasında yer alan önerilerin yanında bulunan "Arkadaslık Istegi Gonder" butonunu kullanarak bağlantı isteği oluşturur yani bu tabloya bir varlık eklemiş olur.Bu tablonun Güncelleme fonksiyonu yazılmamıştır,çünkü gerek yoktur.
 Güncelleme yapılırsa tablo amacı dışında kullanılmış olacaktır.
 
-**EKLEME**
+2.1.EKLEME
+----------
 
 Üst satırlar da belirtildiği gibi bu tabloya varlık ekleme baglantılar.html sayfasından gerçekleşmektedir.
 
@@ -236,7 +242,8 @@ aracılığı ile iletilir. Bu bilgiler FriendRequest tablosuna eklenecek varlı
 baglantılar_page() fonksiyonu oldukça kapsamlı bir fonksiyon olduğundan sadece FriendRequest tablosuna varlık eklemek için gereken koşul bloğu
 gösterildi,Bu fonksiyonun diğer blokları gerektiği yerlerde bu dökümanda verilecektir.
 
-**SILME**
+2.2.SILME
+---------
 
 Kullanıcı baglantılar.html dosyasından kendisine gelen baglantı isteklerini baglantı istekleri bölümünde görebilmektedir. Gelen baglantı isteğinin yanındaki
 "Arkadaslik İstegini Sil" butonunu kullanarak gelen bağlantı isteğini silebilir. Bu işlem geliştirme açısından aşağıdaki şekilde dizayn edilmiştir:
@@ -298,7 +305,8 @@ PYTHON&SQL:
 Yukarıda verilen python kodunda bir diğer tabloya ekleme yapılırken(aşağıda ayrıca anlatılacaktır.), FriendRequest tablosundan varlık
 silinmektedir.
 
-**ARAMA**
+2.3.ARAMA
+---------
 
 FriendRequest tablosunda arama fonksiyonu yine baglantılar.html üzerinden,baglantılar.html sayfasının Gelen Bağlantı İstekleri
 kısmında gerçekleşmektedir. Arama fonksiyonu kullanılarak kullanıcıya gelen baglantı isteklerini göstermektedir.
@@ -361,8 +369,8 @@ yukarıdaki sorgudan elde edilen veriyi göndermektedir.
       return render_template('baglantilar.html',personid=personid,
       maindata=backupmaindata,maindata3=backupmaindata3,maindata4=backupmaindata4)
 
-FriendList Tablosu
-------------------
+3.FriendList Tablosu
+====================
 
 FriendList tablosunun 3 niteliği bulunmaktadır ;bunlar Personid,Friendid ve Title olarak adlandırılmışlardır.FriendList tablosunun oluşturulma amacı site üyelerinin arkadaşlarını varlıklar halinde saklamaktır.
 Personid kullanıcının kendi id sini saklarken friendid arkadaş olduğu kullanıcının idsini,title ise kullanıcının bağlantı kurduğu kullanıcıya isterse atayabildiği kelimeyi ifade etmektedir.
@@ -376,7 +384,8 @@ tarafından onaylanırsa ekleme fonksiyonu gerçekleşir. Eğer baglantilar.html
 bölümü içerisinde bulunan bir bağlantıyı silerse FriendList tablosundan varlıklar silinecektir.
 Kullanıcı arkadaşına verdiği ünvanı değiştirmek isterse bu da güncelleme fonksiyonu aracılığıyla gerçekleşir.
 
-**EKLEME**
+3.1.EKLEME
+----------
 
 Yukarıda da bahsedildiği gibi ekleme operasyonu kullanıcı gelen bağlantı isteğini kabul ettiğinde tabloya varlıklar ekler.Çünkü
 baglantı kurmak karşılıklı gerçekleştiği için kullanıcı karşı tarafın isteğini kabul ettiğinde bu işlemin iki şekilde karşılıklı olarak
@@ -429,7 +438,8 @@ aşağıda verilmiştir.
             connection.commit()
             return redirect(url_for('baglantilar_page',personid=personid))
 
-**SILME**
+3.2.SILME
+---------
 
 FriendList tablosundan bir varlık silme işlemi baglantilar.html sayfasının baglantılar bölmesi içerisinden gerçekleşir. Kullanıcı
 "Arkadaşı Sil" butonunu kullanarak karşısında bulunan bağlantıyı siler, ekleme gibi bu fonksiyon da çift taraflı çalışmaktadır. Aşağıda
@@ -464,7 +474,8 @@ baglantilar.html sayfasından silme işlemi için komut verildiğinde baglantila
             connection.commit()
             return redirect(url_for('baglantilar_page',personid=personid))
 
-**ARAMA**
+3.3.ARAMA
+---------
 
 FriendList tablosunda arama fonksiyonu baglantilar.html de baglantiları gösterme amacı ile kullanılmaktadır. Burada da iç katma
 yapılarak maindata tablosundan o id ye sahip kullanıcının ismi ve soyisimini alarak kullanıcı arayüzünün kalitesi arttırılmış, karışıklıkların
@@ -527,7 +538,8 @@ PYTHON&POSTRGRESQL
         return render_template('baglantilar.html',personid=personid,maindata=backupmaindata,maindata3=backupmaindata3,
         maindata4=backupmaindata4)
 
-**GUNCELLEME**
+3.4.GUNCELLEME
+--------------
 
 FriendList tablosunun Title isimli niteliği güncellenebilir,baglantilar.html sayfasının baglantilar kısmından güncellenebilmektedir.
 Aşağıda FriendList tablosunun güncellenmesine yönelik kodlar bulunmaktadır.
@@ -560,8 +572,8 @@ PYTHON&POSTRGRESQL
 baglantilar_guncelle() fonksiyonu, baglantilar.html aracılığıyla gönderilen varlık bilgisinin güncellenebilmesi için baglantilarupdate.html
 sayfasını döndürür, yukarıdaki fonksiyonlardan da anlaşılabileceği gibi güncellenme operasyonu tamamlanır.
 
-Baglantilar_Page() Fonksiyonu
------------------------------
+4.Baglantilar_Page() Fonksiyonu
+===============================
 
 Yukarıdaki kod bloklarında baglantılar_page fonksiyonu bloklar halinde gösterildi, Anlaşılabilirliğini kolaylaştırabileceği için
 baglantilar_page() fonksiyonu aşağıda verilmiştir.
