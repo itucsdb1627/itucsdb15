@@ -40,35 +40,36 @@ Sayfaya giriş yapıldığında kullanıcı; daha önce verdiği ilanları göre
 
 		
 		.. code-block:: html
-		<table class="table-style-two">
-		<tr>
-		    <th>Il</th>
-		    <th>Sırket</th>
-		    <th>Sektor</th>
-		    <th>Okul Adı</th>
-		    <th>Adı</th>
-		    <th>Processes</th>
-		 </tr>
-		{% for key, Il, Sırket,Personid ,Sektor, SchoolName,FirstName in network %}
-		<tr>
-			<td> {{ Il }} </td>
-			<td> {{ Sırket }} </td>
-			<td> {{ Sektor }} </td>
-			<td> {{ SchoolName }} </td>
-			<td> {{ FirstName }} </td>
-			<td>
-			<form action="{{ url_for('network_page',personid=personid) }}" method="post" role="form" style="display: inline">
-							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Delete" type="submit">Sil</button>
-			</form>
-			<form action="{{url_for('network_page',personid=personid)}}" method="post" role="form" style="display: inline">
-							<input value="{{key}}" name="id" type="hidden" />
-							<button class="btn btn-default" name="Update" type="submit">Duzenle</button>
-			</form>
-			</td>
-		</tr>
-	{% endfor %}
-	</table>
+		
+		         <table class="table-style-two">
+		          <tr>
+		          <th>Il</th>
+		          <th>Sırket</th>
+		          <th>Sektor</th>
+		          <th>Okul Adı</th>
+		          <th>Adı</th>
+		          <th>Processes</th>
+		          </tr>
+		          {% for key, Il, Sırket,Personid ,Sektor, SchoolName,FirstName in network %}
+		          <tr>
+			   <td> {{ Il }} </td>
+			   <td> {{ Sırket }} </td>
+			   <td> {{ Sektor }} </td>
+			   <td> {{ SchoolName }} </td>
+			   <td> {{ FirstName }} </td>
+			   <td>
+			   <form action="{{ url_for('network_page',personid=personid) }}" method="post" role="form" style="display: inline">
+			        <input value="{{key}}" name="id" type="hidden" />
+			        <button class="btn btn-default" name="Delete" type="submit">Sil</button>
+			   </form>
+			   <form action="{{url_for('network_page',personid=personid)}}" method="post" role="form" style="display: inline">
+			        <input value="{{key}}" name="id" type="hidden" />
+				<button class="btn btn-default" name="Update" type="submit">Duzenle</button>
+			     </form>
+			      </td>
+		              </tr>
+	                      {% endfor %}
+	                     </table>
 
  
  
@@ -119,19 +120,19 @@ Sayfanın diğer bir bölümü ise yukarıda anlattılan tablonun altında yer a
 	
                          <div class="col-sm-7">
                          <div class="login-sec"> 
-                <div class="uou-tabs">
-                 <li class="active"><a href="#log-in">Oluşturmak İstediğiniz İlan İle İlgili Bilgiler</a></li>
-                  <form action="{{ url_for('network_page',personid=personid) }}" name="zeynepForm"  method="post" role="form" onsubmit="return(validate());">
-                      <div id="log-in" class="active">
-                  <form>
-                  <input type="text" name="Sirket" placeholder="Şirket Adı"  autofocus />
-                  <input type="text" name="Sektor" placeholder="Sektör Bilgisi"  autofocus />
-                  <input type="text" name="Il" placeholder="Şehir"  autofocus />
-                  <button name="Add" type="submit" >Kaydet</button>
-                  </form>
-                  </div>
-                  </div>
-                  </div>
+                         <div class="uou-tabs">
+                         <li class="active"><a href="#log-in">Oluşturmak İstediğiniz İlan İle İlgili Bilgiler</a></li>
+                          <form action="{{ url_for('network_page',personid=personid) }}" name="zeynepForm"  method="post" role="form" onsubmit="return(validate());">
+                          <div id="log-in" class="active">
+                           <form>
+                            <input type="text" name="Sirket" placeholder="Şirket Adı"  autofocus />
+                            <input type="text" name="Sektor" placeholder="Sektör Bilgisi"  autofocus />
+                            <input type="text" name="Il" placeholder="Şehir"  autofocus />
+                            <button name="Add" type="submit" >Kaydet</button>
+                           </form>
+                          </div>
+                          </div>
+                          </div>
     	
 
 Bu kod bloğu ile kullanıcının veri girebilmesi düşülmüştür. 12. satırda sirket, 13.satırda sektor, 14. satırda ise il bilgisini girebilmesi için kullanıcıya text alanları oluşturulmuştur. 15. satırda yer alan buton ise "Add" fonsiyonunu çağırmaktadır.   Bu işlem sonrasında form "POST" edildiğinde "validate()" adlı bir javascript kodu ile alanların boş geçilmemesi için mesaj verilmiştir. İlgili JavaScript kodu aşağıdaki gibidir. 
