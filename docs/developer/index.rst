@@ -126,7 +126,7 @@ dış anahtarı ile Maindata tablosuna bağlıdır. Language tablosunun yaratıl
 
    Yukarıdaki tablolar için oluşturulan ER diagramı aşağıda verilmiştir:
 
-.. figure:: Zihni/ERDiyagramıZihni.png
+.. figure:: Zihni/ERDiyagramZihni.png
       :scale: 100 %
       :alt:
 
