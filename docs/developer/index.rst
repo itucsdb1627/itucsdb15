@@ -24,9 +24,14 @@ sistemde kullanılmaktadır. Maindata tablosunun yaratılması için gerekli kod
 
 .. code-block:: python
 
-	CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,
-	PASSWORD VARCHAR(50) NOT NULL,NAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50)
-	NOT NULL,UNIQUE(EMAIL))
+   def create_table(self):
+        with dbapi2.connect(current_app.config['dsn']) as connection:
+            cursor = connection.cursor()
+            query = """
+
+
+
+
 
 FriendRequest tablosu 2 niteliğe sahiptir.Bu nitelikler personid ve friendrequestid olarak adlandırılmıştır.Bu tablo personid
 dış anahtarı ile Maindata tablosuna bağlıdır. FriendRequest tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
