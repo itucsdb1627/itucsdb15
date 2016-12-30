@@ -211,7 +211,7 @@ NETWORK tablosu 5 niteliğe sahiptir. ID, IL, SIRKET, SEKTOR, PERSONID bu tablon
 
 		.. code-block:: sql
 		
-			CREATE TABLE IF NOT EXISTS NETWORK (
+		CREATE TABLE IF NOT EXISTS NETWORK (
     		ID SERIAL PRIMARY KEY,
     		IL VARCHAR(90),
     		SIRKET VARCHAR(30) NULL,
@@ -229,8 +229,7 @@ NETWORK tablosu 5 niteliğe sahiptir. ID, IL, SIRKET, SEKTOR, PERSONID bu tablon
 	Oluşturulan Network Tablosuna ait E/R diyagramı aşağıdaki gibidir;
 	
 	.. figure:: Zeynep/ERDiyagram.jpg
-	:scale: 100 %
-	:alt:	
+		
 
 
 
