@@ -41,35 +41,35 @@ Sayfaya giriş yapıldığında kullanıcı; daha önce verdiği ilanları göre
 		
 		.. code-block:: html
 		
-	1	 <table class="table-style-two">
-	2	 <tr>
-	3	     <th>Il</th>
-	4	     <th>Sırket</th>
-	5	     <th>Sektor</th>
-	6	     <th>Okul Adı</th>
-	7	     <th>Adı</th>
-	8	     <th>Processes</th>
-	9	  </tr>
-	10	 {% for key, Il, Sırket,Personid ,Sektor, SchoolName,FirstName in network %}
-	11	 <tr>
-	12		 <td> {{ Il }} </td>
-	13		 <td> {{ Sırket }} </td>
-	14		 <td> {{ Sektor }} </td>
-	15		 <td> {{ SchoolName }} </td>
-	16		 <td> {{ FirstName }} </td>
-	17		 <td>
-	18		 <form action="{{ url_for('network_page',personid=personid) }}" method="post" role="form" style="display: inline">
-	19						 <input value="{{key}}" name="id" type="hidden" />
-	20						 <button class="btn btn-default" name="Delete" type="submit">Sil</button>
-	21		 </form>
-	22		 <form action="{{url_for('network_page',personid=personid)}}" method="post" role="form" style="display: inline">
-	23						 <input value="{{key}}" name="id" type="hidden" />
-	24						 <button class="btn btn-default" name="Update" type="submit">Duzenle</button>
-	25		 </form>
-	26		 </td>
-	27	 </tr>
-	28	 {% endfor %}
-	29	 </table>
+	 1	 <table class="table-style-two">
+	 2	 <tr>
+	 3	     <th>Il</th>
+	 4	     <th>Sırket</th>
+	 5	     <th>Sektor</th>
+	 6	     <th>Okul Adı</th>
+	 7	     <th>Adı</th>
+	 8	     <th>Processes</th>
+	 9	  </tr>
+	 10	 {% for key, Il, Sırket,Personid ,Sektor, SchoolName,FirstName in network %}
+	 11	 <tr>
+	 12		 <td> {{ Il }} </td>
+	 13		 <td> {{ Sırket }} </td>
+	 14		 <td> {{ Sektor }} </td>
+	 15		 <td> {{ SchoolName }} </td>
+	 16		 <td> {{ FirstName }} </td>
+	 17		 <td>
+	 18		 <form action="{{ url_for('network_page',personid=personid) }}" method="post" role="form" style="display: inline">
+	 19						 <input value="{{key}}" name="id" type="hidden" />
+	 20						 <button class="btn btn-default" name="Delete" type="submit">Sil</button>
+	 21		 </form>
+	 22		 <form action="{{url_for('network_page',personid=personid)}}" method="post" role="form" style="display: inline">
+	 23						 <input value="{{key}}" name="id" type="hidden" />
+	 24						 <button class="btn btn-default" name="Update" type="submit">Duzenle</button>
+	 25		 </form>
+	 26		 </td>
+	 27	 </tr>
+	 28	 {% endfor %}
+	 29	 </table>
  
  
 Tablo oluşturulurken 1. satırda CSS kullanılmıştır. Tablonun başlıklarını belirleyen satırlar 3-8 arasında yer almaktadır. 10. satırda; kullanıcının her bir ilanı için tabloya yerleştirme işlemi yapması istendiği için for döngüsü kullanılmak üzere açılmış ve bu döngü 28. satırda kapatılmıştır. Bu sayede kullanıcının network tablosuna kayıtlı bütün verileri listelenebilmektedir. Network  tablosundan 12,13 ve 14. satırlarda il, sirket ve sektor bilgileri çekilirken, education tablosundan 15. satırda bulunan schoolname ve 16. satırda bulunan name bilgisi de maindata tablosundan çekilmektedir. 18 ve 22 satırlarda kullanıcının silme ve güncelleme işlemi yapabilmesi için her bir varlık için buton eklenmiştir.
@@ -117,32 +117,28 @@ Sayfanın diğer bir bölümü ise yukarıda anlattılan tablonun altında yer a
 
 		.. code-block:: html
 		
-		 <!-- FORM SECTION -->
-     		      <div class="col-sm-7">
-            	  <div class="login-sec"> 
-              
-              		 <!-- TABS -->
-              		 <div class="uou-tabs">
-					 <li class="active"><a href="#log-in">Oluşturmak İstediğiniz İlan İle İlgili Bilgiler</a></li>
-					 <form action="{{ url_for('network_page',personid=personid) }}" name="zeynepForm"  method="post" role="form" onsubmit="return(validate());">
-						 <!-- LOGIN -->
-                  		 <div id="log-in" class="active">
-                    		 <form>
-					
-				  				 <input type="text" name="Sirket" placeholder="Şirket Adı"  autofocus />
-			        			 <input type="text" name="Sektor" placeholder="Sektör Bilgisi"  autofocus />
-                    			 <input type="text" name="Il" placeholder="Şehir"  autofocus />
-            					 <button name="Add" type="submit" >Kaydet</button>
-							 </form>
-	 					 </div>
-					 </div>
-              	 </div>
-             </div>
-            
-           </div>
-          
-   		 <section class="pro-mem">
-    	 <div class="container pb30">   
+  <!-- FORM SECTION -->
+  <div class="col-sm-7">
+  <div class="login-sec"> 
+  <!-- TABS -->
+  <div class="uou-tabs">
+  <li class="active"><a href="#log-in">Oluşturmak İstediğiniz İlan İle İlgili Bilgiler</a></li>
+  <form action="{{ url_for('network_page',personid=personid) }}" name="zeynepForm"  method="post" role="form" onsubmit="return(validate());">
+  <!-- LOGIN -->
+    <div id="log-in" class="active">
+   <form>
+   <input type="text" name="Sirket" placeholder="Şirket Adı"  autofocus />
+   <input type="text" name="Sektor" placeholder="Sektör Bilgisi"  autofocus />
+   <input type="text" name="Il" placeholder="Şehir"  autofocus />
+     <button name="Add" type="submit" >Kaydet</button>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
+  <section class="pro-mem">
+  <div class="container pb30">   
     	
 
 Bu kod bloğu ile kullanıcının veri girebilmesi düşülmüştür. 12. satırda sirket, 13.satırda sektor, 14. satırda ise il bilgisini girebilmesi için kullanıcıya text alanları oluşturulmuştur. 15. satırda yer alan buton ise "Add" fonsiyonunu çağırmaktadır.   Bu işlem sonrasında form "POST" edildiğinde "validate()" adlı bir javascript kodu ile alanların boş geçilmemesi için mesaj verilmiştir. İlgili JavaScript kodu aşağıdaki gibidir. 
