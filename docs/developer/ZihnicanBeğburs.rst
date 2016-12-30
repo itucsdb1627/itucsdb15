@@ -136,13 +136,13 @@ Profil.html sayfasına gönderilen değerler aşağıdaki kodla kullanıcıya ak
 
 
 
-Education Tablosu
-=================
+1.Education Tablosu
+===================
 
 Bu tablonun tüm ekle, çıkar , düzenle ve arama fonksiyonları education.py dosyasında bulunmaktadır.
 
-Ekleme
-------
+1.1.Ekleme
+----------
 
 Ekleme işlemi için "Yeni Okul Ekle & Ara" butonuna basılır ve aşağıdaki java Script kodu çalışır.
 
@@ -190,8 +190,8 @@ Aşağıdaki addeducation_page fonksiyonu ekleme işlemini gerçekleştirir.
 
 Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
-Silme
------
+1.2.Silme
+---------
 
 Silme işlemi için silinmek istenen verinin hemen sağındaki "SİL" butonuna tıklandıktan sonra aşağıdaki kod profil_page sayfasına "POST" metoduyla DeleteEducation isteğini gönderir.
 
@@ -223,8 +223,8 @@ Aşağıdaki deleteeducation_page() fonksiyonu silinmek istenen verinin "id" de�
 
 Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
-Güncelleme
-----------
+1.3.Güncelleme
+--------------
 
 Güncelleme işlemi için güncellenmek istenen verinin hemen sağındaki "Güncelle" butonuna tıklanmasıyla aşağıdaki kod profil_page sayfasına "POST" metoduyla UpdateEducation isteğini gönderir.
 
@@ -272,8 +272,8 @@ Aşağıdaki updateeducation_page() fonksiyonu düzenlenmek istenen verinin "id"
              connection.commit()
              return redirect(url_for('profil_page',personid=personid))
 
-Arama
------
+1.4.Arama
+---------
 
 Arama formunda aranmak istenen değer girildikten sonra arama butonuna basıldığında aşağıdaki kodla birlikte profil_page() fonksiyonuna "POST" metoduyla "SearchEducation" isteği gönderilir.
 
@@ -307,13 +307,13 @@ Aşağıdaki searcheducation_page() fonksyionu arama işlemini tamamlar ve bulun
                         for key, SchoolName, YearStart,YearEnd,personid , Gpa in cursor]
             return education
 
-Experience Tablosu
-==================
+2.Experience Tablosu
+====================
 
 Bu tablonun tüm ekle, çıkar , düzenle ve arama fonksiyonları experience.py dosyasında bulunmaktadır.
 
-Ekleme
-------
+2.1.Ekleme
+----------
 
 Ekleme işlemi için "Yeni Şirket Ekle & Ara" butonuna basılır ve aşağıdaki java Script kodu çalışır.
 
@@ -363,8 +363,8 @@ Aşağıdaki addexperience_page fonksiyonu ekleme işlemini gerçekleştirir.
 
 Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
-Silme
------
+2.2.Silme
+---------
 
 Silme işlemi için silinmek istenen verinin hemen sağındaki "SİL" butonuna tıklanmasıyla aşağıdaki kod profil_page sayfasına "POST" metoduyla DeleteExperience isteğini gönderir.
 
@@ -396,8 +396,8 @@ Aşağıdaki deleteexperience_page() fonksiyonu silinmek istenen verinin "id" de
 
 Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
-Güncelleme
-----------
+2.3.Güncelleme
+--------------
 
 Güncelleme işlemi için güncellenmek istenen verinin hemen sağındaki "Güncelle" butonuna tıklanmasıyla aşağıdaki kod profil_page sayfasına "POST" metoduyla UpdateExperience isteğini gönderir.
 
@@ -445,8 +445,8 @@ Aşağıdaki updateexperience_page() fonksiyonu düzenlenmek istenen verinin "id
              connection.commit()
              return redirect(url_for('profil_page',personid=personid))
 
-Arama
------
+2.4.Arama
+---------
 
 Arama formunda aranmak istenen değer girildikten sonra arama butonuna basıldığında aşağıdaki kodla birlikte profil_page() fonksiyonuna "POST" metoduyla "SearchExperience" isteği gönderilir.
 
@@ -480,13 +480,13 @@ Aşağıdaki searchexperience_page() fonksiyonu arama işlemini tamamlar ve bulu
                         for key, CompanyName, YearStart,YearEnd,Position,personid  in cursor]
             return experience
 
-Language Tablosu
-================
+3.Language Tablosu
+==================
 
 Bu tablonun tüm ekle, çıkar , düzenle ve arama fonksiyonları language.py dosyasında bulunmaktadır.
 
-Ekleme
-------
+3.1.Ekleme
+----------
 
 Ekleme işlemi için "Yeni Dil Ekle & Ara" butonuna basılır ve aşağıdaki java Script kodu çalışır.
 
@@ -535,8 +535,8 @@ Aşağıdaki addlanguage() fonksiyonu ekleme işlemini gerçekleştirir.
 
 Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
-Silme
------
+3.2.Silme
+---------
 
 Silme işlemi için silinmek istenen verinin hemen sağındaki "SİL" butonuna tıklanmasıyla aşağıdaki kod profil_page sayfasına "POST" metoduyla DeleteLanguage isteği gönderilir.
 
@@ -568,8 +568,8 @@ Aşağıdaki deletelanguage() fonksiyonu silinmek istenen verinin "id" değerini
 
 Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
-Güncelleme
-----------
+3.3.Güncelleme
+--------------
 
 Güncelleme işlemi için güncellenmek istenen verinin hemen sağındaki "Güncelle" butonuna tıklanmasıyla aşağıdaki kod profil_page sayfasına "POST" metoduyla UpdateLanguage isteğini gönderir.
 
@@ -615,8 +615,8 @@ Aşağıdaki updatelanguage() fonksiyonu düzenlenmek istenen verinin "id" değe
              connection.commit()
              return redirect(url_for('profil_page',personid=personid))
 
-Arama
------
+3.4.Arama
+---------
 
 Arama formunda aranmak istenen değer girildikten sonra arama butonuna basıldığında aşağıdaki kodla birlikte profil_page() fonksiyonuna "POST" metoduyla "SearchLanguage" isteği gönderilir.
 
