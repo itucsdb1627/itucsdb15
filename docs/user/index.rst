@@ -7,7 +7,5 @@ Her takım üyesi aşağıda kendi kısımlarına değinmektedir.
 
 .. toctree::
 
-   BurakSimsek
    ZihnicanBegburs
-   HilalGulsen
-   ZeynepAnkara
+

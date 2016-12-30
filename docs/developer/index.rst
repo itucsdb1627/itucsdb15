@@ -202,7 +202,7 @@ ACTIVITIES tablosu 5 niteliğe sahiptir. ID, ACTIVITYNAME, ACTIVITYCONTENT, ACTI
 
 
 4. Zeynep Ankara' nın Veritabanı ve E/R diagramı
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 4.1. Veritabanı Dizaynı
 """""""""""""""""""""""
@@ -211,7 +211,7 @@ NETWORK tablosu 5 niteliğe sahiptir. ID, IL, SIRKET, SEKTOR, PERSONID bu tablon
 
 
 		.. code-block:: sql
-		  
+
 		 CREATE TABLE IF NOT EXISTS NETWORK (
     	         ID SERIAL PRIMARY KEY,
     	         IL VARCHAR(90),
@@ -221,16 +221,16 @@ NETWORK tablosu 5 niteliğe sahiptir. ID, IL, SIRKET, SEKTOR, PERSONID bu tablon
     	         FOREIGN KEY (PERSONID)
     	         REFERENCES MAINDATA (ID)
     	         ON DELETE CASCADE)
-    		
-    		
+
+
 4.2. E/R Diyagram
 """""""""""""""""
 
-	
+
 	Oluşturulan Network Tablosuna ait E/R diyagramı aşağıdaki gibidir;
-	
+
 	.. figure:: Zeynep/ERDiyagram.jpg
-		
+
 
 
 
@@ -274,7 +274,5 @@ Kod
 
 .. toctree::
 
-   BurakSimsek
    ZihnicanBeğburs
-   HilalGulsen
-   ZeynepAnkara
+

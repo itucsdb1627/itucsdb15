@@ -158,21 +158,21 @@ Kullanıcı tecrübe tablosundaki herhangi bir bilgiyi düzenleme istediğinde t
 .. figure:: zihni/TecrubeTablosuDuzenleme.jpg
       :scale: 100 %
 
-      *Ekran Görüntüsü 18: Tecrübe Tablosu Düzenleme Sayfası *
+      *Ekran Görüntüsü 18: Tecrübe Tablosu Düzenleme Sayfası*
 
 Tıklamadan sonra kullanıcı düzenleme sayfasına yönlendirilir.
 
 .. figure:: zihni/TecrubeTablosuDuzenlemeSayfasi.jpg
       :scale: 100 %
 
-      *Ekran Görüntüsü 18: Tecrübe Tablosu Düzenleme Sayfası *
+      *Ekran Görüntüsü 18: Tecrübe Tablosu Düzenleme Sayfası*
 
 Düzenleme sayfasında kullanıcı değiştirmek istediği tecrübe bilgisinin verilerini görür ve değiştirmek istediği veri veya verileri değiştirerek "DÜZENLE" butonuna tıklar. Tıklamadan sonra kullanıcı tekrar profil sayfasına yönlendirilir ve düzenlediği bilgiyi gözlemleyebilir.
 
 .. figure:: zihni/TecrubeTablosuDuzenlemeSonrasi.jpg
       :scale: 100 %
 
-      *Ekran Görüntüsü 19: Tecrübe Tablosu Düzenleme Sonrası *
+      *Ekran Görüntüsü 19: Tecrübe Tablosu Düzenleme Sonrası*
 
 Arama İşlemi
 ------------
@@ -273,7 +273,7 @@ kullanıcı bulmak istediği dil bilgisi için "Dil Ara" başlığı altındaki 
 .. figure:: zihni/DilTablosuArama.jpg
       :scale: 100 %
 
-      *Ekran Görüntüsü 30: Dil Tablosu Arama *
+      *Ekran Görüntüsü 30: Dil Tablosu Arama*
 
 Tıklamadan sonra kullanıcı dil tablosunda sonuçları gözlemleyebilir.
 
