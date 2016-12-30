@@ -22,26 +22,23 @@ Veritabanı Dizaynı
 Maindata tablosu 5 niteliğe sahiptir. Bu nitelikler ID,email,password,name ve surname olarak adlandırılmışlardır.ID değeri sadece
 sistemde kullanılmaktadır. Maindata tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
 
-.. code-block:: python
+.. code-block:: sql
 
-   def create_table(self):
-        with dbapi2.connect(current_app.config['dsn']) as connection:
-            cursor = connection.cursor()
-            query = """
-
-
-
-
+   CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,
+      PASSWORD VARCHAR(50) NOT NULL,NAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50)
+      NOT NULL,UNIQUE(EMAIL))
 
 FriendRequest tablosu 2 niteliğe sahiptir.Bu nitelikler personid ve friendrequestid olarak adlandırılmıştır.Bu tablo personid
 dış anahtarı ile Maindata tablosuna bağlıdır. FriendRequest tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
 
-.. code-block:: sql
+.. code-block::   sql
 
    CREATE TABLE FRIENDREQUEST
    (PERSONID INTEGER,REQUESTID INTEGER,
    FOREIGN KEY (PERSONID) REFERENCES MAINDATA(ID) ON
    DELETE CASCADE ON UPDATE CASCADE )
+
+
 
 
 FriendList tablosu 3 niteliğe sahiptir.Bu nitelikler personid,friendid ve title olarak adlandırılmıştır.Bu tablo personid
