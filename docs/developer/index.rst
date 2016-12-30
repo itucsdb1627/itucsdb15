@@ -194,7 +194,7 @@ ACTIVITIES tablosu 5 niteliğe sahiptir. ID, ACTIVITYNAME, ACTIVITYCONTENT, ACTI
 
    Tablolarım için E/R diyagramı :
 
-   .. figure:: Hilal/ERDiyagramı.jpg
+   .. figure:: Hilal/ERDiyagrami.jpg
       :scale: 100 %
       :alt:
 

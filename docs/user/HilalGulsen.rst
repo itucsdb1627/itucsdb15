@@ -35,13 +35,13 @@ Ekleme İşlemi
 -------------
    Yeni bir grup eklemek için gruba ilişkin bilgiler doldurularak "Oluştur" butonuna tıklanır.
 
-    .. figure:: Hilal/eklemeekranı1.JPG
+    .. figure:: Hilal/eklemeekrani1.JPG
       :scale: 75 %
       :alt: Main
 
    Yeni oluşturulan grubun tabloda yer aldığı görülür.
 
-    .. figure:: Hilal/eklemesonrası1.JPG
+    .. figure:: Hilal/eklemesonrasi1.JPG
       :scale: 75 %
       :alt: Main
 
@@ -49,7 +49,7 @@ Silme İşlemi
 ------------
    Kullanıcı var olan bir grubu silmek istediğinde, grup bilgisinin yanında bulunan "Gruplarımdan Çıkar" butonuna tıklaması yeterli olacaktır.
 
-    .. figure:: Hilal/silmedenönce1.JPG
+    .. figure:: Hilal/silmedenonce1.JPG
       :scale: 75 %
       :alt: Main
 
@@ -63,19 +63,19 @@ Güncelleme İşlemi
 -----------------
    Kullanıcı var olan bir grubun bilgilerini güncellemek istediğinde, grup bilgisinin yanında bulunan "Düzenle" butonuna tıklaması yeterli olacaktır.
 
-    .. figure:: Hilal/düzenlemedenönce1.JPG
+    .. figure:: Hilal/duzenlemedenonce1.JPG
       :scale: 75 %
       :alt: Main
 
     Butona tıkladıktan sonra düzenleme işlemleri için yeni bir sayfa açılır.Bu sayfada gerekli bilgiler doldurularak "Değiştir" butonuna tıklanır.
 
-    .. figure:: Hilal/düzenlemeekranı1.JPG
+    .. figure:: Hilal/duzenlemeekrani1.JPG
       :scale: 75 %
       :alt: Main
 
     Grup bilgisinin güncellenmiş hali tabloda görülebilir.
 
-     .. figure:: Hilal/düzenlemedensonra1.JPG
+     .. figure:: Hilal/duzenlemedensonra1.JPG
       :scale: 75 %
       :alt: Main
 
@@ -83,7 +83,7 @@ Arama İşlemi
 ------------
    Kullanıcı var olan bir grubu aratmak istediğinde, Grup Ara kısmına bulmak istediği grubun adını yazarak "Ara" butonuna tıklar.
 
-    .. figure:: Hilal/aramadanönce1.JPG
+    .. figure:: Hilal/aramadanonce1.JPG
       :scale: 75 %
       :alt: Main
 
@@ -97,7 +97,7 @@ YAYIN Tablosu ve İşlemler
 =========================
    Yayın bilgileri bu tabloda tutulmaktadır.İlgi Alanları sayfasındaki Yayınlar butonuna tıklandığında, yayınların göründüğü ve üzerinde işlemlerin yapılabildiği kısım görünecektir.
 
-   .. figure:: Hilal/yayınlar.JPG
+   .. figure:: Hilal/yayinlar.JPG
       :scale: 75 %
       :alt: Main
 
@@ -110,13 +110,13 @@ Ekleme İşlemi
 -------------
    Yeni bir yayın eklemek için yayına ilişkin bilgiler doldurularak "Kur" butonuna tıklanır.
 
-    .. figure:: Hilal/eklemeekranı2.JPG
+    .. figure:: Hilal/eklemeekrani2.JPG
       :scale: 75 %
       :alt: Main
 
    Yeni oluşturulan yayının tabloda yer aldığı görülür.
 
-    .. figure:: Hilal/eklemesonrası2.JPG
+    .. figure:: Hilal/eklemesonrasi2.JPG
       :scale: 75 %
       :alt: Main
 
@@ -124,7 +124,7 @@ Silme İşlemi
 ------------
    Kullanıcı var olan bir yayını silmek istediğinde, yayın bilgisinin yanında bulunan "Yayını Sil" butonuna tıklaması yeterli olacaktır.
 
-    .. figure:: Hilal/silmedenönce2.JPG
+    .. figure:: Hilal/silmedenonce2.JPG
       :scale: 75 %
       :alt: Main
 
@@ -138,19 +138,19 @@ Güncelleme İşlemi
 -----------------
    Kullanıcı var olan bir yayının bilgilerini güncellemek istediğinde, yayın bilgisinin yanında bulunan "Düzenle" butonuna tıklaması yeterli olacaktır.
 
-    .. figure:: Hilal/düzenlemedenönce2.JPG
+    .. figure:: Hilal/duzenlemedenonce2.JPG
       :scale: 75 %
       :alt: Main
 
     Butona tıkladıktan sonra düzenleme işlemleri için yeni bir sayfa açılır.Bu sayfada gerekli bilgiler doldurularak "Değiştir" butonuna tıklanır.
 
-    .. figure:: Hilal/düzenlemeekranı2.JPG
+    .. figure:: Hilal/duzenlemeekrani2.JPG
       :scale: 75 %
       :alt: Main
 
     Yayın bilgisinin güncellenmiş hali tabloda görülebilir.
 
-     .. figure:: Hilal/düzenlemedensonra2.JPG
+     .. figure:: Hilal/duzenlemedensonra2.JPG
       :scale: 75 %
       :alt: Main
 
@@ -158,7 +158,7 @@ Arama İşlemi
 ------------
    Kullanıcı var olan bir yayını aratmak istediğinde, Yayın Ara kısmına bulmak istediği yayının adını yazarak "Ara" butonuna tıklar.
 
-    .. figure:: Hilal/aramadanönce2.JPG
+    .. figure:: Hilal/aramadanonce2.JPG
       :scale: 75 %
       :alt: Main
 
@@ -185,13 +185,13 @@ Ekleme İşlemi
 -------------
    Yeni bir etkinlik eklemek için etkinliğe ilişkin bilgiler doldurularak "Oluştur" butonuna tıklanır.
 
-    .. figure:: Hilal/eklemeekranı3.JPG
+    .. figure:: Hilal/eklemeekrani3.JPG
       :scale: 75 %
       :alt: Main
 
    Yeni oluşturulan etkinliğin tabloda yer aldığı görülür.
 
-    .. figure:: Hilal/eklemesonrası3.JPG
+    .. figure:: Hilal/eklemesonrasi3.JPG
       :scale: 75 %
       :alt: Main
 
@@ -199,7 +199,7 @@ Silme İşlemi
 ------------
    Kullanıcı var olan bir etkinliği silmek istediğinde, etkinlik bilgisinin yanında bulunan "Etkinliği Sil" butonuna tıklaması yeterli olacaktır.
 
-    .. figure:: Hilal/silmedenönce3.JPG
+    .. figure:: Hilal/silmedenonce3.JPG
       :scale: 75 %
       :alt: Main
 
@@ -213,19 +213,19 @@ Güncelleme İşlemi
 -----------------
    Kullanıcı var olan bir etkinliğin bilgilerini güncellemek istediğinde, etkinlik bilgisinin yanında bulunan "Düzenle" butonuna tıklaması yeterli olacaktır.
 
-    .. figure:: Hilal/düzenlemedenönce3.JPG
+    .. figure:: Hilal/duzenlemedenonce3.JPG
       :scale: 75 %
       :alt: Main
 
     Butona tıkladıktan sonra düzenleme işlemleri için yeni bir sayfa açılır.Bu sayfada gerekli bilgiler doldurularak "Değiştir" butonuna tıklanır.
 
-    .. figure:: Hilal/düzenlemeekranı3.JPG
+    .. figure:: Hilal/duzenlemeekrani3.JPG
       :scale: 75 %
       :alt: Main
 
     Etkinlik bilgisinin güncellenmiş hali tabloda görülebilir.
 
-     .. figure:: Hilal/düzenlemedensonra3.JPG
+     .. figure:: Hilal/duzenlemedensonra3.JPG
       :scale: 75 %
       :alt: Main
 
@@ -233,7 +233,7 @@ Arama İşlemi
 ------------
    Kullanıcı var olan bir etkinliği aratmak istediğinde, Etkinlik Ara kısmına bulmak istediği etkinliğin adını yazarak "Ara" butonuna tıklar.
 
-    .. figure:: Hilal/aramadanönce3.JPG
+    .. figure:: Hilal/aramadanonce3.JPG
       :scale: 75 %
       :alt: Main
 
