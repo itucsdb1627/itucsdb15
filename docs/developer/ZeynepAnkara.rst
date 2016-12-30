@@ -14,7 +14,7 @@ Kullanıcı bu sayfaya anasayfada yer alan "İşler" alanına tıklayarak ulaş�
 
 Kullanıcı bu sayfaya ulaşırken; parametre olarak personid ile geçiş yapabilmektedir. Sayfaya ulaşabilmek için aşağıdaki kod yazılmıştır. 
 
-		..code-block::html
+		.. code-block:: html
 		
 		<li> <a href="{{ url_for('network_page',personid=personid) }}">İşler</a> </li>
 		
@@ -24,7 +24,7 @@ Sayfaya giriş yapan kullanıcının işlem yapabileceği tablo için network ta
 Network tablosu ile yapılan işlemler için network.py dosyası oluşturulmuştur. Network tablosunun oluşmasını sağlayan SQL kodları aşağıdaki gibidir:
 
 		
-		..code-block::sql
+		.. code-block:: sql
 		  
 		CREATE TABLE IF NOT EXISTS NETWORK (
     	ID SERIAL PRIMARY KEY,
@@ -39,7 +39,7 @@ Network tablosu ile yapılan işlemler için network.py dosyası oluşturulmuşt
 Sayfaya giriş yapıldığında kullanıcı; daha önce verdiği ilanları görebileceği bir tablo ile karşılaşır. Bu tabloda network tablosundan çekilen; il, sektor, sirket bilgilerini ve personid dış anahtarı ile Maindata tablosundan erişilen "name" bilgisi ve Educatin tablosundan erişilen "schoolname" bilgilerini görebilir. Kullanıcya ait olan bu tablo aşağıdaki HTML kodları ile oluşturulmuştur. 
 
 		
-		..code-block::html
+		.. code-block:: html
 		
 	1	<table class="table-style-two">
 	2	<tr>
@@ -77,7 +77,7 @@ Tabloda kullanılan CSS aşağıdaki gibidir.
 
 		
 		
-		..code-block::css
+		.. code-block:: css
 		
 		table.table-style-two {
 		font-family: verdana, arial, sans-serif;
@@ -115,7 +115,7 @@ Bu kodlar ile; tablonun yazı tipi, karakter büyüklüğü, satır/sutun geniş
 Sayfanın diğer bir bölümü ise yukarıda anlattılan tablonun altında yer almaktadır. Bu alan; kullanıcının network tablosuna veri ekleyebilmesi için tasarlanmıştır ve Bootstrap kullanılarak bir form oluşturulmuştur. 
 
 
-		..code-block::html
+		.. code-block:: html
 		
 		<!-- FORM SECTION -->
      		     <div class="col-sm-7">
@@ -148,7 +148,7 @@ Sayfanın diğer bir bölümü ise yukarıda anlattılan tablonun altında yer a
 Bu kod bloğu ile kullanıcının veri girebilmesi düşülmüştür. 12. satırda sirket, 13.satırda sektor, 14. satırda ise il bilgisini girebilmesi için kullanıcıya text alanları oluşturulmuştur. 15. satırda yer alan buton ise "Add" fonsiyonunu çağırmaktadır.   Bu işlem sonrasında form "POST" edildiğinde "validate()" adlı bir javascript kodu ile alanların boş geçilmemesi için mesaj verilmiştir. İlgili JavaScript kodu aşağıdaki gibidir. 
 
 
-		..code-block:: javascript 
+		.. code-block:: javascript 
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js">
 
@@ -179,7 +179,7 @@ Yukarıdaki kod ile; kullanıcının boş veri girişi yapması engellenmiştir.
 Sayfanın en alt kısmında yer alan ve diğer kullanıcıların da eklediği ilanları listelememizi sağlayan alan için kullanılan HTML kodlar aşağıdaki gibidir. 
 
 
-		..code-block::hmtl
+		.. code-block:: hmtl
 
 		 <h3>İş İlanları </h3>
       		{% for key, Il, Sırket, Personid , Sektor, SchoolName,FirstName in network2 %}
@@ -197,7 +197,7 @@ Sayfanın en alt kısmında yer alan ve diğer kullanıcıların da eklediği il
 Bu kod bloğu; için yeni bir connection oluştururak sayfanın üst bölümünde yer alan tablonun connection işleminin çakışmaması sağlanmıştır. Bootstrap formu kullanılmış ve kullanıcıların yanlızca network tablosundaki bilgileri birerküçük container şeklinde sıralanmıştır. Bu işlemi yapabilmek için ise; yerleştirme işlemi for döngüsü içinde yapılmıştır. Bu panel üzerinde kullanıcının ilanın üzerine geldiğinde; görselliğin değişmesi amacıyla jquery kullanılmıştır. Kodları aşağıdaki gibidir. 
 
 
-		..code-block::jquery 
+		.. code-block:: jquery 
 		
 		<script>
 		$(document).ready(function(){
@@ -215,7 +215,7 @@ Bu kod bloğu ile; kullanıcı "uou-block-6a" ile ifade edilen alana geldiğinde
 Network.html sayfasına girildiğinde network.py dosyasına yönelendirilir. "GET" metodu oluşunca sayfada yer alması istenen veriler tablolardan çekilerek kullanıcı için; yukarıda anlatılan tabolaların doldurulması sağlanır, "POST" metodu oluşursa isteklere bağlı olarak ilgili işlem döndürülür ve sayfaya uygulanır.
 
 
-		..code-block::python
+		.. code-block:: python
 		
 		@app.route('/network/<personid>', methods=['GET', 'POST'])
 		def network_page(personid):
@@ -285,13 +285,13 @@ Ekleme
 Ekleme işlemi için; sayfada bulunan "Kaydet" butonu tıklanır. Eğer verilerin hepsi eksiksiz girildiyse (girilmediği durumda JavaScript ile alanların boş geçilemeyeceği uayarı verilir ve bu kod yukarıda incelenmiştir.) "Add" isteği oluşur ve network_page fonksiyonuna yönlendirilir. Bu işlemi yapan kod; 
 
 
-		..code-block:: hmtl
+		.. code-block:: hmtl
 
 		<form action="{{ url_for('network_page',personid=personid) }}" name="zeynepForm"  method="post" role="form" onsubmit="return(validate());">
 		
 Network_page e yönlendirildikten sonra; verileri tabloya eklenmesi aşağaıdaki kod ile geröekleşir. 
 
-		..code-block:: python
+		.. code-block:: python
 		
 		 if 'Add' in request.form:
             Il = request.form['Il']
@@ -315,7 +315,7 @@ Silme
 Silme işlemi için; sayfada bulunan tabloda yer alan "Sil" butonuna tıklamak gerekir. Bu buton tıklandığı durumda "Delete" isteiği oluşur ve tekrar netwrok_page fonskiyonuna gönderilir. Silme işlemini gerçekleştiren kod aşağıdaki gibidir. 
 
 
-		..code-block:: python 
+		.. code-block:: python 
 		
 		 elif 'Delete' in request.form:
             id = request.form['id']
@@ -332,7 +332,7 @@ Güncelleme
 Güncelleme işlemi için; sayfada bulunan tabloda yer alan "Düzenle" butonuna tıklamak gerekir. Bu buton tıklandığı durumda "Update" isteiğini oluşturur ve network_page fonsiyonuna yönelendirlir. Bu yönelendisirlme doğrutusunda güncelleme işlemini yapabilmek için network_edit.html(network_edit.html sayfası aşağıda anlatılmıştır.) sayfasına yönlendirilme yapılır.  
 
 
-		..code-block:: python 
+		.. code-block:: python 
 		
 		elif 'Update' in request.form:
             networkid = request.form['id']
@@ -344,7 +344,7 @@ Yukarıdaki kod ile network_edit.html sayfasına yönlendirilme gerçekleşir.
 Güncelleme işlemi gerçekleşebilmesi için; network_edit.html sayfasında gerekli değişiklikler yapılır ve "Kaydet" butonuna tıklanır. Böyle olduğunda network.html sayfasına yönlendirilmiş oluruz. Bu değişiklikleri yapan kod aşağıdaki gibidir. 
 
 
-		..code-block:: python 
+		.. code-block:: python 
 		
 		@app.route('/network/editnetwork/<networkid>,<personid>', methods=['GET', 'POST'])
 		def edit_network(networkid,personid):
@@ -369,7 +369,7 @@ Network_edit.HTML
 Bu sayfa kullanıcının güncelleme yapması için oluşturulmuştur. Yanlızca network tablosuna güncelleyeceği alanları girebileceği alanlar yer almaktadır. Kullanıcı yukarıda anlatılmış olan kendine ait bilgilerin yer aldığı tablodan "Düzenle" btuonuna tıklaığından gerekli yönlendirme ile bu sayfaya ulaşır. Sayfa için kullanılan kod aşağıda verilmiştir. 
 
 
-		..code-block:: html 
+		.. code-block:: html 
 		
 		<!-- FORM SECTION -->
      		     <div class="col-sm-7">
