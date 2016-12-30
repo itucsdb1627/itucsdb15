@@ -2,27 +2,22 @@ itucsdb1627'nin dokümantasyonuna hoşgeldiniz!
 =============================================
 
 :Takım: itucsdb1627
-
 :Üyeler:
-
    * Burak Şimşek
    * Zihnican Beğburs
    * Hilal Gülşen
    * Zeynep Ankara
 
 
-Projemizin amacı sosyal iletişim platformu oluşturmaktır.
+Bnetwork projemiz iş dünyası için tasarlanmış bir sosyal ağdır.Kullanıcıların ağlarını genişletebildiği,iş fırsatlarını yakalayabildiği
+,çeşitli etkinlerden haberdar olabildiği ve kendilerini iş dünyasına sunabildikleri bir platformdur.
 
 Projemiz birbirleriyle ilişkili 4 ana bölümden oluşmaktadır.
 
 Bu bölümler:
-
 *Bağlantılar
-
 *Profil
-
 *İlgi Alanları
-
 *İşler
 
 İçindekiler:
