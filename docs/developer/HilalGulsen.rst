@@ -209,12 +209,12 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
                      activities=searchactivities_page(personid)
                      return render_template('ilgialanlari.html',activities = activities,personid=personid)
 
-1.GRUP TABLOSU
-##############
+GRUP TABLOSU
+############
    Grup tablosuna ait işlemler grup.py dosyasında yer almakta ve ilgialanlari.py dosyası tarafından çağrılmaktadır.
 
-1.1.Ekleme İşlemi
-=================
+Ekleme İşlemi
+=============
    Grup için gerekli bilgiler doldurulduktan sonra "Oluştur" butonuna tıklandığında "Add" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -246,8 +246,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
              (GroupName, Explanation,StartDate,Sector,personid))
              connection.commit()
 
-1.2.Silme İşlemi
-================
+Silme İşlemi
+============
    Silinmek istenen varlığın yanında bulunan Gruplarımdan Çıkar butonuna basıldığında "Delete" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -276,8 +276,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
              cursor.execute( """ DELETE FROM GRUP WHERE ID =%s """,[id])
              connection.commit()
 
-1.3.Güncelleme İşlemi
-=====================
+Güncelleme İşlemi
+=================
    Güncellenmek istenen varlığın yanında bulunan Düzenle butonuna basıldığında "Update" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -330,8 +330,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
                       connection.commit()
                       return redirect(url_for('ilgialanlari_page',personid=personid))
 
-1.4.Arama İşlemi
-================
+Arama İşlemi
+============
    Bulunmak istenen grubun adı Grup Ara kısmına girilip Ara butonuna tıklandığında "Search" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -360,12 +360,12 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
                      for key, GroupName, Explanation, StartDate, Sector,personid in cursor]
              return grup
 
-2.PUBLISHES TABLOSU
-###################
+PUBLISHES TABLOSU
+#################
    Publishes tablosuna ait işlemler publishes.py dosyasında yer almakta ve ilgialanlari.py dosyası tarafından çağrılmaktadır.
 
-2.1.Ekleme İşlemi
-=================
+Ekleme İşlemi
+=============
    Yayın için gerekli bilgiler doldurulduktan sonra "Kur" butonuna tıklandığında "Addpublishes" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -397,8 +397,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
              (EssayType,PublishName,PublishContent,PublishDate,personid))
              connection.commit()
 
-2.2.Silme İşlemi
-================
+Silme İşlemi
+============
    Silinmek istenen varlığın yanında bulunan Yayını Sil butonuna basıldığında "Deletepublishes" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -427,8 +427,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
                 cursor.execute( """ DELETE FROM PUBLISHES WHERE ID =%s """,[id])
                 connection.commit()
 
-2.3.Güncelleme İşlemi
-=====================
+Güncelleme İşlemi
+=================
    Güncellenmek istenen varlığın yanında bulunan Düzenle butonuna basıldığında "Updatepublishes" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -481,8 +481,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
                          connection.commit()
                          return redirect(url_for('ilgialanlari_page',personid=personid))
 
-2.4.Arama İşlemi
-================
+Arama İşlemi
+============
    Bulunmak istenen yayının adı Yayın Ara kısmına girilip Ara butonuna tıklandığında "Searchpublishes" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -511,12 +511,12 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
                      for key, EssayType,PublishName,PublishContent,PublishDate,personid in cursor]
              return publishes
 
-3.ACTIVITIES TABLOSU
-####################
+ACTIVITIES TABLOSU
+##################
    Activities tablosuna ait işlemler activities.py dosyasında yer almakta ve ilgialanlari.py dosyası tarafından çağrılmaktadır.
 
-3.1.Ekleme İşlemi
-=================
+Ekleme İşlemi
+=============
    Etkinlik için gerekli bilgiler doldurulduktan sonra "Oluştur" butonuna tıklandığında "Addactivities" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -547,8 +547,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
              (ActivityName,ActivityContent,ActivityDate,personid))
              connection.commit()
 
-3.2.Silme İşlemi
-================
+Silme İşlemi
+============
    Silinmek istenen varlığın yanında bulunan Etkinliği Sil butonuna basıldığında "Deleteactivities" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -577,8 +577,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
              cursor.execute( """ DELETE FROM ACTIVITIES WHERE ID =%s """,[id])
              connection.commit()
 
-3.3.Güncelleme İşlemi
-=====================
+Güncelleme İşlemi
+=================
    Güncellenmek istenen varlığın yanında bulunan Düzenle butonuna basıldığında "Updateactivities" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
@@ -630,8 +630,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
                       connection.commit()
                       return redirect(url_for('ilgialanlari_page',personid=personid))
 
-3.4.Arama İşlemi
-================
+Arama İşlemi
+============
    Bulunmak istenen etkinliğin adı Etkinlik Ara kısmına girilip Ara butonuna tıklandığında "Searchactivities" isteği oluşur ve aşağıdaki kodla ilgialanlari_page fonksiyonuna gönderilir.
 
    .. code-block:: html
