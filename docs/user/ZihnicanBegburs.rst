@@ -38,7 +38,6 @@ kullanıcı okul adı, başlangış tarihi, bitiş tarihi ve not bilgilerini gir
 Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
 .. figure:: zihni/EgitimTablosuEklemeGozlemle.jpg
-
       :scale: 100 %
 
       *Ekran Görüntüsü 4: Egitim Tablosu Ekleme Sonrasi*
