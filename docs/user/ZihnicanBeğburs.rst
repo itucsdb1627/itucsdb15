@@ -1,5 +1,6 @@
+#############################################
 Zihni Beğburs tarafından Gerçeklenen Kısımlar
-=============================================
+#############################################
 
 Kullanıcı siteye şifre ve e-postasıyla giriş yaptıktan sonra profil sayfasına tıklayarak profil bilgileri üzerinde işlem yapabileceği sayfaya erişir.
 Bu sayfa 3 ana tablodan oluşur. Bu tablolar eğitim bilgileri, tecrübe bilgileri ve dil bilgilerini içeren tablolardır. Kullanıcı bu sayfada bu bilgiler üzerinde
