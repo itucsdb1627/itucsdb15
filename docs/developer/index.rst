@@ -1,38 +1,3 @@
-Parts Implemented by Göktürk GÖK
-================================
-
-
-Complaints Table
-----------------
-
-- **CREATE**
-
-Creating a complaint table is operated by init_complaint() function and all columns with the rows to be ready to filled in being used on proper routes. This initialization is triggered by "Create Complaint Table" link under the Göktürk on navigation bar.
-When it is run then this table is initialized in database.
-
-.. code-block:: python
-
-   def init_complaint_tbl(self):
-        with dbapi2.connect(current_app.config['dsn']) as connection:
-            cursor = connection.cursor()
-            query = """CREATE TABLE complaint (
-                id SERIAL PRIMARY KEY,
-                complaint_text TEXT UNIQUE NOT NULL,
-                complaint_object TEXT NOT NULL,
-                complaint_object_id INT NOT NULL,
-                crt_id INT NOT NULL,
-                crt_time TIMESTAMP NOT NULL,
-                is_done INT NOT NULL,
-                FOREIGN KEY (crt_id) REFERENCES users (id)
-                    ON UPDATE CASCADE
-                    ON DELETE CASCADE
-            )"""
-            cursor.execute(query)
-            connection.commit()
-
-
-
-
 Geliştirici Kılavuzu
 ====================
 
@@ -58,11 +23,9 @@ Maindata tablosu 5 niteliğe sahiptir. Bu nitelikler ID,email,password,name ve s
 sistemde kullanılmaktadır. Maindata tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
 
 .. code-block:: sql
-
-::
-      CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,
-      PASSWORD VARCHAR(50) NOT NULL,NAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50)
-      NOT NULL,UNIQUE(EMAIL))
+   CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,
+   PASSWORD VARCHAR(50) NOT NULL,NAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50)
+   NOT NULL,UNIQUE(EMAIL))
 
 FriendRequest tablosu 2 niteliğe sahiptir.Bu nitelikler personid ve friendrequestid olarak adlandırılmıştır.Bu tablo personid
 dış anahtarı ile Maindata tablosuna bağlıdır. FriendRequest tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
