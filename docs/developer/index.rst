@@ -126,7 +126,7 @@ dış anahtarı ile Maindata tablosuna bağlıdır. Language tablosunun yaratıl
 
    Yukarıdaki tablolar için oluşturulan ER diagramı aşağıda verilmiştir:
 
-.. figure:: Zihni/ERDiyagramızihni.png
+.. figure:: Zihni/ERDiyagramıZihni.png
       :scale: 100 %
       :alt:
 
@@ -194,8 +194,8 @@ ACTIVITIES tablosu 5 niteliğe sahiptir. ID, ACTIVITYNAME, ACTIVITYCONTENT, ACTI
 
    Tablolarım için E/R diyagramı :
 
-   .. figure:: ERDiyagramı.jpg
-      :scale: 75 %
+   .. figure:: Hilal/ERDiyagramı.jpg
+      :scale: 100 %
       :alt:
 
       *Grup, Publishes, Activities tabloları için E/R Diyagramı*

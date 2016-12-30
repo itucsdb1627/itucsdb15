@@ -532,7 +532,8 @@ Aşağıdaki addlanguage() fonksiyonu ekleme işlemini gerçekleştirir.
         (LanguageName, Level,personid ))
         connection.commit()
 
- Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
+
+Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
 Silme
 -----
