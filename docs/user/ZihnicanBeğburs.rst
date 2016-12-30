@@ -163,7 +163,7 @@ Kullanıcı tecrübe tablosundaki herhangi bir bilgiyi düzenleme istediğinde t
 
 Tıklamadan sonra kullanıcı düzenleme sayfasına yönlendirilir.
 
-.. figure:: zihni/TecrubeTablosuDüzenlemeSayfasi.jpg
+.. figure:: zihni/TecrubeTablosuDuzenlemeSayfasi.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 18: Tecrübe Tablosu Düzenleme Sayfası *
@@ -219,7 +219,7 @@ kullanıcı dil ve seviye bilgilerini girerek "EKLE" butonuna tıklar.
 
 Böylece girilen bilgiler tabloya eklenmiş olur ve tabloda gözlemlenebilir.
 
-.. figure:: zihni/DilTablosuEklemeSonrası.jpg
+.. figure:: zihni/DilTablosuEklemeSonrasi.jpg
       :scale: 100 %
 
       *Ekran Görüntüsü 24: Dil Tablosu Ekleme Sonrası*
