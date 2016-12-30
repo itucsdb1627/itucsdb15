@@ -45,18 +45,18 @@ Ekleme İşlemi
 
 	Yeni bir iş ilanı vermek için sayda bulanan alanlar girildikten sonra "Kaydet" butonu tıklanır. 
 	
-	..figure:: Zeynep/eklemeislemi.jpg
+	.. figure:: Zeynep/eklemeislemi.jpg
 	
 Yeni oluşturulan ilanın görüntülenmesi sayfada iki alanda olur. 
 
 Birincisi; kullanıcının kendi iş ilanları arasında; 
 	
-	..figure:: Zeynep/eklemeislemisonrasıtablo.jpg
+	.. figure:: Zeynep/eklemeislemisonrasıtablo.jpg
 	
 	
 İkincisi ise; diğer bütün ilanlar arasında eklenen ilan görüntülenir. 
 
-	..figure:: Zeynep/eklemeislemisonrasıgeneltablo.jpg
+	.. figure:: Zeynep/eklemeislemisonrasıgeneltablo.jpg
 	
 	
 Gücelleme İşlemi 
@@ -64,24 +64,24 @@ Gücelleme İşlemi
 
 	Kullanıcı kendi ilanlarından herhangi biri üzerinde değişlik yapmak isteğinde tablosunda yer alan "Düzenle" butonuna tıklamalıdır. 
 	
-	..figure:: Zeynep/duzenlebutonu.jpg
+	.. figure:: Zeynep/duzenlebutonu.jpg
 	
 	
 Bu butona tıkladığında düzenle yapabilmesi için yeni bir sayfa açılır. Bu sayfada yer alan alanları istediği şekilde güncelleyerek "Kaydet" butonuna tıklamalıdır. 
 
-	..figure:: Zeynep/duzenlemeislemi.jpg
+	.. figure:: Zeynep/duzenlemeislemi.jpg
 	
 	
 Bu işlemden sonra kullanıcı tekrar tabloların bulunduğu "İşler" sayfasına yönlendirilir ve ilgili değişiklikler iki alanda görülebilir. 
 	
 Birincisi; kullanıcının kendi iş ilanları arasında;
 	
-	..figure:: Zeynep/duzenlemeislemisonrasitablo.jpg
+	.. figure:: Zeynep/duzenlemeislemisonrasitablo.jpg
 	
 	
 İkincisi ise; diğer bütün ilanlar arasında güncellenen ilan görüntülenir.
 	
-	..figure:: Zeynep/duzenlemeislemisonrasigeneltablo.jpg
+	.. figure:: Zeynep/duzenlemeislemisonrasigeneltablo.jpg
 	
 	
 Silme İşlemi 
@@ -89,18 +89,18 @@ Silme İşlemi
 
 	Kullanıcı kendi ilanlarından herhangi birini silebilir. Bunun için; ilanların listelendiği tabloda ilgili satırda bulunan "Sil" butonunu kullanmalıdır. 
 	
-	.figure:: Zeynep/silbutonu.jpg
+	.. figure:: Zeynep/silbutonu.jpg
 	
 	
 Silme işlemi gerçektikten sonra ilgili verilerin olmadığı iki alanda da görülebilir. 
 	
 	Birincisi; kullanıcının kendi iş ilanları tablosunda;
 	
-	.figure:: Zeynep/silmeislemisonrasitablo.jpg
+	.. figure:: Zeynep/silmeislemisonrasitablo.jpg
 	
 	
 İkincisi ise; diğer bütün ilanların listelendiği alanda; 
 	
-	.figure:: Zeynep/silmeislemisonrasigeneltablo.jpg
+	.. figure:: Zeynep/silmeislemisonrasigeneltablo.jpg
 	
 	
