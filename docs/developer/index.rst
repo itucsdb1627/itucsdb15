@@ -275,6 +275,6 @@ Kod
 .. toctree::
 
    BurakSimsek
-   ZihnicanBeğburs
+   ZihnicanBegburs
    HilalGulsen
    ZeynepAnkara
