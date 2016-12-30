@@ -294,17 +294,17 @@ Network_page e yönlendirildikten sonra; verileri tabloya eklenmesi aşağaıdak
 		.. code-block:: python
 		
 		 if 'Add' in request.form:
-            Il = request.form['Il']
-            Sirket = request.form['Sirket']
-            Sektor = request.form['Sektor']
-            connection = dbapi2.connect(app.config['dsn'])
-            cursor = connection.cursor()
-            cursor.execute("""
-            INSERT INTO NETWORK (IL, SIRKET,SEKTOR, PERSONID)
-            VALUES (%s, %s, %s, %s) """,
-            (Il,Sirket,Sektor,personid))
-            connection.commit()   
-            return redirect(url_for('network_page',personid=personid))
+                 Il = request.form['Il']
+                 Sirket = request.form['Sirket']
+                 Sektor = request.form['Sektor']
+                 connection = dbapi2.connect(app.config['dsn'])
+                 cursor = connection.cursor()
+                 cursor.execute("""
+                 INSERT INTO NETWORK (IL, SIRKET,SEKTOR, PERSONID)
+                 VALUES (%s, %s, %s, %s) """,
+                 (Il,Sirket,Sektor,personid))
+                 connection.commit()   
+                 return redirect(url_for('network_page',personid=personid))
 
 Böylelikle network tablosuna yeni bir valık eklenmiş olur. 
 
