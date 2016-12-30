@@ -65,6 +65,76 @@ Yukarıdaki tablolar için oluşturulan ER diagramı aşağıda verilmiştir.
 
 
 
+2. Zihnican Beğburs'un Veritabanı ve E/R Diagramı
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+2.1. Database Design
+""""""""""""""""""""
+
+Education tablosu 6 niteliğe sahiptir. Bu nitelikler ID,SCHOOLNAME,YEARSTART,YEAREND,PERSONID ve GPA dir. Bu tablo personid
+dış anahtarı ile Maindata tablosuna bağlıdır. Education tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
+
+        .. code-block:: sql
+
+                CREATE TABLE IF NOT EXISTS EDUCATION (
+                ID SERIAL PRIMARY KEY,
+                SCHOOLNAME VARCHAR(90),
+                YEARSTART VARCHAR(30) NULL,
+                YEAREND VARCHAR(30) NULL,
+                PERSONID INTEGER,
+                GPA VARCHAR(30) NULL,
+                FOREIGN KEY (PERSONID)
+                REFERENCES MAINDATA (ID)
+                ON DELETE CASCADE)
+
+
+Experience tablosu 6 niteliğe sahiptir. Bu nitelikler ID,COMPANYNAME,YEARSTART,YEAREND,POSITION ve PERSONID dir. Bu tablo personid
+dış anahtarı ile Maindata tablosuna bağlıdır. Experience tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
+
+
+
+    .. code-block:: sql
+
+            CREATE TABLE IF NOT EXISTS EXPERIENCE (
+            ID SERIAL PRIMARY KEY,
+            COMPANYNAME VARCHAR(90),
+            YEARSTART VARCHAR(30) NULL,
+            YEAREND VARCHAR(30) NULL,
+            POSITION VARCHAR(30) NULL,
+            PERSONID INTEGER,
+            FOREIGN KEY (PERSONID)
+            REFERENCES MAINDATA (ID)
+            ON DELETE CASCADE)
+
+Language tablosu 4 niteliğe sahiptir. Bu nitelikler ID,LANGUAGENAME,LEVEL ve PERSONID dir. Bu tablo personid
+dış anahtarı ile Maindata tablosuna bağlıdır. Language tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
+
+
+      .. code-block:: sql
+
+            CREATE TABLE IF NOT EXISTS LANGUAGE (
+            ID SERIAL PRIMARY KEY,
+            LANGUAGENAME VARCHAR(90),
+            LEVEL VARCHAR(30) NULL,
+            PERSONID INTEGER,
+            FOREIGN KEY (PERSONID)
+            REFERENCES MAINDATA (ID)
+            ON DELETE CASCADE)
+
+2.2. E/R Diyagramı
+""""""""""""""""""
+
+   Yukarıdaki tablolar için oluşturulan ER diagramı aşağıda verilmiştir:
+
+.. figure:: Zihni/ERDiyagramızihni.png
+      :scale: 100 %
+      :alt:
+
+      *Education,Language,Experience tabloları için E/R Diyagramı.*
+
+
+
+
 
 
 

@@ -106,10 +106,10 @@ Bu 3 fonksiyon da aynı şekilde kendi tablolarının tüm bilgileri çekmektedi
 
    return render_template('profil.html', education = education,experience=experience,language=language,personid=personid)
 
- Yukarıdaki kodla, çekilen verilen profil.html sayfasına aktarılır.
+Yukarıdaki kodla, çekilen verilen profil.html sayfasına aktarılır.
 
 
- Profil.html sayfasına gönderilen değerler aşağıdaki kodla kullanıcıya aktarılır. Bu kod sadece Education tablosu için gösterilmiştir. Diğer tablolar için de aynı metot kullanılmıştır.
+Profil.html sayfasına gönderilen değerler aşağıdaki kodla kullanıcıya aktarılır. Bu kod sadece Education tablosu için gösterilmiştir. Diğer tablolar için de aynı metot kullanılmıştır.
 
 .. code-block:: html
 
@@ -188,7 +188,7 @@ Aşağıdaki addeducation_page fonksiyonu ekleme işlemini gerçekleştirir.
         (SchoolName, YearStart,YearEnd,personid ,Gpa))
         connection.commit()
 
- Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
+Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
 Silme
 -----
@@ -336,7 +336,7 @@ Bu kod ekleme formunun açılmasını sağlar. Bu form doldurulup ekleme butonun
 
    <form action="{{ url_for('profil_page',personid=personid) }}" method="post" role="form">
 
-Gelen istek profil_page() fonkyionunda aşağıdaki koşula girerek addeducation_page(personid) fonksiyonunu çağırır.
+Gelen istek profil_page() fonkyionunda aşağıdaki koşula girerek addexperience_page(personid) fonksiyonunu çağırır.
 
 .. code-block:: Python
 
@@ -361,7 +361,7 @@ Aşağıdaki addexperience_page fonksiyonu ekleme işlemini gerçekleştirir.
         (CompanyName, YearStart,YearEnd,Position,personid ))
         connection.commit()
 
- Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
+Bu işlemden sonra profil_page fonksiyonuna dönülür ve "GET" metoduyla profil.html sayfasına gidilir.
 
 Silme
 -----
@@ -503,7 +503,7 @@ Ekleme işlemi için "Yeni Dil Ekle & Ara" butonuna basılır ve aşağıdaki ja
                 }
             };
 
-Bu kod ekleme formunun açılmasını sağlar. Bu form doldurulup ekleme butonuna basıldığında aşağıdaki kodla birlikte profil_page() fonksiyonuna "POST" metoduyla "AddEducation" isteği gönderilir.
+Bu kod ekleme formunun açılmasını sağlar. Bu form doldurulup ekleme butonuna basıldığında aşağıdaki kodla birlikte profil_page() fonksiyonuna "POST" metoduyla "AddLanguage" isteği gönderilir.
 
 .. code-block:: html
 
