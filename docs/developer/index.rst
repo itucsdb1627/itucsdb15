@@ -201,6 +201,39 @@ ACTIVITIES tablosu 5 niteliğe sahiptir. ID, ACTIVITYNAME, ACTIVITYCONTENT, ACTI
       *Grup, Publishes, Activities tabloları için E/R Diyagramı*
 
 
+4. Zeynep Ankara' nın Veritabanı ve E/R diagramı
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+4.1. Veritabanı Dizaynı
+"""""""""""""""""""""""
+NETWORK tablosu 5 niteliğe sahiptir. ID, IL, SIRKET, SEKTOR, PERSONID bu tablonun nitelikleridir. Bu tablo PERSONID dış anahtarı ile MAINDATA tablosuna bağlıdır. NETWORK tablosu aşağıdaki SQL kodu ile oluşturulmuştur:
+
+
+		..code-block:: sql
+		
+			CREATE TABLE IF NOT EXISTS NETWORK (
+    		ID SERIAL PRIMARY KEY,
+    		IL VARCHAR(90),
+    		SIRKET VARCHAR(30) NULL,
+    		PERSONID INTEGER,
+    		SEKTOR VARCHAR(30) NULL,
+    		FOREIGN KEY (PERSONID)
+    		REFERENCES MAINDATA (ID)
+    		ON DELETE CASCADE)
+    		
+    		
+4.2. E/R Diyagram
+"""""""""""""""""
+
+	
+	Oluşturulan Network Tablosuna ait E/R diyagramı aşağıdaki gibidir;
+	
+	..figure:: Zeynep/ERDiyagram.jpg
+	:scale: 100 %
+	:alt:	
+
+
+
 Kod
 ---
 
