@@ -40,36 +40,36 @@ Sayfaya giriş yapıldığında kullanıcı; daha önce verdiği ilanları göre
 
 		
 		.. code-block:: html
-		
- <table class="table-style-two">
-  <tr>
-  <th>Il</th>
-  <th>Sırket</th>
-  <th>Sektor</th>
-  <th>Okul Adı</th>
-  <th>Adı</th>
-  <th>Processes</th>
-  </tr>
-  {% for key, Il, Sırket,Personid ,Sektor, SchoolName,FirstName in network %}
-  <tr>
-  <td> {{ Il }} </td>
-  <td> {{ Sırket }} </td>
-  <td> {{ Sektor }} </td>
-  <td> {{ SchoolName }} </td>
-  <td> {{ FirstName }} </td>
-  <td>
-  <form action="{{ url_for('network_page',personid=personid) }}" method="post" role="form" style="display: inline">
-  <input value="{{key}}" name="id" type="hidden" />
-  <button class="btn btn-default" name="Delete" type="submit">Sil</button>
-  </form>
-  <form action="{{url_for('network_page',personid=personid)}}" method="post" role="form" style="display: inline">
-  <input value="{{key}}" name="id" type="hidden" />
-  <button class="btn btn-default" name="Update" type="submit">Duzenle</button>
-  </form>
-  </td>
-  </tr>
-  {% endfor %}
-  </table>
+		<table class="table-style-two">
+		<tr>
+		    <th>Il</th>
+		    <th>Sırket</th>
+		    <th>Sektor</th>
+		    <th>Okul Adı</th>
+		    <th>Adı</th>
+		    <th>Processes</th>
+		 </tr>
+		{% for key, Il, Sırket,Personid ,Sektor, SchoolName,FirstName in network %}
+		<tr>
+			<td> {{ Il }} </td>
+			<td> {{ Sırket }} </td>
+			<td> {{ Sektor }} </td>
+			<td> {{ SchoolName }} </td>
+			<td> {{ FirstName }} </td>
+			<td>
+			<form action="{{ url_for('network_page',personid=personid) }}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="Delete" type="submit">Sil</button>
+			</form>
+			<form action="{{url_for('network_page',personid=personid)}}" method="post" role="form" style="display: inline">
+							<input value="{{key}}" name="id" type="hidden" />
+							<button class="btn btn-default" name="Update" type="submit">Duzenle</button>
+			</form>
+			</td>
+		</tr>
+	{% endfor %}
+	</table>
+
  
  
 Tablo oluşturulurken 1. satırda CSS kullanılmıştır. Tablonun başlıklarını belirleyen satırlar 3-8 arasında yer almaktadır. 10. satırda; kullanıcının her bir ilanı için tabloya yerleştirme işlemi yapması istendiği için for döngüsü kullanılmak üzere açılmış ve bu döngü 28. satırda kapatılmıştır. Bu sayede kullanıcının network tablosuna kayıtlı bütün verileri listelenebilmektedir. Network  tablosundan 12,13 ve 14. satırlarda il, sirket ve sektor bilgileri çekilirken, education tablosundan 15. satırda bulunan schoolname ve 16. satırda bulunan name bilgisi de maindata tablosundan çekilmektedir. 18 ve 22 satırlarda kullanıcının silme ve güncelleme işlemi yapabilmesi için her bir varlık için buton eklenmiştir.
@@ -117,8 +117,8 @@ Sayfanın diğer bir bölümü ise yukarıda anlattılan tablonun altında yer a
 
 		.. code-block:: html
 	
-                <div class="col-sm-7">
-                <div class="login-sec"> 
+                         <div class="col-sm-7">
+                         <div class="login-sec"> 
                 <div class="uou-tabs">
                  <li class="active"><a href="#log-in">Oluşturmak İstediğiniz İlan İle İlgili Bilgiler</a></li>
                   <form action="{{ url_for('network_page',personid=personid) }}" name="zeynepForm"  method="post" role="form" onsubmit="return(validate());">
