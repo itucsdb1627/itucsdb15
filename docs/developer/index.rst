@@ -23,6 +23,7 @@ Maindata tablosu 5 niteliğe sahiptir. Bu nitelikler ID,email,password,name ve s
 sistemde kullanılmaktadır. Maindata tablosunun yaratılması için gerekli kod aşağıda verilmiştir.
 
 .. code-block:: sql
+
    CREATE TABLE MAINDATA(ID SERIAL PRIMARY KEY, EMAIL VARCHAR(50) NOT NULL,
       PASSWORD VARCHAR(50) NOT NULL,NAME VARCHAR(50) NOT NULL,SURNAME VARCHAR(50)
       NOT NULL,UNIQUE(EMAIL))
