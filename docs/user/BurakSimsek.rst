@@ -3,8 +3,8 @@ Burak Şimşek tarafından tamamlanan bölümler
 ###########################################
 
 
-1.Kayıt Sayfası
-===============
+Kayıt Sayfası
+=============
 Kullanıcı itucsdb1627.mybluemix.net sayfasına girdikten sonra sağ üstte bulunan "Kayıt Ol" sekmesine tıklayarak Bnetwork adlı sosyal medya
 sitesinin kayıt olma ekranına gelir. Burada gerekli bilgileri doldurduktan sonra "Kayıt Ol" butonuna basarak üyeliğini gerçekler.
 
@@ -16,8 +16,8 @@ sitesinin kayıt olma ekranına gelir. Burada gerekli bilgileri doldurduktan son
 Kullanıcı sitemize üye olduktan sonra ana sayfadan üye olurken doldurduğu e-mail ve şifre bilgilerini kullanarak üye  girişi yapar.
 Kullanıcı giriş yaptıktan sonra 4 farklı işlem yapabilir.Kullanıcı  "Bağlantılar" sayfasına tıklayarak bağlantılar sayfasına ulaşır.
 
-2.Bağlantılar Sayfası
-=====================
+Bağlantılar Sayfası
+===================
 
 Kullanıcı bağlantılar sayfasına girdiğinde karşısına 3 farklı kısım çıkar. Bu kısımlar:
 
@@ -34,8 +34,8 @@ Kullanıcı bağlantılar sayfasına girdiğinde karşısına 3 farklı kısım 
     *Ekran Görüntüsü 2 :Bağlantılar Sayfası*
 
 
-2.1.Arkadaş Önerileri
----------------------
+Arkadaş Önerileri
+-----------------
 
 Yeni üye olan kullanıcı bağlantılar sayfasından arkadaş önerilerini görür ve eğer isterse tanıdığı kişilere isimlerinin yanında bulunan "Arkadaşlık
 İsteği Gönder" butonuna tıklayarak arkadaşlık isteği gönderebilir.
@@ -45,8 +45,8 @@ Yeni üye olan kullanıcı bağlantılar sayfasından arkadaş önerilerini gör
    :alt: Ekran Görüntüsü 3 :Arkadaş Önerileri Bölümü
     *Ekran Görüntüsü 3 :Arkadaş Önerileri Bölümü*
 
-2.2.Gelen Bağlantı İstekleri
-----------------------------
+Gelen Bağlantı İstekleri
+------------------------
 
 Bağlantılar Sayfasında arkadaş önerileri kısmının altında Gelen Bağlantı İstekleri kısmı bulunmaktadır. Bu kısımda kullanıcıya gönderilen
 bağlantı kurma istekleri yer almaktadır. Kullanıcı gelen bağlantı isteklerinin yanındaki butonları kullanarak bu kişiyi bağlantı olarak ekleyebilir
@@ -60,8 +60,8 @@ ya da bağlantı kurma isteğini reddedebilir.
 Reddetmesi veya kabul etmesi durumunda bu istek sayfadan silinir. Aynı zamanda kullanıcı bu isteği kabul
 etme sırasında isteği gönderen kişinin isminin yanındaki ünvan kısmını doldurarak o kişiyi bir ünvanla kendi bağlantılar listesine ekleyebilir.
 
-2.3.Bağlantılar
----------------
+Bağlantılar
+-----------
 
 Kullanıcı eğer "Gelen Bağlantı İstekleri" kısmından gelen bir isteği onaylarsa ya da "Arkadaş Önerileri" kısmından bir istek yolladıysa ve bu
 istek kabul edildiyse isteğin kabul edildiği kişiyle bağlantı kurmuş olur. Bağlantı kurmuş olduğu kişiler kendileri tarafından eklenen ünvanla bağlantılar sekmesinin
@@ -82,8 +82,8 @@ günceller.
 
 Veya "Arkadasi Sil" butonunu kullanarak bağlantısını bağlantı listesinden kaldırır.
 
-3.Admin Sayfası
-===============
+Admin Sayfası
+=============
 
 Admin sayfası web uygulamasının yöneticisi için tasarlanmış bir sayfadır. Bu sayfa üzerinde web uygulamasına üye olmuş tüm kullanıcılar görünmekte ve bu kullanılara ait
 üyelik bilgileri güncellenebilmekte ya da üyelikleri silinebilmektedir.
@@ -94,8 +94,8 @@ Admin sayfası web uygulamasının yöneticisi için tasarlanmış bir sayfadır
      *Ekran Görüntüsü 7 :Admin Sayfası*
 
 
-3.1.Güncelleme
---------------
+Güncelleme
+----------
 
 Sitenin yöneticisi, gerekli hallerde kullanıcılara ait bilgileri,kullanıcının e-posta bilgisini kullanarak güncelleyebilmektedir. Gerekli olan
 e-posta alanını geçerli bir e-posta ile doldurduktan sonra güncelle butonunu kullanarak güncelleme sayfasına geçmekte,buradan gerekli alanları doldurarak güncelleme yapabilmektedir.
@@ -106,8 +106,8 @@ e-posta alanını geçerli bir e-posta ile doldurduktan sonra güncelle butonunu
      *Ekran Görüntüsü 8 :Kullanıcı Bilgilerini Güncelleme*
 
 
-3.2.Silme
----------
+Silme
+-----
 
 Sitenin yöneticisi,yine gerekli hallerde siteye kayıtlı kullanıcıyı,kullanıcının elektronik postasını gerekli alana yazarak ve ardından sil
 tuşuna basarak silme işlemini gerçekleyebilir.
