@@ -18,8 +18,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
 3. Güncelleme
 4. Arama
 
-1. GRUP Tablosu ve İşlemler
-===========================
+GRUP Tablosu ve İşlemler
+========================
    Grup bilgileri bu bölümde tutulmaktadır.İlgi Alanları sayfasındaki Gruplar butonuna tıklandığında, grupların göründüğü ve üzerinde işlemlerin yapılabildiği kısım görünecektir.
 
    .. figure:: Hilal/gruplar.JPG
@@ -31,8 +31,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
    Bu bölümde grup ismi, grup hakkında açıklama, grubun kuruluş tarihi, hangi sektöre hitap ettiği bilgileri tutulmaktadır.
    Kullanıcı yeni bir grup kurabilir ya da var olan gruplar üzerinde silme,güncelleme,arama gibi işlemleri gerçekleştirebilir.
 
-1.1. Ekleme İşlemi
-------------------
+Ekleme İşlemi
+-------------
    Yeni bir grup eklemek için gruba ilişkin bilgiler doldurularak "Oluştur" butonuna tıklanır.
 
     .. figure:: Hilal/eklemeekranı1.JPG
@@ -45,8 +45,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-1.2. Silme İşlemi
------------------
+Silme İşlemi
+------------
    Kullanıcı var olan bir grubu silmek istediğinde, grup bilgisinin yanında bulunan "Gruplarımdan Çıkar" butonuna tıklaması yeterli olacaktır.
 
     .. figure:: Hilal/silmedenönce1.JPG
@@ -59,8 +59,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-1.3. Güncelleme İşlemi
-----------------------
+Güncelleme İşlemi
+-----------------
    Kullanıcı var olan bir grubun bilgilerini güncellemek istediğinde, grup bilgisinin yanında bulunan "Düzenle" butonuna tıklaması yeterli olacaktır.
 
     .. figure:: Hilal/düzenlemedenönce1.JPG
@@ -79,8 +79,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-1.4. Arama İşlemi
------------------
+Arama İşlemi
+------------
    Kullanıcı var olan bir grubu aratmak istediğinde, Grup Ara kısmına bulmak istediği grubun adını yazarak "Ara" butonuna tıklar.
 
     .. figure:: Hilal/aramadanönce1.JPG
@@ -93,8 +93,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-2. YAYIN Tablosu ve İşlemler
-============================
+YAYIN Tablosu ve İşlemler
+=========================
    Yayın bilgileri bu tabloda tutulmaktadır.İlgi Alanları sayfasındaki Yayınlar butonuna tıklandığında, yayınların göründüğü ve üzerinde işlemlerin yapılabildiği kısım görünecektir.
 
    .. figure:: Hilal/yayınlar.JPG
@@ -106,8 +106,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
    Bu bölümde yayın türü, yayın ismi, yayın içeriği, paylaşım tarihi bilgileri tutulmaktadır.
    Kullanıcı yeni bir yayın oluşturabilir ya da var olan yayınlar üzerinde silme,güncelleme,arama gibi işlemleri gerçekleştirebilir.
 
-2.1. Ekleme İşlemi
-------------------
+Ekleme İşlemi
+-------------
    Yeni bir yayın eklemek için yayına ilişkin bilgiler doldurularak "Kur" butonuna tıklanır.
 
     .. figure:: Hilal/eklemeekranı2.JPG
@@ -120,8 +120,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-2.2. Silme İşlemi
------------------
+Silme İşlemi
+------------
    Kullanıcı var olan bir yayını silmek istediğinde, yayın bilgisinin yanında bulunan "Yayını Sil" butonuna tıklaması yeterli olacaktır.
 
     .. figure:: Hilal/silmedenönce2.JPG
@@ -134,8 +134,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-2.3. Güncelleme İşlemi
-----------------------
+Güncelleme İşlemi
+-----------------
    Kullanıcı var olan bir yayının bilgilerini güncellemek istediğinde, yayın bilgisinin yanında bulunan "Düzenle" butonuna tıklaması yeterli olacaktır.
 
     .. figure:: Hilal/düzenlemedenönce2.JPG
@@ -154,8 +154,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-2.4. Arama İşlemi
------------------
+Arama İşlemi
+------------
    Kullanıcı var olan bir yayını aratmak istediğinde, Yayın Ara kısmına bulmak istediği yayının adını yazarak "Ara" butonuna tıklar.
 
     .. figure:: Hilal/aramadanönce2.JPG
@@ -168,8 +168,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-3. ETKİNLİK Tablosu ve İşlemler
-===============================
+ETKİNLİK Tablosu ve İşlemler
+============================
    Etkinlik bilgileri bu tabloda tutulmaktadır.İlgi Alanları sayfasındaki Etkinlikler butonuna tıklandığında, etkinliklerin göründüğü ve üzerinde işlemlerin yapılabildiği kısım görünecektir.
 
    .. figure:: Hilal/etkinlikler.JPG
@@ -181,8 +181,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
    Bu bölümde etkinlik ismi, etkinlik içeriği, etkinlik tarihi bilgileri tutulmaktadır.
    Kullanıcı yeni bir etkinlik oluşturabilir ya da var olan etkinlikler üzerinde silme,güncelleme,arama gibi işlemleri gerçekleştirebilir.
 
-3.1. Ekleme İşlemi
-------------------
+Ekleme İşlemi
+-------------
    Yeni bir etkinlik eklemek için etkinliğe ilişkin bilgiler doldurularak "Oluştur" butonuna tıklanır.
 
     .. figure:: Hilal/eklemeekranı3.JPG
@@ -195,8 +195,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-3.2. Silme İşlemi
------------------
+Silme İşlemi
+------------
    Kullanıcı var olan bir etkinliği silmek istediğinde, etkinlik bilgisinin yanında bulunan "Etkinliği Sil" butonuna tıklaması yeterli olacaktır.
 
     .. figure:: Hilal/silmedenönce3.JPG
@@ -209,8 +209,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-3.3. Güncelleme İşlemi
-----------------------
+Güncelleme İşlemi
+-----------------
    Kullanıcı var olan bir etkinliğin bilgilerini güncellemek istediğinde, etkinlik bilgisinin yanında bulunan "Düzenle" butonuna tıklaması yeterli olacaktır.
 
     .. figure:: Hilal/düzenlemedenönce3.JPG
@@ -229,8 +229,8 @@ Hilal Gülşen Tarafından Gerçeklenen Kısımlar
       :scale: 75 %
       :alt: Main
 
-3.4. Arama İşlemi
------------------
+Arama İşlemi
+------------
    Kullanıcı var olan bir etkinliği aratmak istediğinde, Etkinlik Ara kısmına bulmak istediği etkinliğin adını yazarak "Ara" butonuna tıklar.
 
     .. figure:: Hilal/aramadanönce3.JPG
