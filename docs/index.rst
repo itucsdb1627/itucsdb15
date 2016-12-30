@@ -1,8 +1,10 @@
-itucsdb1627'nin dokümantasyonuna hoşgeldiniz!
-=============================================
+itucsdb1627 dokümantasyonuna hoşgeldiniz!
+=========================================
 
-:Takım: itucsdb1627
-:Üyeler:
+:Team: itucsdb1627
+
+:Members:
+
    * Burak Şimşek
    * Zihnican Beğburs
    * Hilal Gülşen
